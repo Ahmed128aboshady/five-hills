@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Hills Real Estate | Luxury Properties Dubai</title>
+    <meta name="description" content="Discover premium, ultra-luxury villas and apartments in Dubai. Off-plan and ready properties by top developers.">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- --- Premium Luxury Header --- -->
+    <header class="site-header" id="mainHeader">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">
+                <img src="logo.png" alt="5 Hills Logo" style="height: 56px; width: auto; object-fit: contain;">
+            </a>
+            
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active" id="navHome">Home</a></li>
+                    <li><a href="projects.html" class="nav-link" id="navFeatured">Projects</a></li>
+                    <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="lang-switch" id="langToggleBtn" onclick="toggleLanguage()">العربية</button>
+                <button class="theme-switch-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️</button>
+                <a href="#contact" class="btn-gold" style="padding: 10px 20px; font-size: 0.8rem;" id="headerCtaBtn">Inquire Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Hero Section with Background Video & Search Bar --- -->
+    <section class="hero-section">
+        <div class="hero-bg">
+            <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-dubai-skyline-at-sunset-41793-large.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-bg-fallback"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+            <span class="hero-tagline" id="heroTagline">Exquisite Living in Dubai</span>
+            <h1 class="hero-title gold-gradient-text" id="heroTitle">Find Your Masterpiece Property</h1>
+            <p class="hero-subtitle" id="heroSubtitle">Explore premium off-plan developments and ready-to-move-in luxury residences in Dubai's most prestigious districts.</p>
+        </div>
+
+        <!-- Advanced Search Filter Component -->
+        <div class="container">
+            <div class="search-container">
+                <!-- Links search form to projects.html with queries -->
+                <form class="search-form" action="projects.html" method="GET">
+                    
+                    <div class="search-field-group">
+                        <label for="searchLocation" id="lblLocation">Location</label>
+                        <select id="searchLocation" name="location">
+                            <option value="" id="optAllLocations">All Locations</option>
+                            <option value="downtown-dubai">Downtown Dubai</option>
+                            <option value="dubai-marina">Dubai Marina</option>
+                            <option value="meydan">Meydan / Sobha Hartland</option>
+                            <option value="wasl-1">Wasl 1 / Zabeel</option>
+                            <option value="jumeirah">Jumeirah</option>
+                        </select>
+                    </div>
+
+                    <div class="search-field-group">
+                        <label for="searchPropType" id="lblPropType">Property Type</label>
+                        <select id="searchPropType" name="type">
+                            <option value="" id="optAllTypes">All Types</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="villa">Villa</option>
+                            <option value="townhouse">Townhouse</option>
+                            <option value="commercial">Commercial / Office</option>
+                        </select>
+                    </div>
+
+                    <div class="search-field-group">
+                        <label for="searchPrice" id="lblPrice">Price starting from</label>
+                        <select id="searchPrice" name="price">
+                            <option value="" id="optAnyPrice">Any Price</option>
+                            <option value="1000000">AED 1,000,000+</option>
+                            <option value="2000000">AED 2,000,000+</option>
+                            <option value="5000000">AED 5,000,000+</option>
+                            <option value="10000000">AED 10,000,000+</option>
+                        </select>
+                    </div>
+
+                    <div class="search-field-group">
+                        <label for="searchStatus" id="lblStatus">Status</label>
+                        <select id="searchStatus" name="status">
+                            <option value="" id="optAllStatus">All Status</option>
+                            <option value="off-plan">Off-Plan</option>
+                            <option value="ready">Ready to Move</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-gold search-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <span id="btnSearchText">Search</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Why Invest in Dubai Section --- -->
+    <section class="section-padding" style="background-color: #03070C; border-bottom: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tagline" id="whyTagline">Why Invest in Dubai</span>
+                <h2 class="section-title gold-gradient-text" id="whyTitle">The World's Premium Investment Hub</h2>
+            </div>
+            
+            <div class="why-invest-grid">
+                <!-- Card 1 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    </div>
+                    <h3 class="why-title" id="whyT1">0% Property & Income Tax</h3>
+                    <p class="why-desc" id="whyD1">Maximize your rental yields and capital gains. Dubai offers a complete tax-free environment for foreign property owners and investors.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.11v4.71c0 4.52-2.99 8.78-7 9.88-4.01-1.1-7-5.36-7-9.88V6.29l7-3.11z"/></svg>
+                    </div>
+                    <h3 class="why-title" id="whyT2">10-Year Golden Visa</h3>
+                    <p class="why-desc" id="whyD2">Secure long-term residency for yourself and your family. Obtain the prestigious Golden Visa with real estate investments of AED 2M+.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </div>
+                    <h3 class="why-title" id="whyT3">High Rental Yields</h3>
+                    <p class="why-desc" id="whyD3">Dubai's property market regularly generates 6% to 9% annual rental yields, significantly higher than major European or American global hubs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Featured Projects Teaser Section --- -->
+    <section class="section-padding" id="featured">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tagline" id="featuredTag">Curated Collection</span>
+                <h2 class="section-title gold-gradient-text" id="featuredTitle">Featured Developments</h2>
+            </div>
+
+            <!-- Property Cards Grid -->
+            <div class="property-grid">
+                
+                <!-- Card 1: Knightsbridge -->
+                <div class="property-card">
+                    <div class="card-media">
+                        <span class="card-badge">Off-Plan</span>
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Knightsbridge Residence">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Meydan, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Knightsbridge Phase 1</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">LEOS Developments</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Q2 2028</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Luxury Villas</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 8,500,000</span>
+                            </div>
+                            <a href="single-project.html?project=Knightsbridge_P1" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: 1 Residences -->
+                <div class="property-card">
+                    <div class="card-media">
+                        <span class="card-badge" style="background-color: var(--color-text-bright); color: #070F19;">Ready</span>
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80" alt="1 Residences Wasl 1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Wasl 1, Dubai</span>
+                        </div>
+                        <h3 class="card-title">1 Residences Wasl 1</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">Wasl Asset Management</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Immediate</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartments</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">Post-Handover</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 2,100,000</span>
+                            </div>
+                            <a href="single-project.html?project=Knightsbridge_P1" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Avenue Park Towers -->
+                <div class="property-card">
+                    <div class="card-media">
+                        <span class="card-badge">Off-Plan</span>
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80" alt="Avenue Park Towers">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Dubai Marina</span>
+                        </div>
+                        <h3 class="card-title">Avenue Park Towers</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">5 Hills Signature</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Q4 2027</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartments</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">70/30 on Handover</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 3,400,000</span>
+                            </div>
+                            <a href="single-project.html?project=Knightsbridge_P1" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- View All CTA -->
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="projects.html" class="btn-gold" id="btnViewAll">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- How We Work Section --- -->
+    <section class="section-padding" style="background-color: #03070C; border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tagline" id="howTagline">How We Work</span>
+                <h2 class="section-title gold-gradient-text" id="howTitle">Your Journey to Ownership</h2>
+            </div>
+
+            <div class="roadmap-steps">
+                <div class="step-card">
+                    <span class="step-number">01</span>
+                    <h3 class="step-title" id="stepT1">Private Consultation</h3>
+                    <p class="step-desc" id="stepD1">Identify your financial goals, preferred locations, and family lifestyle requirements with our real estate advisors.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">02</span>
+                    <h3 class="step-title" id="stepT2">Bespoke Curation</h3>
+                    <p class="step-desc" id="stepD2">Receive a personalized portfolio of premium, off-market, or developer-exclusive projects matching your criteria.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">03</span>
+                    <h3 class="step-title" id="stepT3">Site Walkthrough</h3>
+                    <p class="step-desc" id="stepD3">Tour selected projects in person or through an immersive 3D digital video showcase for remote international buyers.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">04</span>
+                    <h3 class="step-title" id="stepT4">Secure Acquisition</h3>
+                    <p class="step-desc" id="stepD4">Enjoy direct developer-pricing, complete contract protection, and end-to-end support throughout registration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Testimonials Section --- -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tagline" id="testTagline">Client Experiences</span>
+                <h2 class="section-title gold-gradient-text" id="testTitle">Testimonials of Trust</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text" id="testText1">"Working with 5 Hills was a game changer. They negotiated a private discount for my Knightsbridge villa and handled my Golden Visa application flawlessly."</p>
+                    <div class="testimonial-user">
+                        <div class="testimonial-avatar">MS</div>
+                        <div class="testimonial-info">
+                            <h4>Michael Schmidt</h4>
+                            <span id="testRole1">Investor, Munich</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" id="testText2">"Their deep understanding of the Dubai off-plan market saved us months of research. Honest, direct, and completely professional."</p>
+                    <div class="testimonial-user">
+                        <div class="testimonial-avatar">AA</div>
+                        <div class="testimonial-info">
+                            <h4>Aisha Al-Mansoori</h4>
+                            <span id="testRole2">Business Owner, Abu Dhabi</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" id="testText3">"Amazing remote service! We finalized our transaction from London. The digital tours and constant communication were top-notch."</p>
+                    <div class="testimonial-user">
+                        <div class="testimonial-avatar">DL</div>
+                        <div class="testimonial-info">
+                            <h4>David Lewis</h4>
+                            <span id="testRole3">CEO, London</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Complete Luxury Footer --- -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="site-logo">
+                    <img src="logo.png" alt="5 Hills Logo" style="height: 44px; width: auto; object-fit: contain;">
+                </a>
+                <p id="footerDesc">5 Hills is a luxury boutique real estate agency in Dubai, dedicated to curating ultra-premium residences, villas, and off-plan assets for global high-net-worth investors.</p>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleQuick">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" id="flHome">Home</a></li>
+                    <li><a href="projects.html" id="flProjects">Projects Portfolio</a></li>
+                    <li><a href="about.html" id="flAbout">About Our Agency</a></li>
+                    <li><a href="contact.html" id="flContact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleAreas">Key Areas</h4>
+                <ul class="footer-links">
+                    <li><a href="projects.html?location=downtown-dubai">Downtown Dubai</a></li>
+                    <li><a href="projects.html?location=dubai-marina">Dubai Marina</a></li>
+                    <li><a href="projects.html?location=meydan">Meydan</a></li>
+                    <li><a href="projects.html?location=wasl-1">Wasl 1 / Zabeel</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleContact">Contact Info</h4>
+                <div class="footer-contact-item" id="fPhone"><strong>Phone:</strong> +971 4 555 0000</div>
+                <div class="footer-contact-item" id="fEmail"><strong>Email:</strong> info@fivehills.ae</div>
+                <div class="footer-contact-item" id="fAddress"><strong>Office:</strong> Marina Plaza, Suite 2402, Dubai Marina, Dubai, UAE</div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p id="fCopy">&copy; 2026 5 Hills Real Estate. All rights reserved. Registered with RERA No. 12849.</p>
+            <p id="fDevelop">Designed & Programmed by Antigravity Developer</p>
+        </div>
+    </footer>
+
+    <!-- --- Floating WhatsApp Widget --- -->
+    <a href="https://wa.me/971500000000?text=Hello,%20I%20am%20interested%20in%20Dubai%20Luxury%20Properties" class="whatsapp-widget" id="whatsappFloatingBtn" target="_blank">
+        <svg viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+        <span>WhatsApp Us</span>
+    </a>
+
+    <!-- --- JS Core Functions Script --- -->
+    <script src="projects-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

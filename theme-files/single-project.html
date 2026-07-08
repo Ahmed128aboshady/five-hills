@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knightsbridge Phase 1 | Luxury Villas in Meydan, Dubai</title>
+    <meta name="description" content="Explore Knightsbridge Phase 1 in Meydan, Dubai. Luxury English-style smart villas starting from AED 8.5 Million with premium payment plans.">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- --- Premium Luxury Header --- -->
+    <header class="site-header" id="mainHeader">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">
+                <img src="logo.png" alt="5 Hills Logo" style="height: 56px; width: auto; object-fit: contain;">
+            </a>
+            
+            <nav class="main-navigation" id="mainNav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+                    <li><a href="index.html#featured" class="nav-link" id="navFeatured">Projects</a></li>
+                    <li><a href="single-project.html" class="nav-link active" id="navSample">Single Project</a></li>
+                    <li><a href="index.html#about" class="nav-link" id="navAbout">About Us</a></li>
+                    <li><a href="index.html#contact" class="nav-link" id="navContact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="lang-switch" id="langToggleBtn" onclick="toggleLanguage()">العربية</button>
+                <button class="theme-switch-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️</button>
+                <a href="#inquire" class="btn-gold" style="padding: 10px 20px; font-size: 0.8rem;" id="headerCtaBtn">Inquire Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Main Content Area --- -->
+    <main class="container section-padding" style="margin-top: 50px;">
+        
+        <!-- Project Detail Hero Banner -->
+        <div class="project-detail-hero" id="projectHeroBanner">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Knightsbridge Villas" id="projectHeroImg">
+            <div class="project-hero-overlay">
+                <div class="project-hero-title">
+                    <h1 id="projectTitle">Knightsbridge Phase 1</h1>
+                    <div class="project-hero-meta">
+                        <span id="metaLoc">Meydan, District 11, Dubai</span>
+                        <span id="metaDev">LEOS Developments</span>
+                    </div>
+                </div>
+                <div class="project-hero-price">
+                    <span id="lblStartingPrice">Starting From</span>
+                    <h3 id="projectPrice">AED 8,500,000</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detail Layout Grid -->
+        <div class="project-detail-layout">
+            
+            <!-- Left Side: Project Main content -->
+            <div class="project-main-content">
+                
+                <!-- Quick Stats Grid -->
+                <div class="quick-stats-grid" id="statsGrid">
+                    <div class="quick-stat-box">
+                        <span id="statLabelType">Property Type</span>
+                        <h4 id="statValType">Luxury Villas</h4>
+                    </div>
+                    <div class="quick-stat-box">
+                        <span id="statLabelStatus">Project Status</span>
+                        <h4 id="statValStatus">Off-Plan</h4>
+                    </div>
+                    <div class="quick-stat-box">
+                        <span id="statLabelDate">Handover Date</span>
+                        <h4 id="statValDate">Q2 2028</h4>
+                    </div>
+                    <div class="quick-stat-box">
+                        <span id="statLabelPlan">Payment Plan</span>
+                        <h4 id="statValPlan">60/40 Plan</h4>
+                    </div>
+                </div>
+
+                <!-- Description Block -->
+                <section class="project-content-block">
+                    <h2 class="block-title gold-gradient-text" id="descTitle">About The Development</h2>
+                    <div class="project-desc" id="projectDesc">
+                        <p>Knightsbridge Phase 1 redefines British elegance in Dubai's heart. Set in District 11, Meydan, this master development merges classic English classical architecture with modern climate-smart technologies.</p>
+                        <p style="margin-top: 16px;">Each villa features high-ceiling spaces, private swimming pools, internal elevators, smart home automation, and views of beautiful gardens and clear blue lagoons. Perfect for investors and families seeking privacy, sustainability, and high ROI in Dubai's premier residential area.</p>
+                    </div>
+                </section>
+
+                <!-- Amenities Block -->
+                <section class="project-content-block">
+                    <h2 class="block-title gold-gradient-text" id="amenitiesTitle">Premium Amenities</h2>
+                    <div class="amenities-layout-grid" id="amenitiesList">
+                        <div class="amenity-card-item">
+                            <svg viewBox="0 0 24 24"><path d="M2 12h20M12 2v20M5 5l14 14M19 5L5 19"/></svg>
+                            <span id="amSmart">Smart Home System</span>
+                        </div>
+                        <div class="amenity-card-item">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                            <span id="amPool">Private Pool</span>
+                        </div>
+                        <div class="amenity-card-item">
+                            <svg viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12h-1.72v2.86h1.72zM3.43 14.86L2 13.43 3.43 12h1.72v2.86H3.43zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                            <span id="amGym">State-of-the-art Gym</span>
+                        </div>
+                        <div class="amenity-card-item">
+                            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.11v4.71c0 4.52-2.99 8.78-7 9.88-4.01-1.1-7-5.36-7-9.88V6.29l7-3.11z"/></svg>
+                            <span id="amSecurity">24/7 Security & CCTV</span>
+                        </div>
+                        <div class="amenity-card-item">
+                            <svg viewBox="0 0 24 24"><path d="M19 19H5V8h14v11zM12 3L2 8l10 5 10-5-10-5z"/></svg>
+                            <span id="amParking">Covered Parking</span>
+                        </div>
+                        <div class="amenity-card-item">
+                            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                            <span id="amConcierge">24/7 Concierge Service</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Image Gallery Block -->
+                <section class="project-content-block">
+                    <h2 class="block-title gold-gradient-text" id="galleryTitle">Project Gallery</h2>
+                    <div class="gallery-layout-grid" id="galleryContainer">
+                        <div class="gallery-grid-item" onclick="openLightbox('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80')">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Exterior Front View">
+                        </div>
+                        <div class="gallery-grid-item" onclick="openLightbox('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80')">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80" alt="Luxury Living Room">
+                        </div>
+                        <div class="gallery-grid-item" onclick="openLightbox('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80')">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=400&q=80" alt="Modern Bedroom">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Floor Plans Block (Tab Switcher) -->
+                <section class="project-content-block">
+                    <div class="block-title">
+                        <span class="gold-gradient-text" id="floorPlanTitle">Floor Plans</span>
+                        <a href="#" class="btn-outline" style="padding: 6px 12px; font-size: 0.75rem;" id="btnDownloadBrochure">Download Brochure</a>
+                    </div>
+                    
+                    <div class="tabs-navigation">
+                        <button class="tab-nav-btn active" onclick="switchFloorTab(event, 'tab-4bed')" id="tabBtn4">4 Bedroom Villa</button>
+                        <button class="tab-nav-btn" onclick="switchFloorTab(event, 'tab-5bed')" id="tabBtn5">5 Bedroom Villa</button>
+                    </div>
+
+                    <!-- 4 Bed Plan -->
+                    <div class="tab-content-panel active" id="tab-4bed">
+                        <div class="floor-plan-container">
+                            <div class="floor-plan-img">
+                                <!-- SVG Simulated Floor Plan -->
+                                <svg width="250" height="250" viewBox="0 0 100 100" fill="none" stroke="#D4AF37" stroke-width="0.8">
+                                    <rect x="5" y="5" width="90" height="90"/>
+                                    <line x1="50" y1="5" x2="50" y2="95"/>
+                                    <line x1="5" y1="50" x2="95" y2="50"/>
+                                    <rect x="15" y="15" width="20" height="25"/>
+                                    <rect x="65" y="15" width="20" height="25"/>
+                                    <circle cx="25" cy="75" r="10"/>
+                                    <rect x="65" y="65" width="20" height="20"/>
+                                </svg>
+                            </div>
+                            <div class="floor-plan-details">
+                                <div class="floor-stat">
+                                    <span class="floor-stat-label" id="lblSuiteArea">Suite Area</span>
+                                    <h5 class="floor-stat-val">5,245 Sq.Ft.</h5>
+                                </div>
+                                <div class="floor-stat">
+                                    <span class="floor-stat-label" id="lblBalconyArea">Balcony Area</span>
+                                    <h5 class="floor-stat-val">840 Sq.Ft.</h5>
+                                </div>
+                                <div class="floor-stat">
+                                    <span class="floor-stat-label" id="lblTotalArea">Total Built Up Area</span>
+                                    <h5 class="floor-stat-val">6,085 Sq.Ft.</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5 Bed Plan -->
+                    <div class="tab-content-panel" id="tab-5bed">
+                        <div class="floor-plan-container">
+                            <div class="floor-plan-img">
+                                <svg width="250" height="250" viewBox="0 0 100 100" fill="none" stroke="#D4AF37" stroke-width="0.8">
+                                    <rect x="5" y="5" width="90" height="90"/>
+                                    <line x1="33" y1="5" x2="33" y2="95"/>
+                                    <line x1="66" y1="5" x2="66" y2="95"/>
+                                    <line x1="5" y1="50" x2="95" y2="50"/>
+                                    <rect x="10" y="15" width="15" height="25"/>
+                                    <rect x="42" y="15" width="15" height="25"/>
+                                    <rect x="75" y="15" width="15" height="25"/>
+                                    <circle cx="18" cy="75" r="8"/>
+                                    <circle cx="50" cy="75" r="8"/>
+                                    <rect x="75" y="65" width="15" height="20"/>
+                                </svg>
+                            </div>
+                            <div class="floor-plan-details">
+                                <div class="floor-stat">
+                                    <span class="floor-stat-label" id="lblSuiteArea5">Suite Area</span>
+                                    <h5 class="floor-stat-val">6,830 Sq.Ft.</h5>
+                                </div>
+                                <div class="floor-stat">
+                                    <span class="floor-stat-label" id="lblBalconyArea5">Balcony Area</span>
+                                    <h5 class="floor-stat-val">1,120 Sq.Ft.</h5>
+                                </div>
+                                <div class="floor-stat">
+                                    <span class="floor-stat-label" id="lblTotalArea5">Total Built Up Area</span>
+                                    <h5 class="floor-stat-val">7,950 Sq.Ft.</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Dual Booking CTA Block -->
+                <section class="booking-panel-cta">
+                    <h2 class="booking-title gold-gradient-text" id="bookingPanelTitle">Schedule a Consultation</h2>
+                    <p class="booking-desc" id="bookingPanelDesc">Speak directly with our Dubai Real Estate experts. Book a private site walkthrough or an online Zoom video consultation today.</p>
+                    <div class="booking-buttons-flex">
+                        <button class="btn-gold" onclick="openBookingModal('online')" id="btnBookOnline">Book Online Meeting</button>
+                        <button class="btn-outline" onclick="openBookingModal('person')" id="btnBookVisit">Book Site Visit</button>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Side: Sticky Lead Form Sidebar -->
+            <aside class="sticky-sidebar" id="inquire">
+                <div class="lead-capture-card">
+                    <h3 class="capture-title gold-gradient-text" id="sidebarTitle">Register Interest</h3>
+                    <p class="capture-subtitle" id="sidebarSubtitle">Get pricing sheets, floor plan packages, and developer discounts.</p>
+                    
+                    <form id="projectLeadForm" onsubmit="event.preventDefault(); submitLeadForm();">
+                        <div class="form-field">
+                            <label for="leadName" id="lblLeadName">Full Name</label>
+                            <input type="text" id="leadName" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="leadEmail" id="lblLeadEmail">Email Address</label>
+                            <input type="email" id="leadEmail" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="leadPhone" id="lblLeadPhone">Phone Number</label>
+                            <input type="tel" id="leadPhone" placeholder="+971 50 000 0000" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="leadMessage" id="lblLeadMessage">Custom Inquiry</label>
+                            <textarea id="leadMessage" rows="3">I would like to inquire about Knightsbridge Phase 1.</textarea>
+                        </div>
+                        <button type="submit" class="btn-gold form-submit-btn" id="btnSubmitLead">Request Details</button>
+                    </form>
+                    
+                    <p class="lead-privacy-notice" id="lblPrivacy">Your data is secured under Dubai Real Estate regulatory norms.</p>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- --- Dual Booking Modals --- -->
+    <div class="modal-backdrop" id="bookingModal">
+        <div class="modal-window">
+            <button class="modal-close-btn" onclick="closeBookingModal()">&times;</button>
+            <h3 class="modal-title gold-gradient-text" id="mTitle">Book Online Meeting</h3>
+            <p class="modal-subtitle" id="mSubtitle">Please select your preferred time slot for a Google Meet / Zoom session.</p>
+            
+            <form id="modalBookingForm" onsubmit="event.preventDefault(); submitBookingForm();">
+                <div class="form-field">
+                    <label id="mlblName">Your Name</label>
+                    <input type="text" id="bookName" required>
+                </div>
+                <div class="form-field">
+                    <label id="mlblEmail">Email</label>
+                    <input type="email" id="bookEmail" required>
+                </div>
+                <div class="form-field" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <label id="mlblDate">Preferred Date</label>
+                        <input type="date" id="bookDate" required>
+                    </div>
+                    <div>
+                        <label id="mlblTime">Preferred Time</label>
+                        <input type="time" id="bookTime" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-gold" style="width:100%; margin-top: 15px;" id="mSubmitBtn">Confirm Appointment</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- --- Lightbox Backdrop --- -->
+    <div class="lightbox-backdrop" id="galleryLightbox" onclick="closeLightbox()">
+        <button class="lightbox-nav lightbox-prev" onclick="prevLightboxImage(event)">❮</button>
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <img src="" id="lightboxImg" alt="Enlarged View">
+        </div>
+        <button class="lightbox-nav lightbox-next" onclick="nextLightboxImage(event)">❯</button>
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    </div>
+
+    <!-- --- Floating WhatsApp Widget with Dynamic prefilled project context --- -->
+    <a href="https://wa.me/971500000000?text=Hello,%20I%20am%20interested%20in%20Knightsbridge%20Phase%201" class="whatsapp-widget" id="whatsappFloatingBtn" target="_blank">
+        <svg viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+        <span id="waText">Inquire on WhatsApp</span>
+    </a>
+
+    <!-- --- JS Core Functions Script --- -->
+    <script src="projects-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

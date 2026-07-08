@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties Portfolio | 5 Hills Real Estate Dubai</title>
+    <meta name="description" content="Browse our luxury properties and off-plan projects in Dubai Marina, Downtown, Meydan, and Zabeel. Filter by price, type, and status.">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- --- Premium Luxury Header --- -->
+    <header class="site-header" id="mainHeader">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">
+                <img src="logo.png" alt="5 Hills Logo" style="height: 56px; width: auto; object-fit: contain;">
+            </a>
+            
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+                    <li><a href="projects.html" class="nav-link active" id="navFeatured">Projects</a></li>
+                    <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="lang-switch" id="langToggleBtn" onclick="toggleLanguage()">العربية</button>
+                <button class="theme-switch-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️</button>
+                <a href="contact.html" class="btn-gold" style="padding: 10px 20px; font-size: 0.8rem;" id="headerCtaBtn">Inquire Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Page Banner --- -->
+    <section class="page-banner">
+        <div class="container">
+            <h1 class="page-banner-title gold-gradient-text" id="projectsBannerTitle">Luxury Portfolio</h1>
+            <p class="page-banner-subtitle" id="projectsBannerSubtitle">Explore Dubai's most prestigious real estate projects</p>
+        </div>
+    </section>
+
+    <!-- --- Portfolio Grid with AJAX Filtering --- -->
+    <section class="section-padding">
+        <div class="container">
+            
+            <!-- AJAX-style Filter Bar -->
+            <div class="portfolio-filter-bar">
+                <div class="filter-controls-group">
+                    <!-- Location Selector -->
+                    <select class="filter-select" id="filterLocation" onchange="applyPortfolioFilters()">
+                        <option value="" id="optAllLocations">All Locations</option>
+                        <option value="downtown-dubai">Downtown Dubai</option>
+                        <option value="dubai-marina">Dubai Marina</option>
+                        <option value="meydan">Meydan / Sobha Hartland</option>
+                        <option value="wasl-1">Wasl 1 / Zabeel</option>
+                        <option value="jumeirah">Jumeirah</option>
+                    </select>
+                    
+                    <!-- Property Type Selector -->
+                    <select class="filter-select" id="filterType" onchange="applyPortfolioFilters()">
+                        <option value="" id="optAllTypes">All Types</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="villa">Villa</option>
+                        <option value="townhouse">Townhouse</option>
+                        <option value="commercial">Commercial / Office</option>
+                    </select>
+
+                    <!-- Price Range Selector -->
+                    <select class="filter-select" id="filterPrice" onchange="applyPortfolioFilters()">
+                        <option value="" id="optAnyPrice">Any Price</option>
+                        <option value="2000000">AED 2,000,000+</option>
+                        <option value="4000000">AED 4,000,000+</option>
+                        <option value="8000000">AED 8,000,000+</option>
+                    </select>
+
+                    <!-- Status Selector -->
+                    <select class="filter-select" id="filterStatus" onchange="applyPortfolioFilters()">
+                        <option value="" id="optAllStatus">All Status</option>
+                        <option value="off-plan">Off-Plan</option>
+                        <option value="ready">Ready to Move</option>
+                    </select>
+                </div>
+
+                <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+                    <span id="resultsCount">19</span> <span id="lblPropertiesFound">Properties Found</span>
+                </div>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="property-grid" id="portfolioGrid">
+                <!-- Project Card: 1 Residences Wasl 1 -->
+                <div class="property-card" data-location="wasl-1" data-type="apartment" data-price="2100000" data-status="ready">
+                    <div class="card-media">
+                        <span class="card-badge" style="background-color: var(--color-text-bright); color: #070F19;">Ready</span>
+                        <img src="images/project-images/1Residences_pdf_0.png" alt="1 Residences Wasl 1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Wasl 1, Zabeel, Dubai</span>
+                        </div>
+                        <h3 class="card-title">1 Residences Wasl 1</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">Wasl Asset Management</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Ready</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartment</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">Post-Handover Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 2,100,000</span>
+                            </div>
+                            <a href="single-project.html?project=1 Residences" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: 1 Residences Wasl 1 -->
+                <div class="property-card" data-location="wasl-1" data-type="apartment" data-price="2100000" data-status="ready">
+                    <div class="card-media">
+                        <span class="card-badge" style="background-color: var(--color-text-bright); color: #070F19;">Ready</span>
+                        <img src="images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_0.png" alt="1 Residences Wasl 1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Wasl 1, Zabeel, Dubai</span>
+                        </div>
+                        <h3 class="card-title">1 Residences Wasl 1</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">Wasl Asset Management</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Ready</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartment</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">Post-Handover Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 2,100,000</span>
+                            </div>
+                            <a href="single-project.html?project=1 Residences Wasl 1 Ready-20260701T113518Z-3-001" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Avenue Park Towers -->
+                <div class="property-card" data-location="wasl-1" data-type="apartment" data-price="4500000" data-status="ready">
+                    <div class="card-media">
+                        <span class="card-badge" style="background-color: var(--color-text-bright); color: #070F19;">Ready</span>
+                        <img src="images/project-images/AvenueParkTowers_pdf_0.png" alt="Avenue Park Towers">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Zabeel Park, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Avenue Park Towers</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">Wasl Asset Management</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Ready</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartment</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 4,500,000</span>
+                            </div>
+                            <a href="single-project.html?project=Avenue Park Towers" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Bayn Project -->
+                <div class="property-card" data-location="dubai-marina" data-type="apartment" data-price="2400000" data-status="off-plan">
+                    <div class="card-media">
+                        <span class="card-badge" >Off-Plan</span>
+                        <img src="images/project-images/BaynProject_vid_0.jpg" alt="Bayn Project">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Dubai Marina, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Bayn Project</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">5 Hills Signature</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Q4 2028</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartment</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 2,400,000</span>
+                            </div>
+                            <a href="single-project.html?project=Bayn Project" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Boulevard Park -->
+                <div class="property-card" data-location="wasl-1" data-type="apartment" data-price="4500000" data-status="ready">
+                    <div class="card-media">
+                        <span class="card-badge" style="background-color: var(--color-text-bright); color: #070F19;">Ready</span>
+                        <img src="images/project-images/BoulevardPark_pdf_0.png" alt="Boulevard Park">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Zabeel Park, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Boulevard Park</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">Wasl Asset Management</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Ready</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartment</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 4,500,000</span>
+                            </div>
+                            <a href="single-project.html?project=Boulevard Park" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Cedarwood Estates -->
+                <div class="property-card" data-location="meydan" data-type="villa" data-price="6700000" data-status="ready">
+                    <div class="card-media">
+                        <span class="card-badge" style="background-color: var(--color-text-bright); color: #070F19;">Ready</span>
+                        <img src="images/project-images/cedarwoodestates_0.jpg" alt="Cedarwood Estates">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Meydan, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Cedarwood Estates</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">Sobha Group</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Ready</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Villa</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">Immediate</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 6,700,000</span>
+                            </div>
+                            <a href="single-project.html?project=cedarwood estates" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Cedarwood Estates South -->
+                <div class="property-card" data-location="meydan" data-type="villa" data-price="6700000" data-status="ready">
+                    <div class="card-media">
+                        <span class="card-badge" style="background-color: var(--color-text-bright); color: #070F19;">Ready</span>
+                        <img src="images/project-images/CedarwoodEstatesSouth_pdf_0.png" alt="Cedarwood Estates South">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Meydan, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Cedarwood Estates South</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">Sobha Group</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Ready</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Villa</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">Immediate</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 6,700,000</span>
+                            </div>
+                            <a href="single-project.html?project=Cedarwood Estates South" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Core Villas Projects -->
+                <div class="property-card" data-location="dubai-marina" data-type="villa" data-price="7800000" data-status="off-plan">
+                    <div class="card-media">
+                        <span class="card-badge" >Off-Plan</span>
+                        <img src="images/project-images/CoreVillasProjects_0.jpeg" alt="Core Villas Projects">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Dubai Marina, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Core Villas Projects</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">5 Hills Signature</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Q4 2028</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Villa</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 7,800,000</span>
+                            </div>
+                            <a href="single-project.html?project=Core Villas Projects" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Corner 6-Bedroom Luxury Villa -->
+                <div class="property-card" data-location="dubai-marina" data-type="villa" data-price="7800000" data-status="off-plan">
+                    <div class="card-media">
+                        <span class="card-badge" >Off-Plan</span>
+                        <img src="images/project-images/corner6bedroom_0.jpeg" alt="Corner 6-Bedroom Luxury Villa">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Dubai Marina, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Corner 6-Bedroom Luxury Villa</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">5 Hills Signature</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Q4 2028</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Villa</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 7,800,000</span>
+                            </div>
+                            <a href="single-project.html?project=corner6bedroom" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Ellington Project -->
+                <div class="property-card" data-location="meydan" data-type="apartment" data-price="3100000" data-status="off-plan">
+                    <div class="card-media">
+                        <span class="card-badge" >Off-Plan</span>
+                        <img src="images/project-images/Ellingtonproject_0.jpeg" alt="Ellington Project">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Sobha Hartland, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Ellington Project</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">Ellington Properties</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Q4 2028</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartment</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 3,100,000</span>
+                            </div>
+                            <a href="single-project.html?project=Ellington project" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Hillside Residences -->
+                <div class="property-card" data-location="dubai-marina" data-type="apartment" data-price="2400000" data-status="off-plan">
+                    <div class="card-media">
+                        <span class="card-badge" >Off-Plan</span>
+                        <img src="images/project-images/HillsideResidences_vid_0.jpg" alt="Hillside Residences">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Dubai Marina, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Hillside Residences</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">5 Hills Signature</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Q4 2028</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartment</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 2,400,000</span>
+                            </div>
+                            <a href="single-project.html?project=Hillside Residences" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Hotel Project -->
+                <div class="property-card" data-location="dubai-marina" data-type="apartment" data-price="2400000" data-status="off-plan">
+                    <div class="card-media">
+                        <span class="card-badge" >Off-Plan</span>
+                        <img src="images/project-images/HotelProject_0.jpeg" alt="Hotel Project">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Dubai Marina, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Hotel Project</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">5 Hills Signature</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Q4 2028</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartment</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 2,400,000</span>
+                            </div>
+                            <a href="single-project.html?project=Hotel Project" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Knightsbridge Phase 1 -->
+                <div class="property-card" data-location="meydan" data-type="apartment" data-price="8500000" data-status="off-plan">
+                    <div class="card-media">
+                        <span class="card-badge" >Off-Plan</span>
+                        <img src="images/project-images/Knightsbridge_P1_0.jpeg" alt="Knightsbridge Phase 1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Meydan, District 11, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Knightsbridge Phase 1</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">LEOS Developments</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Q2 2028</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartment</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 8,500,000</span>
+                            </div>
+                            <a href="single-project.html?project=Knightsbridge_P1" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Office Project -->
+                <div class="property-card" data-location="dubai-marina" data-type="commercial" data-price="12500000" data-status="off-plan">
+                    <div class="card-media">
+                        <span class="card-badge" >Off-Plan</span>
+                        <img src="images/project-images/OfficeProject_0.jpeg" alt="Office Project">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Dubai Marina, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Office Project</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">5 Hills Signature</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Ready</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Commercial</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">Bespoke Terms</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 12,500,000</span>
+                            </div>
+                            <a href="single-project.html?project=Office Project" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: P053 Premium Residences -->
+                <div class="property-card" data-location="dubai-marina" data-type="apartment" data-price="2400000" data-status="off-plan">
+                    <div class="card-media">
+                        <span class="card-badge" >Off-Plan</span>
+                        <img src="images/project-images/P053Project_zip_0.jpeg" alt="P053 Premium Residences">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Dubai Marina, Dubai</span>
+                        </div>
+                        <h3 class="card-title">P053 Premium Residences</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">5 Hills Signature</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Q4 2028</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartment</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 2,400,000</span>
+                            </div>
+                            <a href="single-project.html?project=P053 Project" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Park Gate Residence -->
+                <div class="property-card" data-location="wasl-1" data-type="apartment" data-price="4500000" data-status="ready">
+                    <div class="card-media">
+                        <span class="card-badge" style="background-color: var(--color-text-bright); color: #070F19;">Ready</span>
+                        <img src="images/project-images/ParkGateResidence_0.jpg" alt="Park Gate Residence">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Zabeel Park, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Park Gate Residence</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">Wasl Asset Management</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Ready</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartment</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 4,500,000</span>
+                            </div>
+                            <a href="single-project.html?project=Park Gate Residence" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Pinewood Estates -->
+                <div class="property-card" data-location="jumeirah" data-type="villa" data-price="9800000" data-status="off-plan">
+                    <div class="card-media">
+                        <span class="card-badge" >Off-Plan</span>
+                        <img src="images/project-images/PinewoodEstates_0.jpeg" alt="Pinewood Estates">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Jumeirah, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Pinewood Estates</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">5 Hills Signature</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Q3 2028</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Villa</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 9,800,000</span>
+                            </div>
+                            <a href="single-project.html?project=Pinewood Estates" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Studio Project -->
+                <div class="property-card" data-location="dubai-marina" data-type="apartment" data-price="2400000" data-status="off-plan">
+                    <div class="card-media">
+                        <span class="card-badge" >Off-Plan</span>
+                        <img src="images/project-images/StudioProject_0.jpeg" alt="Studio Project">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Dubai Marina, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Studio Project</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">5 Hills Signature</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Q4 2028</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Apartment</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">60/40 Plan</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 2,400,000</span>
+                            </div>
+                            <a href="single-project.html?project=Studio Project" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Warehouse Commercial Project -->
+                <div class="property-card" data-location="dubai-marina" data-type="commercial" data-price="12500000" data-status="off-plan">
+                    <div class="card-media">
+                        <span class="card-badge" >Off-Plan</span>
+                        <img src="images/project-images/WharehouseProject_0.jpeg" alt="Warehouse Commercial Project">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="loc-txt">Dubai Marina, Dubai</span>
+                        </div>
+                        <h3 class="card-title">Warehouse Commercial Project</h3>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Developer</span>
+                                <span class="spec-val">5 Hills Signature</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Handover</span>
+                                <span class="spec-val">Ready</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Property Type</span>
+                                <span class="spec-val">Commercial</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payment Plan</span>
+                                <span class="spec-val">Bespoke Terms</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Starting From</span>
+                                <span class="price-val">AED 12,500,000</span>
+                            </div>
+                            <a href="single-project.html?project=Wharehouse Project" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Complete Luxury Footer --- -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="site-logo">
+                    <img src="logo.png" alt="5 Hills Logo" style="height: 44px; width: auto; object-fit: contain;">
+                </a>
+                <p id="footerDesc">5 Hills is a luxury boutique real estate agency in Dubai, dedicated to curating ultra-premium residences, villas, and off-plan assets for global high-net-worth investors.</p>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleQuick">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" id="flHome">Home</a></li>
+                    <li><a href="projects.html" id="flProjects">Projects Portfolio</a></li>
+                    <li><a href="about.html" id="flAbout">About Our Agency</a></li>
+                    <li><a href="contact.html" id="flContact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleAreas">Key Areas</h4>
+                <ul class="footer-links">
+                    <li><a href="projects.html?location=downtown-dubai">Downtown Dubai</a></li>
+                    <li><a href="projects.html?location=dubai-marina">Dubai Marina</a></li>
+                    <li><a href="projects.html?location=meydan">Meydan</a></li>
+                    <li><a href="projects.html?location=wasl-1">Wasl 1 / Zabeel</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleContact">Contact Info</h4>
+                <div class="footer-contact-item" id="fPhone"><strong>Phone:</strong> +971 4 555 0000</div>
+                <div class="footer-contact-item" id="fEmail"><strong>Email:</strong> info@fivehills.ae</div>
+                <div class="footer-contact-item" id="fAddress"><strong>Office:</strong> Marina Plaza, Suite 2402, Dubai Marina, Dubai, UAE</div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p id="fCopy">&copy; 2026 5 Hills Real Estate. All rights reserved. Registered with RERA No. 12849.</p>
+            <p id="fDevelop">Designed & Programmed by Antigravity Developer</p>
+        </div>
+    </footer>
+
+    <!-- --- Floating WhatsApp Widget --- -->
+    <a href="https://wa.me/971500000000?text=Hello,%20I%20am%20interested%20in%20Dubai%20Luxury%20Properties" class="whatsapp-widget" id="whatsappFloatingBtn" target="_blank">
+        <svg viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+        <span>WhatsApp Us</span>
+    </a>
+
+    <!-- --- JS Core Functions Script --- -->
+    <script src="projects-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
