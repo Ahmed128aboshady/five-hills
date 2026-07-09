@@ -2243,3 +2243,17 @@ body.light-theme .social-dock-item {
         height: 16px;
     }
 }
+
+
+/* --- Theme-Aware Ready Badges --- */
+.badge-ready {
+    background-color: #ffffff !important;
+    color: #031525 !important;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .badge-ready {
+    background-color: #031525 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
