@@ -384,6 +384,26 @@ function updateUI() {
         }
     }
 
+    // Translate mobile menu links dynamically
+    const mobHome = document.getElementById('mobNavHome');
+    if (mobHome) mobHome.innerText = langData.navHome;
+    
+    const mobFeatured = document.getElementById('mobNavFeatured');
+    if (mobFeatured) mobFeatured.innerText = langData.navFeatured;
+    
+    const mobAbout = document.getElementById('mobNavAbout');
+    if (mobAbout) mobAbout.innerText = langData.navAbout;
+    
+    const mobContact = document.getElementById('mobNavContact');
+    if (mobContact) mobContact.innerText = langData.navContact;
+    
+    // Translate mobile action buttons
+    const mobLangBtn = document.getElementById('langToggleBtnMobile');
+    if (mobLangBtn) mobLangBtn.innerText = langData.langBtn;
+    
+    const mobCtaBtn = document.getElementById('headerCtaBtnMobile');
+    if (mobCtaBtn) mobCtaBtn.innerText = langData.headerCtaBtn;
+
     // Specific translation logic for forms placeholders/values
     const leadName = document.getElementById('leadName');
     if (leadName) leadName.placeholder = currentLang === 'ar' ? "الاسم الكامل" : "Full Name";
@@ -664,26 +684,28 @@ function closeBookingModal() {
 // Theme Switcher State Manager
 function updateThemeUI() {
     const themeBtn = document.getElementById('themeToggleBtn');
-    if (!themeBtn) return;
+    const themeBtnMob = document.getElementById('themeToggleBtnMobile');
     
     const headerLogoImg = document.querySelector('.site-header .site-logo img');
     const footerLogoImg = document.querySelector('.site-footer .site-logo img');
     
     if (document.body.classList.contains('light-theme')) {
-        themeBtn.innerText = '🌙'; // Click to go Dark
+        if (themeBtn) themeBtn.innerText = '🌙';
+        if (themeBtnMob) themeBtnMob.innerText = '🌙';
         if (headerLogoImg) {
-            headerLogoImg.src = 'images/project-images/logo.png'; // Square logo for Light Theme
+            headerLogoImg.src = 'images/project-images/logo.png';
         }
         if (footerLogoImg) {
-            footerLogoImg.src = 'images/project-images/logo222-dark.png'; // Dark wide logo for Light Theme Footer
+            footerLogoImg.src = 'images/project-images/logo222-dark.png';
         }
     } else {
-        themeBtn.innerText = '☀️'; // Click to go Light
+        if (themeBtn) themeBtn.innerText = '☀️';
+        if (themeBtnMob) themeBtnMob.innerText = '☀️';
         if (headerLogoImg) {
-            headerLogoImg.src = 'images/project-images/logo-wide.png'; // Wide white logo for Dark Theme
+            headerLogoImg.src = 'images/project-images/logo-wide.png';
         }
         if (footerLogoImg) {
-            footerLogoImg.src = 'images/project-images/logo222.png'; // Wide white logo for Dark Theme Footer
+            footerLogoImg.src = 'images/project-images/logo222.png';
         }
     }
 }
@@ -746,6 +768,60 @@ function submitBookingForm() {
 
 // Initialise features on DOM Load
 window.addEventListener('DOMContentLoaded', () => {
+    // --- Mobile Menu Toggle & Drawer Injection ---
+    const headerContainer = document.querySelector('.header-container');
+    if (headerContainer && !document.getElementById('mobileMenuToggle')) {
+        // Create hamburger button
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'mobile-menu-toggle';
+        toggleBtn.id = 'mobileMenuToggle';
+        toggleBtn.setAttribute('aria-label', 'Toggle Navigation');
+        toggleBtn.innerHTML = '<span class="bar"></span><span class="bar"></span><span class="bar"></span>';
+        headerContainer.appendChild(toggleBtn);
+        
+        // Create drawer overlay
+        const drawerHTML = `
+        <div class="mobile-nav-drawer" id="mobileNavDrawer">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" id="mobNavHome">Home</a></li>
+                <li><a href="projects.html" id="mobNavFeatured">Projects</a></li>
+                <li><a href="about.html" id="mobNavAbout">About Us</a></li>
+                <li><a href="contact.html" id="mobNavContact">Contact</a></li>
+            </ul>
+            <div class="mobile-nav-actions">
+                <button class="lang-switch" id="langToggleBtnMobile" onclick="toggleLanguage()"></button>
+                <button class="theme-switch-btn" id="themeToggleBtnMobile" onclick="toggleTheme()"></button>
+                <a href="contact.html" class="btn-gold" style="padding: 10px 20px; font-size: 0.8rem; width: 100%; text-align: center;" id="headerCtaBtnMobile">Inquire Now</a>
+            </div>
+        </div>
+        `;
+        const drawerWrapper = document.createElement('div');
+        drawerWrapper.innerHTML = drawerHTML;
+        document.body.appendChild(drawerWrapper.firstElementChild);
+        
+        const drawer = document.getElementById('mobileNavDrawer');
+        toggleBtn.addEventListener('click', () => {
+            toggleBtn.classList.toggle('active');
+            drawer.classList.toggle('active');
+        });
+        
+        // Active link highlighting for mobile drawer
+        const currentPath = window.location.pathname;
+        const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+        mobileLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (currentPath.endsWith(href) || (href === 'index.html' && (currentPath.endsWith('/') || currentPath.endsWith('/index.html')))) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+            link.addEventListener('click', () => {
+                toggleBtn.classList.remove('active');
+                drawer.classList.remove('active');
+            });
+        });
+    }
+
     // Persistent language check
     const savedLang = localStorage.getItem('five_hills_lang');
     if (savedLang) {
