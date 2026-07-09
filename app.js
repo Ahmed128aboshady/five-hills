@@ -663,12 +663,12 @@ function updateThemeUI() {
     if (document.body.classList.contains('light-theme')) {
         themeBtn.innerText = '🌙'; // Click to go Dark
         if (headerLogoImg) {
-            headerLogoImg.src = 'logo.png'; // Square logo for Light Theme
+            headerLogoImg.src = 'images/project-images/logo.png'; // Square logo for Light Theme
         }
     } else {
         themeBtn.innerText = '☀️'; // Click to go Light
         if (headerLogoImg) {
-            headerLogoImg.src = 'logo-wide.png'; // Wide logo for Dark Theme
+            headerLogoImg.src = 'images/project-images/logo-wide.png'; // Wide logo for Dark Theme
         }
     }
 }
