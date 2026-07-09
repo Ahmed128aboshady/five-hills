@@ -657,10 +657,19 @@ function closeBookingModal() {
 function updateThemeUI() {
     const themeBtn = document.getElementById('themeToggleBtn');
     if (!themeBtn) return;
+    
+    const headerLogoImg = document.querySelector('.site-header .site-logo img');
+    
     if (document.body.classList.contains('light-theme')) {
         themeBtn.innerText = '🌙'; // Click to go Dark
+        if (headerLogoImg) {
+            headerLogoImg.src = 'logo.png'; // Square logo for Light Theme
+        }
     } else {
         themeBtn.innerText = '☀️'; // Click to go Light
+        if (headerLogoImg) {
+            headerLogoImg.src = 'logo-wide.png'; // Wide logo for Dark Theme
+        }
     }
 }
 
