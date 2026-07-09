@@ -2257,3 +2257,13 @@ body.light-theme .badge-ready {
     color: #ffffff !important;
     border: none !important;
 }
+
+.social-dock-item.whatsapp:hover {
+    background-color: #25d366;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.whatsapp-widget {
+    display: none !important;
+}
