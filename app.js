@@ -659,16 +659,23 @@ function updateThemeUI() {
     if (!themeBtn) return;
     
     const headerLogoImg = document.querySelector('.site-header .site-logo img');
+    const footerLogoImg = document.querySelector('.site-footer .site-logo img');
     
     if (document.body.classList.contains('light-theme')) {
         themeBtn.innerText = '🌙'; // Click to go Dark
         if (headerLogoImg) {
             headerLogoImg.src = 'images/project-images/logo.png'; // Square logo for Light Theme
         }
+        if (footerLogoImg) {
+            footerLogoImg.src = 'images/project-images/logo-wide-dark.png'; // Dark wide logo for Light Theme Footer
+        }
     } else {
         themeBtn.innerText = '☀️'; // Click to go Light
         if (headerLogoImg) {
-            headerLogoImg.src = 'images/project-images/logo-wide.png'; // Wide logo for Dark Theme
+            headerLogoImg.src = 'images/project-images/logo-wide.png'; // Wide white logo for Dark Theme
+        }
+        if (footerLogoImg) {
+            footerLogoImg.src = 'images/project-images/logo-wide.png'; // Wide white logo for Dark Theme Footer
         }
     }
 }
