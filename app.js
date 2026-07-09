@@ -174,6 +174,10 @@ const translations = {
         fEmail: "Email: info@fivehills.ae",
         fAddress: "Office: Marina Plaza, Suite 2402, Dubai Marina, Dubai, UAE",
         fCopy: "© 2026 5 Hills Real Estate. All rights reserved. Registered with RERA No. 12849.",
+        fWhatsapp: '<strong>WhatsApp:</strong> <a href="https://wa.me/971564622103?text=Hello" target="_blank" style="color: inherit; text-decoration: underline;">+971 56 462 2103</a>',
+        ccT1_wa: "WhatsApp Support",
+        ccD1_wa: "Chat with our online support team for instant property listings.",
+
         fDevelop: 'Designed & Programmed by <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">Marketing Team</span>'
     },
     ar: {
@@ -343,6 +347,10 @@ const translations = {
         fEmail: "البريد: info@fivehills.ae",
         fAddress: "المكتب: مارينا بلازا، جناح 2402، دبي مارينا، دبي، إ.ع.م",
         fCopy: "© 2026 5 هيلز العقارية. جميع الحقوق محفوظة. ترخيص ريرا رقم 12849.",
+        fWhatsapp: '<strong>واتساب:</strong> <a href="https://wa.me/971564622103?text=Hello" target="_blank" style="color: inherit; text-decoration: underline;">+971 56 462 2103</a>',
+        ccT1_wa: "الدعم عبر الواتساب",
+        ccD1_wa: "تواصل مع فريق الدعم المباشر للحصول على أحدث قوائم العقارات فوراً.",
+
         fDevelop: 'Designed & Programmed by <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">Marketing Team</span>'
     }
 };
