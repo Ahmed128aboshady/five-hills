@@ -2247,13 +2247,13 @@ body.light-theme .social-dock-item {
 
 /* --- Theme-Aware Ready Badges --- */
 .badge-ready {
-    background-color: #ffffff !important;
-    color: #031525 !important;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: var(--color-accent) !important;
+    color: #ffffff !important;
+    border: none !important;
 }
 
 body.light-theme .badge-ready {
-    background-color: #031525 !important;
+    background-color: var(--color-accent) !important;
     color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: none !important;
 }
