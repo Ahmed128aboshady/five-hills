@@ -174,7 +174,7 @@ const translations = {
         fEmail: "Email: info@fivehills.ae",
         fAddress: "Office: Marina Plaza, Suite 2402, Dubai Marina, Dubai, UAE",
         fCopy: "© 2026 5 Hills Real Estate. All rights reserved. Registered with RERA No. 12849.",
-        fDevelop: "Designed & Programmed by Antigravity Developer"
+        fDevelop: 'Designed & Programmed by <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">Marketing Team</span>'
     },
     ar: {
         langBtn: "English",
@@ -343,7 +343,7 @@ const translations = {
         fEmail: "البريد: info@fivehills.ae",
         fAddress: "المكتب: مارينا بلازا، جناح 2402، دبي مارينا، دبي، إ.ع.م",
         fCopy: "© 2026 5 هيلز العقارية. جميع الحقوق محفوظة. ترخيص ريرا رقم 12849.",
-        fDevelop: "تصميم وبرمجة مطور انتي جرافيتي"
+        fDevelop: 'تصميم وبرمجة بواسطة <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">فريق التسويق</span>'
     }
 };
 
@@ -828,13 +828,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const trigger = document.getElementById('marketingTeamBtn');
     const closeBtn = document.getElementById('closeMarketingModal');
     
-    // Set up click events
-    if (trigger && modal) {
-        trigger.addEventListener('click', (e) => {
+    // Set up click events using Event Delegation (bulletproof against translation refreshes)
+    document.body.addEventListener('click', (e) => {
+        if (e.target && e.target.id === 'marketingTeamBtn') {
             e.preventDefault();
-            modal.classList.add('active');
-        });
-    }
+            const targetModal = document.getElementById('marketingModal');
+            if (targetModal) {
+                targetModal.classList.add('active');
+            }
+        }
+    });
     
     if (closeBtn && modal) {
         closeBtn.addEventListener('click', () => {
