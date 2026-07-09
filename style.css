@@ -1030,7 +1030,7 @@ body.light-theme .project-hero-overlay {
 }
 
 .project-hero-price {
-    text-align: right;
+    text-align: left;
 }
 
 [dir="rtl"] .project-hero-price {
@@ -1727,7 +1727,7 @@ body.light-theme .modal-backdrop {
 [dir="rtl"] .form-field,
 [dir="rtl"] .contact-info-column,
 [dir="rtl"] .step-card {
-    text-align: right;
+    text-align: left;
 }
 
 [dir="rtl"] .card-badge {
@@ -1981,8 +1981,8 @@ body.light-theme .modal-backdrop {
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     color: #ffffff;
     font-family: 'Cairo', sans-serif;
-    direction: rtl;
-    text-align: right;
+    direction: ltr;
+    text-align: left;
 }
 
 body.light-theme .marketing-modal-card {
@@ -1999,7 +1999,7 @@ body.light-theme .marketing-modal-card {
 .marketing-modal-close {
     position: absolute;
     top: 16px;
-    left: 16px;
+    right: 16px;
     background: none;
     border: none;
     color: var(--color-text-muted);
@@ -2100,7 +2100,7 @@ body.light-theme .member-name {
     color: var(--color-text-muted);
     line-height: 1.4;
     direction: ltr;
-    text-align: right;
+    text-align: left;
 }
 
 .member-linkedin {

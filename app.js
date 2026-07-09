@@ -343,7 +343,7 @@ const translations = {
         fEmail: "البريد: info@fivehills.ae",
         fAddress: "المكتب: مارينا بلازا، جناح 2402، دبي مارينا، دبي، إ.ع.م",
         fCopy: "© 2026 5 هيلز العقارية. جميع الحقوق محفوظة. ترخيص ريرا رقم 12849.",
-        fDevelop: 'تصميم وبرمجة بواسطة <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">فريق التسويق</span>'
+        fDevelop: 'Designed & Programmed by <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">Marketing Team</span>'
     }
 };
 
@@ -771,14 +771,14 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="marketing-modal-card">
             <button class="marketing-modal-close" id="closeMarketingModal">&times;</button>
             <div class="marketing-modal-header">
-                <h3>فريق التسويق وتطوير الموقع</h3>
+                <h3>Marketing & Web Development Team</h3>
             </div>
             <div class="marketing-team-list">
                 <!-- Hadeer -->
                 <div class="team-member-item">
                     <div class="member-avatar">HM</div>
                     <div class="member-info">
-                        <div class="member-name">هدير مصطفى</div>
+                        <div class="member-name">Hadeer Moustafa</div>
                         <div class="member-role">Digital Marketing Manager</div>
                     </div>
                     <a href="https://www.linkedin.com/in/hadeer-moustafa-030271183/" target="_blank" class="member-linkedin" title="LinkedIn Profile">
@@ -791,7 +791,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="team-member-item">
                     <div class="member-avatar">AN</div>
                     <div class="member-info">
-                        <div class="member-name">أحمد نصر</div>
+                        <div class="member-name">Ahmed Nasr</div>
                         <div class="member-role">Senior Graphic Designer</div>
                     </div>
                     <a href="https://www.linkedin.com/in/ahmednasrahmed/" target="_blank" class="member-linkedin" title="LinkedIn Profile">
@@ -804,7 +804,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="team-member-item">
                     <div class="member-avatar">AA</div>
                     <div class="member-info">
-                        <div class="member-name">أحمد أبو شادي</div>
+                        <div class="member-name">Ahmed Aboshady</div>
                         <div class="member-role" style="font-size: 0.72rem; line-height: 1.3;">SEO & Growth Specialist | Web & Odoo Dev</div>
                     </div>
                     <a href="https://www.linkedin.com/in/ahmed-yousef-55751023a" target="_blank" class="member-linkedin" title="LinkedIn Profile">
