@@ -1460,6 +1460,13 @@ body.light-theme .site-footer {
     padding-left: 4px;
 }
 
+.footer-about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+}
+
 .footer-about p {
     font-size: 0.85rem;
     margin-top: 12px;
