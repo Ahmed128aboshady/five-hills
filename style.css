@@ -1464,6 +1464,8 @@ body.light-theme .site-footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    width: 100%;
     min-height: 120px;
 }
 
