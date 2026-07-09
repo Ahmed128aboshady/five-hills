@@ -1919,21 +1919,29 @@ body.light-theme .modal-backdrop {
 }
 
 @media (max-width: 500px) {
+    .header-container {
+        padding: 0 10px !important;
+        height: 60px !important;
+    }
+    .site-logo img {
+        height: 36px !important;
+        width: auto !important;
+    }
     .header-actions {
-        gap: 8px;
+        gap: 4px !important;
     }
     .header-actions .btn-gold {
-        padding: 8px 14px;
-        font-size: 0.75rem;
+        padding: 6px 10px !important;
+        font-size: 0.7rem !important;
     }
     .lang-switch {
-        padding: 5px 8px;
-        font-size: 0.75rem;
+        padding: 4px 6px !important;
+        font-size: 0.7rem !important;
     }
     .theme-switch-btn {
-        width: 28px;
-        height: 28px;
-        font-size: 0.75rem;
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 0.7rem !important;
     }
     .quick-stats-grid {
         grid-template-columns: 1fr;
