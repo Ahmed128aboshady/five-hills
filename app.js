@@ -667,7 +667,7 @@ function updateThemeUI() {
             headerLogoImg.src = 'images/project-images/logo.png'; // Square logo for Light Theme
         }
         if (footerLogoImg) {
-            footerLogoImg.src = 'images/project-images/logo-posts-dark.png'; // Dark wide logo for Light Theme Footer
+            footerLogoImg.src = 'images/project-images/logo222-dark.png'; // Dark wide logo for Light Theme Footer
         }
     } else {
         themeBtn.innerText = '☀️'; // Click to go Light
@@ -675,7 +675,7 @@ function updateThemeUI() {
             headerLogoImg.src = 'images/project-images/logo-wide.png'; // Wide white logo for Dark Theme
         }
         if (footerLogoImg) {
-            footerLogoImg.src = 'images/project-images/logo-posts.png'; // Wide white logo for Dark Theme Footer
+            footerLogoImg.src = 'images/project-images/logo222.png'; // Wide white logo for Dark Theme Footer
         }
     }
 }
