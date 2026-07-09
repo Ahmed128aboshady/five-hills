@@ -762,3 +762,97 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+// --- Dynamic Injection of Marketing Team Modal ---
+document.addEventListener('DOMContentLoaded', () => {
+    const modalHTML = `
+    <div class="marketing-modal-backdrop" id="marketingModal">
+        <div class="marketing-modal-card">
+            <button class="marketing-modal-close" id="closeMarketingModal">&times;</button>
+            <div class="marketing-modal-header">
+                <h3>فريق التسويق وتطوير الموقع</h3>
+            </div>
+            <div class="marketing-team-list">
+                <!-- Hadeer -->
+                <div class="team-member-item">
+                    <div class="member-avatar">HM</div>
+                    <div class="member-info">
+                        <div class="member-name">هدير مصطفى</div>
+                        <div class="member-role">Digital Marketing Manager</div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/hadeer-moustafa-030271183/" target="_blank" class="member-linkedin" title="LinkedIn Profile">
+                        <svg style="width: 20px; height: 20px; fill: currentColor;" viewBox="0 0 24 24">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                    </a>
+                </div>
+                <!-- Ahmed Nasr -->
+                <div class="team-member-item">
+                    <div class="member-avatar">AN</div>
+                    <div class="member-info">
+                        <div class="member-name">أحمد نصر</div>
+                        <div class="member-role">Senior Graphic Designer</div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/ahmednasrahmed/" target="_blank" class="member-linkedin" title="LinkedIn Profile">
+                        <svg style="width: 20px; height: 20px; fill: currentColor;" viewBox="0 0 24 24">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                    </a>
+                </div>
+                <!-- Ahmed Abu Shady -->
+                <div class="team-member-item">
+                    <div class="member-avatar">AA</div>
+                    <div class="member-info">
+                        <div class="member-name">أحمد أبو شادي</div>
+                        <div class="member-role" style="font-size: 0.72rem; line-height: 1.3;">SEO & Growth Specialist | Web & Odoo Dev</div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/ahmed-yousef-55751023a" target="_blank" class="member-linkedin" title="LinkedIn Profile">
+                        <svg style="width: 20px; height: 20px; fill: currentColor;" viewBox="0 0 24 24">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+    
+    // Create and append the modal elements
+    const modalWrapper = document.createElement('div');
+    modalWrapper.innerHTML = modalHTML;
+    document.body.appendChild(modalWrapper.firstElementChild);
+    
+    // Grab DOM references
+    const modal = document.getElementById('marketingModal');
+    const trigger = document.getElementById('marketingTeamBtn');
+    const closeBtn = document.getElementById('closeMarketingModal');
+    
+    // Set up click events
+    if (trigger && modal) {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('active');
+        });
+    }
+    
+    if (closeBtn && modal) {
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+    }
+    
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    }
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+        }
+    });
+});

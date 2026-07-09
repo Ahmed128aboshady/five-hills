@@ -1943,3 +1943,182 @@ body.light-theme .modal-backdrop {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
+/* --- Marketing Team Modal --- */
+.marketing-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 21, 37, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.marketing-modal-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.marketing-modal-card {
+    background: #051b2c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transform: scale(0.85);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: #ffffff;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+body.light-theme .marketing-modal-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #031525;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.marketing-modal-backdrop.active .marketing-modal-card {
+    transform: scale(1);
+}
+
+.marketing-modal-close {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.marketing-modal-close:hover {
+    color: var(--color-accent);
+}
+
+.marketing-modal-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+}
+
+body.light-theme .marketing-modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.marketing-modal-header h3 {
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+body.light-theme .marketing-modal-header h3 {
+    color: #031525;
+}
+
+.marketing-team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.team-member-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s, background 0.3s;
+}
+
+body.light-theme .team-member-item {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.team-member-item:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+body.light-theme .team-member-item:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.member-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.member-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.member-name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    color: #FFFFFF;
+}
+
+body.light-theme .member-name {
+    color: #031525;
+}
+
+.member-role {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    direction: ltr;
+    text-align: right;
+}
+
+.member-linkedin {
+    color: #0077b5;
+    font-size: 20px;
+    transition: transform 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 119, 181, 0.1);
+    flex-shrink: 0;
+}
+
+.member-linkedin:hover {
+    transform: scale(1.1);
+    background: rgba(0, 119, 181, 0.2);
+    color: #0096e6;
+}
