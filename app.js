@@ -170,7 +170,7 @@ const translations = {
         flContact: "Contact Us",
         fTitleAreas: "Key Areas",
         fTitleContact: "Contact Info",
-        fPhone: "Phone: +971 4 555 0000",
+        fPhone: "<strong>Phone:</strong> +971 50 893 0996",
         fEmail: "Email: info@fivehills.ae",
         fAddress: "Office: Marina Plaza, Suite 2402, Dubai Marina, Dubai, UAE",
         fCopy: "© 2026 5 Hills Real Estate. All rights reserved. Registered with RERA No. 12849.",
@@ -339,7 +339,7 @@ const translations = {
         flContact: "اتصل بنا",
         fTitleAreas: "أهم المناطق",
         fTitleContact: "بيانات الاتصال",
-        fPhone: "الهاتف: +971 4 555 0000",
+        fPhone: "<strong>الهاتف:</strong> +971 50 893 0996",
         fEmail: "البريد: info@fivehills.ae",
         fAddress: "المكتب: مارينا بلازا، جناح 2402، دبي مارينا، دبي، إ.ع.م",
         fCopy: "© 2026 5 هيلز العقارية. جميع الحقوق محفوظة. ترخيص ريرا رقم 12849.",
@@ -822,6 +822,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalWrapper = document.createElement('div');
     modalWrapper.innerHTML = modalHTML;
     document.body.appendChild(modalWrapper.firstElementChild);
+    // --- Dynamic Injection of Floating Social Dock ---
+    const socialHTML = `
+    <div class="floating-social-dock" id="socialFloatingDock">
+        <a href="https://www.instagram.com/5hills.ae" target="_blank" class="social-dock-item instagram" title="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/fivehills.ae" target="_blank" class="social-dock-item facebook" title="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@fivehills.ae" target="_blank" class="social-dock-item tiktok" title="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M12.53.07C13.73.03 14.93.01 16.14 0c.05 1.54.49 3.09 1.4 4.3 1.09 1.45 2.67 2.45 4.4 2.8v3.42c-1.63-.04-3.23-.52-4.6-1.42-.31-.2-.59-.44-.86-.69v7.91c0 4.29-3.46 7.78-7.75 7.78-4.29 0-7.78-3.49-7.78-7.78 0-4.29 3.49-7.78 7.78-7.78.38 0 .75.03 1.12.09v3.46c-.37-.08-.75-.12-1.12-.12-2.38 0-4.32 1.94-4.32 4.32s1.94 4.32 4.32 4.32c2.34 0 4.25-1.87 4.29-4.2l.03-14.77Z"/></svg>
+        </a>
+    </div>
+    `;
+    const socialWrapper = document.createElement('div');
+    socialWrapper.innerHTML = socialHTML;
+    document.body.appendChild(socialWrapper.firstElementChild);
+
     
     // Grab DOM references
     const modal = document.getElementById('marketingModal');
