@@ -178,6 +178,30 @@ const translations = {
         ccT1_wa: "WhatsApp Support",
         ccD1_wa: "Chat with our online support team for instant property listings.",
 
+        // Team / Leadership Page
+        navTeam: "Our Team",
+        flTeam: "Our Leadership",
+        teamHeroTag: "Our Leadership",
+        teamHeroTitle: "The Visionaries Behind 5 Hills",
+        teamHeroSubtitle: "Two pioneers united by a shared mission — to redefine luxury real estate investment in Dubai with integrity, innovation, and unmatched expertise.",
+        teamStat1: "In Curated Transactions",
+        teamStat2: "Years Combined Experience",
+        teamStat3: "Client Satisfaction Rate",
+        founderBadge1: "Co-Founder",
+        founderName1: "Ashraf El Shenawy",
+        founderRole1: "Real Estate & Financial Advisor",
+        founderBio1: "With over a decade of expertise in Dubai's dynamic real estate market, Ashraf brings an unparalleled depth of knowledge in high-value property transactions, financial structuring, and investor relations. His vision has been the driving force behind 5 Hills' reputation for delivering uncompromising results to global high-net-worth clients.",
+        founderStat1A: "Years Exp.",
+        founderStat1B: "Deals Closed",
+        founderStat1C: "Clients Served",
+        founderBadge2: "Founder",
+        founderName2: "Amal Ahmed",
+        founderRole2: "Founder & Chief Executive",
+        founderBio2: "Amal is the entrepreneurial force who founded 5 Hills with a bold vision: to create Dubai's most trusted boutique brokerage. Her strategic leadership, combined with an innate ability to connect with global investors, has established 5 Hills as a benchmark for excellence, trust, and bespoke real estate advisory in the UAE.",
+        founderStat2A: "Years Exp.",
+        founderStat2B: "Portfolio Value",
+        founderStat2C: "Happy Clients",
+
         fDevelop: 'Designed & Programmed by <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">Marketing Team</span>'
     },
     ar: {
@@ -350,6 +374,30 @@ const translations = {
         fWhatsapp: '<strong>واتساب:</strong> <a href="https://wa.me/971564622103?text=Hello" target="_blank" style="color: inherit; text-decoration: underline;">+971 56 462 2103</a>',
         ccT1_wa: "الدعم عبر الواتساب",
         ccD1_wa: "تواصل مع فريق الدعم المباشر للحصول على أحدث قوائم العقارات فوراً.",
+
+        // Team / Leadership Page
+        navTeam: "فريقنا",
+        flTeam: "قيادتنا",
+        teamHeroTag: "قيادتنا",
+        teamHeroTitle: "العقول المبدعة وراء 5 هيلز",
+        teamHeroSubtitle: "رائدان متحدان برسالة مشتركة — إعادة تعريف الاستثمار العقاري الفاخر في دبي بالنزاهة والابتكار والخبرة المتميزة.",
+        teamStat1: "في المعاملات العقارية المنتقاة",
+        teamStat2: "سنوات من الخبرة المشتركة",
+        teamStat3: "معدل رضا العملاء",
+        founderBadge1: "المؤسس المشارك",
+        founderName1: "أشرف الشناوي",
+        founderRole1: "مستشار عقاري ومالي",
+        founderBio1: "بخبرة تمتد لأكثر من عقد في سوق العقارات الديناميكي في دبي، يجلب أشرف معرفة لا مثيل لها في المعاملات العقارية عالية القيمة والهيكلة المالية وعلاقات المستثمرين.",
+        founderStat1A: "سنوات خبرة",
+        founderStat1B: "صفقات مُغلقة",
+        founderStat1C: "عميل خدمناهم",
+        founderBadge2: "المؤسسة",
+        founderName2: "أمل أحمد",
+        founderRole2: "المؤسسة والرئيسة التنفيذية",
+        founderBio2: "أمل هي القوة الريادية التي أسست 5 هيلز برؤية جريئة: إنشاء وساطة عقارية صغيرة الحجم الأكثر موثوقية في دبي. قيادتها الاستراتيجية وقدرتها على التواصل مع المستثمرين العالميين أرسخت مكانة 5 هيلز كمعيار للتميز والثقة.",
+        founderStat2A: "سنوات خبرة",
+        founderStat2B: "قيمة المحفظة",
+        founderStat2C: "عملاء سعداء",
 
         fDevelop: 'Designed & Programmed by <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">Marketing Team</span>'
     }
@@ -786,6 +834,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 <li><a href="index.html" id="mobNavHome">Home</a></li>
                 <li><a href="projects.html" id="mobNavFeatured">Projects</a></li>
                 <li><a href="about.html" id="mobNavAbout">About Us</a></li>
+                <li><a href="team.html" id="mobNavTeam">Our Team</a></li>
                 <li><a href="contact.html" id="mobNavContact">Contact</a></li>
             </ul>
             <div class="mobile-nav-actions">
