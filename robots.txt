@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ahmed128aboshady.github.io/five-hills/sitemap.xml

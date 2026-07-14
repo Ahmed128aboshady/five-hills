@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="icon" type="image/png" href="favicon.png?v=1.1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -129,13 +132,13 @@
                     <h2 class="block-title gold-gradient-text" id="galleryTitle">Project Gallery</h2>
                     <div class="gallery-layout-grid" id="galleryContainer">
                         <div class="gallery-grid-item" onclick="openLightbox('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80')">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Exterior Front View">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Exterior Front View">
                         </div>
                         <div class="gallery-grid-item" onclick="openLightbox('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80')">
-                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80" alt="Luxury Living Room">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80" alt="Luxury Living Room">
                         </div>
                         <div class="gallery-grid-item" onclick="openLightbox('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80')">
-                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=400&q=80" alt="Modern Bedroom">
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=400&q=80" alt="Modern Bedroom">
                         </div>
                     </div>
                 </section>
@@ -268,7 +271,7 @@
         <div class="container footer-grid">
             <div class="footer-col footer-about">
                 <a href="index.html" class="site-logo">
-                    <img src="images/project-images/logo222.png" alt="5 Hills Logo" style="height: 120px; width: auto; object-fit: contain;">
+                    <img src="images/project-images/logo222.png" alt="5 Hills Real Estate Agency Dubai Logo" loading="lazy" style="height: 120px; width: auto; object-fit: contain;">
                 </a>
             </div>
             <div class="footer-col">
@@ -340,7 +343,7 @@
     <div class="lightbox-backdrop" id="galleryLightbox" onclick="closeLightbox()">
         <button class="lightbox-nav lightbox-prev" onclick="prevLightboxImage(event)">❮</button>
         <div class="lightbox-content" onclick="event.stopPropagation()">
-            <img src="" id="lightboxImg" alt="Enlarged View">
+            <img loading="lazy" src="" id="lightboxImg" alt="Enlarged View">
         </div>
         <button class="lightbox-nav lightbox-next" onclick="nextLightboxImage(event)">❯</button>
         <button class="lightbox-close" onclick="closeLightbox()">✕</button>
