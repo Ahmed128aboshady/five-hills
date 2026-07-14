@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+    <!-- --- Local SEO Geographic Metadata --- -->
+    <meta name="geo.region" content="AE-DU" />
+    <meta name="geo.placename" content="Dubai Marina" />
+    <meta name="geo.position" content="25.0768;55.1416" />
+    <meta name="ICBM" content="25.0768, 55.1416" />
+
     <!-- --- Structured Data (JSON-LD) for Local SEO --- -->
     <script type="application/ld+json">
     {
@@ -58,7 +64,7 @@
     <meta name="description" content="Get in touch with 5 Hills Real Estate in Dubai. Connect with our expert advisors via phone, email, or visit our office at Dubai Marina.">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="../style.css?v=1.18">
+    <link rel="stylesheet" href="../style.css?v=1.19">
 </head>
 <body>
 
@@ -210,12 +216,14 @@
                     <li><a href="projects.html?location=wasl-1">Wasl 1 / Zabeel</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
+            <div class="footer-col" itemscope itemtype="https://schema.org/RealEstateAgent">
+                <meta itemprop="name" content="5 Hills Real Estate">
+                <meta itemprop="image" content="https://ahmed128aboshady.github.io/five-hills/images/project-images/logo222.webp">
                 <h4 id="fTitleContact">Contact Info</h4>
-                <div class="footer-contact-item" id="fPhone"><strong>Phone:</strong> +971 50 893 0996</div>
+                <div class="footer-contact-item" id="fPhone"><strong>Phone:</strong> <span itemprop="telephone">+971 50 893 0996</span></div>
                 <div class="footer-contact-item" id="fWhatsapp"><strong>WhatsApp:</strong> <a href="https://wa.me/971564622103?text=Hello,%20I%20am%20interested%20in%20Dubai%20Luxury%20Properties" target="_blank" style="color: inherit; text-decoration: underline;">+971 56 462 2103</a></div>
-                <div class="footer-contact-item" id="fEmail"><strong>Email:</strong> info@fivehills.ae</div>
-                <div class="footer-contact-item" id="fAddress"><strong>Office:</strong> Marina Plaza, Suite 2402, Dubai Marina, Dubai, UAE</div>
+                <div class="footer-contact-item" id="fEmail"><strong>Email:</strong> <span itemprop="email">info@fivehills.ae</span></div>
+                <div class="footer-contact-item" id="fAddress" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><strong>Office:</strong> <span itemprop="streetAddress">Marina Plaza, Suite 2402, Dubai Marina</span>, <span itemprop="addressLocality">Dubai</span>, <span itemprop="addressRegion">Dubai</span>, <span itemprop="addressCountry">AE</span></div>
             </div>
         </div>
         <div class="container footer-bottom">
