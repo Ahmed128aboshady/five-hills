@@ -4,9 +4,9 @@ const projectsData = {
         "locationSlug": "wasl-1",
         "priceRaw": 2100000,
         "images": [
-            "images/project-images/1Residences_pdf_0.png",
-            "images/project-images/1Residences_pdf_1.png",
-            "images/project-images/1Residences_pdf_2.png"
+            "images/project-images/1Residences_pdf_0.webp",
+            "images/project-images/1Residences_pdf_1.webp",
+            "images/project-images/1Residences_pdf_2.webp"
         ],
         "en": {
             "title": "1 Residences Wasl 1",
@@ -35,9 +35,9 @@ const projectsData = {
         "locationSlug": "wasl-1",
         "priceRaw": 2100000,
         "images": [
-            "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_0.png",
-            "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_1.png",
-            "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_2.png"
+            "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_0.webp",
+            "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_1.webp",
+            "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_2.webp"
         ],
         "en": {
             "title": "1 Residences Wasl 1",
@@ -66,7 +66,7 @@ const projectsData = {
         "locationSlug": "wasl-1",
         "priceRaw": 4500000,
         "images": [
-            "images/project-images/AvenueParkTowers_pdf_0.png"
+            "images/project-images/AvenueParkTowers_pdf_0.webp"
         ],
         "en": {
             "title": "Avenue Park Towers",
@@ -95,7 +95,7 @@ const projectsData = {
         "locationSlug": "dubai-marina",
         "priceRaw": 2400000,
         "images": [
-            "images/project-images/BaynProject_vid_0.jpg"
+            "images/project-images/BaynProject_vid_0.webp"
         ],
         "en": {
             "title": "Bayn Project",
@@ -124,9 +124,9 @@ const projectsData = {
         "locationSlug": "wasl-1",
         "priceRaw": 4500000,
         "images": [
-            "images/project-images/BoulevardPark_pdf_0.png",
-            "images/project-images/BoulevardPark_pdf_1.png",
-            "images/project-images/BoulevardPark_pdf_2.png"
+            "images/project-images/BoulevardPark_pdf_0.webp",
+            "images/project-images/BoulevardPark_pdf_1.webp",
+            "images/project-images/BoulevardPark_pdf_2.webp"
         ],
         "en": {
             "title": "Boulevard Park",
@@ -155,9 +155,9 @@ const projectsData = {
         "locationSlug": "meydan",
         "priceRaw": 6700000,
         "images": [
-            "images/project-images/cedarwoodestates_0.jpg",
-            "images/project-images/cedarwoodestates_1.jpg",
-            "images/project-images/cedarwoodestates_2.jpg"
+            "images/project-images/cedarwoodestates_0.webp",
+            "images/project-images/cedarwoodestates_1.webp",
+            "images/project-images/cedarwoodestates_2.webp"
         ],
         "en": {
             "title": "Cedarwood Estates",
@@ -186,9 +186,9 @@ const projectsData = {
         "locationSlug": "meydan",
         "priceRaw": 6700000,
         "images": [
-            "images/project-images/CedarwoodEstatesSouth_pdf_0.png",
-            "images/project-images/CedarwoodEstatesSouth_pdf_1.png",
-            "images/project-images/CedarwoodEstatesSouth_pdf_2.png"
+            "images/project-images/CedarwoodEstatesSouth_pdf_0.webp",
+            "images/project-images/CedarwoodEstatesSouth_pdf_1.webp",
+            "images/project-images/CedarwoodEstatesSouth_pdf_2.webp"
         ],
         "en": {
             "title": "Cedarwood Estates South",
@@ -217,9 +217,9 @@ const projectsData = {
         "locationSlug": "dubai-marina",
         "priceRaw": 7800000,
         "images": [
-            "images/project-images/CoreVillasProjects_0.jpeg",
-            "images/project-images/CoreVillasProjects_1.jpeg",
-            "images/project-images/CoreVillasProjects_2.jpeg"
+            "images/project-images/CoreVillasProjects_0.webp",
+            "images/project-images/CoreVillasProjects_1.webp",
+            "images/project-images/CoreVillasProjects_2.webp"
         ],
         "en": {
             "title": "Core Villas Projects",
@@ -248,9 +248,9 @@ const projectsData = {
         "locationSlug": "dubai-marina",
         "priceRaw": 7800000,
         "images": [
-            "images/project-images/corner6bedroom_0.jpeg",
-            "images/project-images/corner6bedroom_1.jpeg",
-            "images/project-images/corner6bedroom_2.jpeg"
+            "images/project-images/corner6bedroom_0.webp",
+            "images/project-images/corner6bedroom_1.webp",
+            "images/project-images/corner6bedroom_2.webp"
         ],
         "en": {
             "title": "Corner 6-Bedroom Luxury Villa",
@@ -279,8 +279,8 @@ const projectsData = {
         "locationSlug": "meydan",
         "priceRaw": 3100000,
         "images": [
-            "images/project-images/Ellingtonproject_0.jpeg",
-            "images/project-images/Ellingtonproject_1.jpeg"
+            "images/project-images/Ellingtonproject_0.webp",
+            "images/project-images/Ellingtonproject_1.webp"
         ],
         "en": {
             "title": "Ellington Project",
@@ -309,7 +309,7 @@ const projectsData = {
         "locationSlug": "dubai-marina",
         "priceRaw": 2400000,
         "images": [
-            "images/project-images/HillsideResidences_vid_0.jpg"
+            "images/project-images/HillsideResidences_vid_0.webp"
         ],
         "en": {
             "title": "Hillside Residences",
@@ -338,9 +338,9 @@ const projectsData = {
         "locationSlug": "dubai-marina",
         "priceRaw": 2400000,
         "images": [
-            "images/project-images/HotelProject_0.jpeg",
-            "images/project-images/HotelProject_1.jpeg",
-            "images/project-images/HotelProject_2.jpeg"
+            "images/project-images/HotelProject_0.webp",
+            "images/project-images/HotelProject_1.webp",
+            "images/project-images/HotelProject_2.webp"
         ],
         "en": {
             "title": "Hotel Project",
@@ -369,9 +369,9 @@ const projectsData = {
         "locationSlug": "meydan",
         "priceRaw": 8500000,
         "images": [
-            "images/project-images/Knightsbridge_P1_0.jpeg",
-            "images/project-images/Knightsbridge_P1_1.png",
-            "images/project-images/Knightsbridge_P1_2.png"
+            "images/project-images/Knightsbridge_P1_0.webp",
+            "images/project-images/Knightsbridge_P1_1.webp",
+            "images/project-images/Knightsbridge_P1_2.webp"
         ],
         "en": {
             "title": "Knightsbridge Phase 1",
@@ -400,9 +400,9 @@ const projectsData = {
         "locationSlug": "dubai-marina",
         "priceRaw": 12500000,
         "images": [
-            "images/project-images/OfficeProject_0.jpeg",
-            "images/project-images/OfficeProject_1.jpeg",
-            "images/project-images/OfficeProject_2.jpeg"
+            "images/project-images/OfficeProject_0.webp",
+            "images/project-images/OfficeProject_1.webp",
+            "images/project-images/OfficeProject_2.webp"
         ],
         "en": {
             "title": "Office Project",
@@ -431,8 +431,8 @@ const projectsData = {
         "locationSlug": "dubai-marina",
         "priceRaw": 2400000,
         "images": [
-            "images/project-images/P053Project_zip_0.jpeg",
-            "images/project-images/P053Project_zip_1.jpeg"
+            "images/project-images/P053Project_zip_0.webp",
+            "images/project-images/P053Project_zip_1.webp"
         ],
         "en": {
             "title": "P053 Premium Residences",
@@ -461,8 +461,8 @@ const projectsData = {
         "locationSlug": "wasl-1",
         "priceRaw": 4500000,
         "images": [
-            "images/project-images/ParkGateResidence_0.jpg",
-            "images/project-images/ParkGateResidence_1.jpg",
+            "images/project-images/ParkGateResidence_0.webp",
+            "images/project-images/ParkGateResidence_1.webp",
             "images/project-images/ParkGateResidence_2.webp"
         ],
         "en": {
@@ -492,9 +492,9 @@ const projectsData = {
         "locationSlug": "jumeirah",
         "priceRaw": 9800000,
         "images": [
-            "images/project-images/PinewoodEstates_0.jpeg",
-            "images/project-images/PinewoodEstates_1.jpeg",
-            "images/project-images/PinewoodEstates_2.png"
+            "images/project-images/PinewoodEstates_0.webp",
+            "images/project-images/PinewoodEstates_1.webp",
+            "images/project-images/PinewoodEstates_2.webp"
         ],
         "en": {
             "title": "Pinewood Estates",
@@ -523,8 +523,8 @@ const projectsData = {
         "locationSlug": "dubai-marina",
         "priceRaw": 2400000,
         "images": [
-            "images/project-images/StudioProject_0.jpeg",
-            "images/project-images/StudioProject_1.jpeg"
+            "images/project-images/StudioProject_0.webp",
+            "images/project-images/StudioProject_1.webp"
         ],
         "en": {
             "title": "Studio Project",
@@ -553,9 +553,9 @@ const projectsData = {
         "locationSlug": "dubai-marina",
         "priceRaw": 12500000,
         "images": [
-            "images/project-images/WharehouseProject_0.jpeg",
-            "images/project-images/WharehouseProject_1.jpeg",
-            "images/project-images/WharehouseProject_2.jpeg"
+            "images/project-images/WharehouseProject_0.webp",
+            "images/project-images/WharehouseProject_1.webp",
+            "images/project-images/WharehouseProject_2.webp"
         ],
         "en": {
             "title": "Warehouse Commercial Project",

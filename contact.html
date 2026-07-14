@@ -1,6 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+    <!-- --- Structured Data (JSON-LD) for Local SEO --- -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "5 Hills Real Estate",
+      "image": "https://ahmed128aboshady.github.io/five-hills/images/project-images/logo222.webp",
+      "@id": "https://ahmed128aboshady.github.io/five-hills/",
+      "url": "https://ahmed128aboshady.github.io/five-hills/",
+      "telephone": "+971508930996",
+      "priceRange": "$$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Marina Plaza, Suite 2402, Dubai Marina",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubai",
+        "postalCode": "00000",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.0768,
+        "longitude": 55.1416
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/fivehills.ae",
+        "https://www.instagram.com/5hills.ae",
+        "https://www.tiktok.com/@fivehills.ae",
+        "https://wa.me/971564622103"
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -11,7 +58,7 @@
     <meta name="description" content="Get in touch with 5 Hills Real Estate in Dubai. Connect with our expert advisors via phone, email, or visit our office at Dubai Marina.">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=1.15">
+    <link rel="stylesheet" href="style.css?v=1.16">
 </head>
 <body>
 
@@ -19,7 +66,7 @@
     <header class="site-header" id="mainHeader">
         <div class="header-container">
             <a href="index.html" class="site-logo">
-                <img src="images/project-images/logo-wide.png" alt="5 Hills Logo" style="height: 56px; width: auto; object-fit: contain;">
+                <img src="images/project-images/logo-wide.webp" alt="5 Hills Logo" style="height: 56px; width: auto; object-fit: contain;">
             </a>
             
             <nav class="main-navigation">
@@ -137,7 +184,7 @@
         <div class="container footer-grid">
             <div class="footer-col footer-about">
                 <a href="index.html" class="site-logo">
-                    <img src="images/project-images/logo222.png" alt="5 Hills Real Estate Agency Dubai Logo" loading="lazy" style="height: 120px; width: auto; object-fit: contain;">
+                    <img src="images/project-images/logo222.webp" alt="5 Hills Real Estate Agency Dubai Logo" loading="lazy" style="height: 120px; width: auto; object-fit: contain;">
                 </a>
             </div>
             <div class="footer-col">
@@ -183,7 +230,7 @@
     </a>
 
     <!-- --- JS Core Functions Script --- -->
-    <script src="projects-data.js"></script>
-    <script src="app.js?v=1.12"></script>
+    <script src="projects-data.js?v=1.1"></script>
+    <script src="app.js?v=1.13"></script>
 </body>
 </html>

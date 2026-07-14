@@ -791,19 +791,19 @@ function updateThemeUI() {
         if (themeBtn) themeBtn.innerText = '🌙';
         if (themeBtnMob) themeBtnMob.innerText = '🌙';
         if (headerLogoImg) {
-            headerLogoImg.src = 'images/project-images/logo.png';
+            headerLogoImg.src = 'images/project-images/logo.webp';
         }
         if (footerLogoImg) {
-            footerLogoImg.src = 'images/project-images/logo222-dark.png';
+            footerLogoImg.src = 'images/project-images/logo222-dark.webp';
         }
     } else {
         if (themeBtn) themeBtn.innerText = '☀️';
         if (themeBtnMob) themeBtnMob.innerText = '☀️';
         if (headerLogoImg) {
-            headerLogoImg.src = 'images/project-images/logo-wide.png';
+            headerLogoImg.src = 'images/project-images/logo-wide.webp';
         }
         if (footerLogoImg) {
-            footerLogoImg.src = 'images/project-images/logo222.png';
+            footerLogoImg.src = 'images/project-images/logo222.webp';
         }
     }
 }
