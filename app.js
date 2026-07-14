@@ -202,6 +202,31 @@ const translations = {
         founderStat2B: "Portfolio Value",
         founderStat2C: "Happy Clients",
 
+        // Property Management Section (About page)
+        mgmtTag: "Full-Service Management",
+        mgmtTitle: "We Manage Everything For You",
+        mgmtDesc: "From luxury residential towers and private villas to commercial retail malls — 5 Hills manages every aspect of your property portfolio so you earn more and worry less.",
+        mgmtStat1Lbl: "Properties Managed",
+        mgmtStat2Lbl: "Residential & Commercial Units",
+        mgmtStat3Lbl: "Asset Classes",
+        mgmtStat4Lbl: "Occupancy Rate",
+        mgmtCard1Title: "Residential Towers",
+        mgmtCard1Desc: "We manage full residential buildings across Dubai — handling tenant sourcing, lease agreements, maintenance coordination, and monthly owner reporting.",
+        mgmtCard2Title: "Luxury Villas",
+        mgmtCard2Desc: "From short-term holiday lets to long-term leases, we provide white-glove management for private villas — maximizing yield while preserving your asset's prestige.",
+        mgmtCard3Title: "Commercial Mall",
+        mgmtCard3Desc: "Our commercial management team handles retail tenant mix, lease negotiations, common area upkeep, and footfall growth strategies for your retail asset.",
+        mgmtServicesTitle: "What We Handle For You",
+        mgmtSvc1: "Tenant Sourcing & Screening",
+        mgmtSvc2: "Lease Drafting & Renewals",
+        mgmtSvc3: "Rent Collection & Disbursement",
+        mgmtSvc4: "Maintenance & Facility Management",
+        mgmtSvc5: "Monthly Financial Reporting",
+        mgmtSvc6: "RERA & Legal Compliance",
+        mgmtSvc7: "Vacancy Marketing & Listings",
+        mgmtSvc8: "Commercial Tenant Mix Strategy",
+        mgmtCta: "Discuss Your Portfolio",
+
         fDevelop: 'Designed & Programmed by <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">Marketing Team</span>'
     },
     ar: {
@@ -398,6 +423,31 @@ const translations = {
         founderStat2A: "سنوات خبرة",
         founderStat2B: "قيمة المحفظة",
         founderStat2C: "عملاء سعداء",
+
+        // Property Management Section (About page)
+        mgmtTag: "إدارة متكاملة",
+        mgmtTitle: "ندير كل شيء نيابةً عنك",
+        mgmtDesc: "من الأبراج السكنية الفاخرة والفلل الخاصة إلى مراكز التسوق التجارية — تتولى 5 هيلز إدارة كل جانب من جوانب محفظتك العقارية لتربح أكثر وتقلق أقل.",
+        mgmtStat1Lbl: "عقار تحت الإدارة",
+        mgmtStat2Lbl: "وحدة سكنية وتجارية",
+        mgmtStat3Lbl: "فئات أصول عقارية",
+        mgmtStat4Lbl: "معدل الإشغال",
+        mgmtCard1Title: "الأبراج السكنية",
+        mgmtCard1Desc: "ندير المباني السكنية الكاملة في دبي — من استقطاب المستأجرين وعقود الإيجار إلى تنسيق الصيانة والتقارير الشهرية للملاك.",
+        mgmtCard2Title: "الفلل الفاخرة",
+        mgmtCard2Desc: "من الإيجارات السياحية قصيرة المدى إلى العقود الطويلة، نوفر إدارة احترافية شاملة للفلل الخاصة تحقق أعلى عائد مع الحفاظ على مكانة أصلك.",
+        mgmtCard3Title: "المول التجاري",
+        mgmtCard3Desc: "يتولى فريقنا التجاري إدارة المزيج الإيجاري الأمثل، والتفاوض على العقود، وصيانة المناطق المشتركة، واستراتيجيات رفع حركة العملاء.",
+        mgmtServicesTitle: "ما نتولاه نيابةً عنك",
+        mgmtSvc1: "استقطاب المستأجرين وفحصهم",
+        mgmtSvc2: "صياغة العقود وتجديدها",
+        mgmtSvc3: "تحصيل الإيجارات وصرفها",
+        mgmtSvc4: "الصيانة وإدارة المرافق",
+        mgmtSvc5: "التقارير المالية الشهرية",
+        mgmtSvc6: "الامتثال لأنظمة ريرا والقوانين",
+        mgmtSvc7: "تسويق الوحدات الشاغرة",
+        mgmtSvc8: "استراتيجية المزيج التجاري",
+        mgmtCta: "ناقش محفظتك العقارية معنا",
 
         fDevelop: 'Designed & Programmed by <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">Marketing Team</span>'
     }
