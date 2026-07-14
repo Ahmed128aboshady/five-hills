@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="icon" type="image/png" href="../favicon.png?v=1.1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Off-Plan vs. Ready Properties: ROI Analysis | 5 Hills</title>
+    <meta name="description" content="Detailed analysis of rental yields, capital appreciation, and payment plans for off-plan and ready properties in Dubai.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../style.css?v=1.17">
+</head>
+<body>
+
+    <!-- --- Premium Header --- -->
+    <header class="site-header" id="mainHeader">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">
+                <img src="../images/project-images/logo-wide.webp" alt="5 Hills Logo" style="height: 56px; width: auto; object-fit: contain;">
+            </a>
+            
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+                    <li><a href="projects.html" class="nav-link" id="navFeatured">Projects</a></li>
+                    <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+                    <li><a href="team.html" class="nav-link" id="navTeam">Our Team</a></li>
+                    <li><a href="blog.html" class="nav-link active" id="navBlog">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="lang-switch" id="langToggleBtn" onclick="toggleLanguage()">العربية</button>
+                <button class="theme-switch-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️</button>
+                <a href="contact.html" class="btn-gold" style="padding: 10px 20px; font-size: 0.8rem;" id="headerCtaBtn">Inquire Now</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-banner" style="min-height: 40vh;">
+        <div class="container">
+            <h1 class="page-banner-title gold-gradient-text" id="roiTitle">Off-Plan vs. Ready Properties</h1>
+            <p class="page-banner-subtitle" id="roiSubtitle">Analyzing the highest yields and capital appreciation in Dubai</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container" style="max-width: 800px; line-height: 1.8; color: var(--color-text-muted);">
+            <img src="../images/project-images/blog-roi.webp" alt="Dubai Property Financial Analytics" style="width:100%; border-radius:16px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);" loading="lazy">
+            
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin-bottom:20px;" id="roiH1">Ready Properties: Instant Rental Income</h2>
+            <p id="roiP1">Ready properties (key-in-hand) are highly attractive for traditional income-focused investors. By buying a completed property in established areas like Dubai Marina or Downtown Dubai, you can tenant the unit and receive rental payments immediately. Dubai Marina regularly yields 6% to 8% gross annual rents, which is higher than international benchmarks.</p>
+            
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 30px 0 20px;" id="roiH2">Off-Plan Properties: Maximum Capital Gains</h2>
+            <p id="roiP2">Off-plan properties (under construction) offer the highest potential for capital appreciation. Investors buy directly from developers at pre-launch pricing (VVIP releases), with structured payment plans (e.g. 60/40 or 70/30) extending throughout construction. As the community develops, the property value increases significantly by handover.</p>
+
+            <h3 style="color:var(--color-text-bright); margin: 30px 0 15px;" id="roiComparisonTitle">Quick Comparison:</h3>
+            <table style="width:100%; border-collapse:collapse; margin-bottom:30px; border:1px solid var(--color-border);">
+                <thead>
+                    <tr style="background:var(--color-bg-card); color:var(--color-text-bright); border-bottom:1px solid var(--color-border);">
+                        <th style="padding:12px; text-align:left;" id="thMetric">Metric</th>
+                        <th style="padding:12px; text-align:left;" id="thOffplan">Off-Plan</th>
+                        <th style="padding:12px; text-align:left;" id="thReady">Ready</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid var(--color-border);">
+                        <td style="padding:12px;" id="tdPrice">Entry Price</td>
+                        <td style="padding:12px;" id="tdPriceVal1">Lower (Pre-launch rates)</td>
+                        <td style="padding:12px;" id="tdPriceVal2">Premium market rates</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--color-border);">
+                        <td style="padding:12px;" id="tdYield">Rental Yield</td>
+                        <td style="padding:12px;" id="tdYieldVal1">Delayed (At handover)</td>
+                        <td style="padding:12px;" id="tdYieldVal2">Immediate (6%-8% annual)</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--color-border);">
+                        <td style="padding:12px;" id="tdCap">Capital Gain</td>
+                        <td style="padding:12px;" id="tdCapVal1">Higher (20%-35% appreciation)</td>
+                        <td style="padding:12px;" id="tdCapVal2">Steady (Based on market growth)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="text-align:center; margin-top:50px;">
+                <a href="contact.html" class="btn-gold" style="padding:15px 35px; font-size:0.9rem;" id="roiCta">Get ROI Projections</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Footer --- -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="site-logo">
+                    <img src="../images/project-images/logo222.webp" alt="5 Hills Logo" style="height: 120px; width: auto; object-fit: contain;">
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleQuick">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" id="flHome">Home</a></li>
+                    <li><a href="projects.html" id="flProjects">Projects Portfolio</a></li>
+                    <li><a href="about.html" id="flAbout">About Our Agency</a></li>
+                    <li><a href="about.html#propertyManagement" id="flMgmt">Property Management</a></li>
+                    <li><a href="team.html" id="flTeam">Our Leadership</a></li>
+                    <li><a href="blog.html" id="flBlog">Real Estate Blog</a></li>
+                    <li><a href="contact.html" id="flContact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleAreas">Key Areas</h4>
+                <ul class="footer-links">
+                    <li><a href="projects.html?location=downtown-dubai">Downtown Dubai</a></li>
+                    <li><a href="projects.html?location=dubai-marina">Dubai Marina</a></li>
+                    <li><a href="projects.html?location=meydan">Meydan</a></li>
+                    <li><a href="projects.html?location=wasl-1">Wasl 1 / Zabeel</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleContact">Contact Info</h4>
+                <div class="footer-contact-item" id="fPhone"><strong>Phone:</strong> +971 50 893 0996</div>
+                <div class="footer-contact-item" id="fWhatsapp"><strong>WhatsApp:</strong> <a href="https://wa.me/971564622103?text=Hello,%20I%20am%20interested%20in%20Dubai%20Luxury%20Properties" target="_blank" style="color: inherit; text-decoration: underline;">+971 56 462 2103</a></div>
+                <div class="footer-contact-item" id="fEmail"><strong>Email:</strong> info@fivehills.ae</div>
+                <div class="footer-contact-item" id="fAddress"><strong>Office:</strong> Marina Plaza, Suite 2402, Dubai Marina, Dubai, UAE</div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p id="fCopy">&copy; 2026 5 Hills Real Estate. All rights reserved. Registered with RERA No. 12849.</p>
+            <p id="fDevelop">Designed & Programmed by <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">Marketing Team</span></p>
+        </div>
+    </footer>
+    <script src="../projects-data.js?v=1.2"></script>
+    <script src="../app.js?v=1.15"></script>
+</body>
+</html>

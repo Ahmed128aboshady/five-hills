@@ -6,6 +6,14 @@
    ========================================================================== */
 
 // Unified translation dictionary for all pages (Home, Projects, About, Contact, Single Project)
+function getAssetPath(path) {
+    const isAr = window.location.pathname.includes('/ar/');
+    if (isAr && path && !path.startsWith('http') && !path.startsWith('data:') && !path.startsWith('../')) {
+        return '../' + path;
+    }
+    return path;
+}
+
 const translations = {
     en: {
         langBtn: "العربية",
@@ -226,6 +234,70 @@ const translations = {
         mgmtSvc7: "Vacancy Marketing & Listings",
         mgmtSvc8: "Commercial Tenant Mix Strategy",
         mgmtCta: "Discuss Your Portfolio",
+
+        // Blog Navigation & Structure
+        navBlog: "Blog",
+        flBlog: "Real Estate Blog",
+        blogBannerTitle: "Dubai Real Estate Blog",
+        blogBannerSubtitle: "Expert insights, guides, and investment analyses from Dubai's leading advisors",
+        lblGuideTag: "GUIDE",
+        lblAnalysisTag: "ANALYSIS",
+        lblReviewTag: "REVIEW",
+        art1Title: "How to Secure the Dubai Golden Visa via Property",
+        art1Desc: "Learn the step-by-step requirements to obtain a 10-year residency Golden Visa in the UAE through real estate investments of AED 2M+.",
+        art1Btn: "Read Article",
+        art2Title: "Off-Plan vs. Ready Properties: Which has Better ROI?",
+        art2Desc: "An in-depth analysis of rental yields, capital appreciation rates, and tax-free returns between ready and off-plan assets in Dubai.",
+        art2Btn: "Read Article",
+        art3Title: "Top 5 Luxury Areas in Dubai to Buy a Family Villa",
+        art3Desc: "Exploring Meydan, Dubai Marina, Zabeel Park, Downtown Dubai, and Zabeel for premium family villa investments.",
+        art3Btn: "Read Article",
+        
+        // Article - Golden Visa
+        visaTitle: "Dubai Golden Visa Guide",
+        visaSubtitle: "Secure your 10-year residency through smart property acquisition",
+        visaH1: "Investment Criteria",
+        visaP1: "The Dubai Golden Visa program is one of the most successful residency-by-investment programs globally. Under current RERA and Dubai Land Department rules, foreign investors who buy property worth a minimum of AED 2 Million ($544,500 USD) are eligible for a 10-year renewable residency visa.",
+        visaH2: "Key Requirements:",
+        visaReq1: "Minimum Valuation: The total value of your property portfolio must be AED 2 Million or higher. Multiple properties can be combined.",
+        visaReq2: "Mortgaged Assets: If the property is mortgaged, the bank must provide a No Objection Certificate (NOC), and the owner must have paid at least AED 2 Million of the total value directly.",
+        visaReq3: "Joint Ownership: Spouses can jointly own a single property worth AED 2 Million to qualify.",
+        visaH3: "Step-by-Step Process",
+        visaP2: "1. Property Purchase: Acquire an eligible ready or off-plan asset (with a developer registered under Escrow regulations).\n2. Title Deed Issuance: Obtain the official Title Deed from the Dubai Land Department (DLD).\n3. Application: Apply through the DLD or the Federal Authority for Identity, Citizenship, Customs and Port Security (ICP).\n4. Medical & Security: Complete the local medical fitness test and biometric scans. Receive your Emirates ID and 10-year residency visa sticker.",
+        visaCta: "Consult a Golden Visa Broker",
+        
+        // Article - ROI
+        roiTitle: "Off-Plan vs. Ready Properties",
+        roiSubtitle: "Analyzing the highest yields and capital appreciation in Dubai",
+        roiH1: "Ready Properties: Instant Rental Income",
+        roiP1: "Ready properties (key-in-hand) are highly attractive for traditional income-focused investors. By buying a completed property in established areas like Dubai Marina or Downtown Dubai, you can tenant the unit and receive rental payments immediately. Dubai Marina regularly yields 6% to 8% gross annual rents, which is higher than international benchmarks.",
+        roiH2: "Off-Plan Properties: Maximum Capital Gains",
+        roiP2: "Off-plan properties (under construction) offer the highest potential for capital appreciation. Investors buy directly from developers at pre-launch pricing (VVIP releases), with structured payment plans (e.g. 60/40 or 70/30) extending throughout construction. As the community develops, the property value increases significantly by handover.",
+        roiComparisonTitle: "Quick Comparison:",
+        thMetric: "Metric",
+        thOffplan: "Off-Plan",
+        thReady: "Ready",
+        tdPrice: "Entry Price",
+        tdPriceVal1: "Lower (Pre-launch rates)",
+        tdPriceVal2: "Premium market rates",
+        tdYield: "Rental Yield",
+        tdYieldVal1: "Delayed (At handover)",
+        tdYieldVal2: "Immediate (6%-8% annual)",
+        tdCap: "Capital Gain",
+        tdCapVal1: "Higher (20%-35% appreciation)",
+        tdCapVal2: "Steady (Based on market growth)",
+        roiCta: "Get ROI Projections",
+        
+        // Article - Luxury Areas
+        areasTitle: "Top 5 Luxury Areas in Dubai",
+        areasSubtitle: "The best premium communities to buy family villas and custom estates",
+        areasH1: "1. Meydan (District 11)",
+        areasP1: "Meydan represents the next generation of luxury villa living. Home to top-tier developments like Knightsbridge, it offers vast spaces, green parklands, and crystal lagoons just 15 minutes away from Downtown Dubai. Highly recommended for families seeking sustainable, high-tech smart villas.",
+        areasH2: "2. Dubai Marina",
+        areasP2: "For those who prefer waterfront properties and yacht club access, Dubai Marina provides exclusive penthouses and custom marina-villas. It boasts strong rental yields, direct beach access, and immediate proximity to Dubai's primary commercial and retail zones.",
+        areasH3: "3. Zabeel Park / Wasl 1",
+        areasP3: "Providing a unique bridge between Old and New Dubai, Zabeel and Wasl 1 offer luxury apartments and townhouses with views of Zabeel Park and the Dubai Frame. It combines central connectivity with green open-space living.",
+        areasCta: "Explore Exclusive Villa Listings",
 
         fDevelop: 'Designed & Programmed by <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">Marketing Team</span>'
     },
@@ -449,6 +521,70 @@ const translations = {
         mgmtSvc8: "استراتيجية المزيج التجاري",
         mgmtCta: "ناقش محفظتك العقارية معنا",
 
+        // Blog Navigation & Structure
+        navBlog: "المدونة",
+        flBlog: "المدونة العقارية",
+        blogBannerTitle: "المدونة العقارية في دبي",
+        blogBannerSubtitle: "رؤى الخبراء، والتقارير الاستثمارية، وأحدث أدلة السوق العقاري من كبار مستشارينا",
+        lblGuideTag: "دليل عقاري",
+        lblAnalysisTag: "تحليل السوق",
+        lblReviewTag: "مراجعة المنطقة",
+        art1Title: "كيف تحصل على الإقامة الذهبية في دبي عبر العقار",
+        art1Desc: "تعرف على المتطلبات الكاملة والخطوات اللازمة للحصول على تأشيرة الإقامة الذهبية لمدة 10 سنوات في الإمارات عبر شراء عقار بقيمة 2 مليون درهم فما فوق.",
+        art1Btn: "اقرأ المقال بالكامل",
+        art2Title: "العقارات قيد الإنشاء ضد الجاهزة: أيهما أفضل للاستثمار؟",
+        art2Desc: "تحليل عميق لعوائد الإيجار ومعدلات زيادة رأس المال والأرباح المعفاة من الضرائب بين العقارات الجاهزة وقيد الإنشاء في دبي.",
+        art2Btn: "اقرأ المقال بالكامل",
+        art3Title: "أفضل 5 مناطق فاخرة في دبي لشراء فيلا عائلية",
+        art3Desc: "استكشاف مناطق ميدان ودبي مارينا وزعبيل وداون تاون دبي لشراء الفلل والعقارات العائلية الفاخرة.",
+        art3Btn: "اقرأ المقال بالكامل",
+        
+        // Article - Golden Visa
+        visaTitle: "دليل الإقامة الذهبية في دبي",
+        visaSubtitle: "أمّن إقامتك لمدة 10 سنوات من خلال الاستثمار العقاري الذكي",
+        visaH1: "معايير الاستثمار والتأهل",
+        visaP1: "يعد برنامج الإقامة الذهبية في دبي أحد أنجح برامج الإقامة عبر الاستثمار عالمياً. وفقاً للوائح دائرة الأراضي والأملاك ومؤسسة التنظيم العقاري (RERA)، يتأهل المستثمرون الأجانب للحصول على إقامة ذهبية متجددة لمدة 10 سنوات عند شراء عقار أو محفظة عقارية بقيمة لا تقل عن 2 مليون درهم إماراتي (حوالي 544,500 دولار أمريكي).",
+        visaH2: "المتطلبات الأساسية:",
+        visaReq1: "الحد الأدنى للقيمة: يجب أن تكون القيمة الإجمالية لمحفظتك العقارية 2 مليون درهم أو أكثر. يمكن الجمع بين عقارات متعددة للتأهل.",
+        visaReq2: "العقارات المرهونة: في حال رهن العقار، يجب توفير خطاب عدم ممانعة (NOC) من البنك، شريطة أن يكون المالك قد سدد 2 مليون درهم كدفعة مباشرة من قيمة العقار.",
+        visaReq3: "الملكية المشتركة: يمكن للزوجين المشاركة في ملكية عقار واحد بقيمة 2 مليون درهم فما فوق للتأهل معاً.",
+        visaH3: "خطوات التقديم بالتفصيل",
+        visaP2: "1. شراء العقار: تملك عقار جاهز أو قيد الإنشاء (لدى مطور مسجل وله حساب ضمان معتمد).\n2. إصدار الملكية: الحصول على سند الملكية الرسمي من دائرة الأراضي والأملاك في دبي (DLD).\n3. تقديم الطلب: تقديم المعاملة عبر تطبيق الدائرة أو الهيئة الاتحادية للهوية والجنسية والجمارك وأمن المنافذ (ICP).\n4. الفحص الطبي والتبصيم: إجراء الفحص الطبي في المراكز المعتمدة والتبصيم لإصدار الهوية الإماراتية وتثبيت الإقامة.",
+        visaCta: "استشر وسيط الإقامة الذهبية الآن",
+        
+        // Article - ROI
+        roiTitle: "العقارات قيد الإنشاء ضد الجاهزة",
+        roiSubtitle: "تحليل عوائد الإيجار ونمو رأس المال في دبي",
+        roiH1: "العقارات الجاهزة: دخل إيجاري فوري مباشر",
+        roiP1: "تعد العقارات الجاهزة (المسلمة مفتاحاً) خياراً جذاباً جداً للمستثمرين التقليديين الباحثين عن الدخل المستمر. من خلال شراء عقار جاهز في مناطق راسخة مثل دبي مارينا أو داون تاون دبي، يمكنك تأجير الوحدة فوراً وتلقي عوائد الإيجار. تحقق دبي مارينا عوائد إيجارية إجمالية تتراوح بين 6% و 8% سنويًا، وهي أعلى بكثير من الأسواق العالمية.",
+        roiH2: "العقارات قيد الإنشاء: الحد الأقصى لأرباح نمو رأس المال",
+        roiP2: "تتميز العقارات قيد الإنشاء (تحت التطوير) بأعلى احتمالية لنمو قيمة رأس المال. يشتري المستثمرون مباشرة من المطورين بأسعار الإطلاق الأولى (مبيعات كبار الشخصيات VVIP)، مع خطط سداد ميسرة (مثل 60/40 أو 70/30) تمتد طوال فترة البناء. ومع تطور المنطقة، تزداد قيمة العقار بنسبة كبيرة جداً عند التسليم.",
+        roiComparisonTitle: "مقارنة سريعة:",
+        thMetric: "المعيار الاستثماري",
+        thOffplan: "قيد الإنشاء",
+        thReady: "عقار جاهز",
+        tdPrice: "سعر الدخول",
+        tdPriceVal1: "أقل (أسعار ما قبل الإطلاق)",
+        tdPriceVal2: "أسعار السوق الحالية",
+        tdYield: "العائد الإيجاري",
+        tdYieldVal1: "مؤجل (عند اكتمال التسليم)",
+        tdYieldVal2: "فوري (6%-8% سنويًا)",
+        tdCap: "نمو رأس المال",
+        tdCapVal1: "أعلى (20% إلى 35% زيادة قيمة)",
+        tdCapVal2: "مستقر (حسب نمو السوق العام)",
+        roiCta: "احصل على جدول دراسات الجدوى",
+        
+        // Article - Luxury Areas
+        areasTitle: "أفضل 5 مناطق فاخرة في دبي",
+        areasSubtitle: "أرقى المجمعات السكنية لشراء الفلل العائلية والعقارات الخاصة",
+        areasH1: "1. ميدان (المجمع الحادي عشر - District 11)",
+        areasP1: "تمثل منطقة ميدان الجيل القادم للعيش الفاخر في الفلل. تحتضن مجمعات رائدة مثل Knightsbridge، وتوفر مساحات خضراء وبحيرات كريستالية شاسعة على بعد 15 دقيقة فقط من داون تاون دبي. نوصي بها للعائلات التي تبحث عن الفلل الذكية المستدامة.",
+        areasH2: "2. دبي مارينا",
+        areasP2: "لعشاق الإطلالات البحرية ونوادي اليخوت، توفر دبي مارينا شقق بنتهاوس حصرية وفللاً شاطئية مخصصة. تتميز بعوائد إيجارية عالية، وقرب مباشر من الشاطئ والمناطق الحيوية والتجارية في الإمارة.",
+        areasH3: "3. حديقة زعبيل / وصل 1",
+        areasP3: "تعتبر وصلاً فعالاً بين دبي القديمة والجديدة، وتوفر مجمعات شقق فاخرة تطل مباشرة على حديقة زعبيل وبرواز دبي، مما يجمع العيش الهادئ مع الاتصال المركزي بكافة الطرق الرئيسية.",
+        areasCta: "تصفح الفلل الحصرية المتوفرة",
+
         fDevelop: 'Designed & Programmed by <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">Marketing Team</span>'
     }
 };
@@ -524,9 +660,18 @@ function updateUI() {
 }
 
 function toggleLanguage() {
-    currentLang = currentLang === 'en' ? 'ar' : 'en';
-    localStorage.setItem('five_hills_lang', currentLang);
-    updateUI();
+    const isAr = window.location.pathname.includes('/ar/');
+    const pathParts = window.location.pathname.split('/');
+    const filename = pathParts.pop() || 'index.html';
+    const search = window.location.search;
+    
+    if (isAr) {
+        // Go to English (parent folder)
+        window.location.href = '../' + filename + search;
+    } else {
+        // Go to Arabic (ar subfolder)
+        window.location.href = 'ar/' + filename + search;
+    }
 }
 
 // Update WhatsApp Floating Link
@@ -592,7 +737,7 @@ function loadSingleProjectDetails() {
     
     const heroImg = document.getElementById('projectHeroImg');
     if (heroImg && data.images.length > 0) {
-        heroImg.src = data.images[0];
+        heroImg.src = getAssetPath(data.images[0]);
         heroImg.alt = langData.title;
     }
     
@@ -603,7 +748,7 @@ function loadSingleProjectDetails() {
             const item = document.createElement('div');
             item.className = 'gallery-grid-item';
             item.onclick = () => openLightbox(imgSrc);
-            item.innerHTML = `<img src="${imgSrc}" alt="${langData.title}">`;
+            item.innerHTML = `<img src="${getAssetPath(imgSrc)}" alt="${langData.title}">`;
             galleryContainer.appendChild(item);
         });
     }
@@ -713,7 +858,7 @@ function openLightbox(src) {
         currentLightboxIndex = 0;
     }
 
-    img.src = currentLightboxImages[currentLightboxIndex];
+    img.src = getAssetPath(currentLightboxImages[currentLightboxIndex]);
     lightbox.classList.add('active');
 }
 
@@ -732,7 +877,7 @@ function prevLightboxImage(event) {
     }
     
     const img = document.getElementById('lightboxImg');
-    if (img) img.src = currentLightboxImages[currentLightboxIndex];
+    if (img) img.src = getAssetPath(currentLightboxImages[currentLightboxIndex]);
 }
 
 function nextLightboxImage(event) {
@@ -745,7 +890,7 @@ function nextLightboxImage(event) {
     }
     
     const img = document.getElementById('lightboxImg');
-    if (img) img.src = currentLightboxImages[currentLightboxIndex];
+    if (img) img.src = getAssetPath(currentLightboxImages[currentLightboxIndex]);
 }
 
 // Dual Booking Modals
@@ -791,19 +936,19 @@ function updateThemeUI() {
         if (themeBtn) themeBtn.innerText = '🌙';
         if (themeBtnMob) themeBtnMob.innerText = '🌙';
         if (headerLogoImg) {
-            headerLogoImg.src = 'images/project-images/logo.webp';
+            headerLogoImg.src = getAssetPath('images/project-images/logo.webp');
         }
         if (footerLogoImg) {
-            footerLogoImg.src = 'images/project-images/logo222-dark.webp';
+            footerLogoImg.src = getAssetPath('images/project-images/logo222-dark.webp');
         }
     } else {
         if (themeBtn) themeBtn.innerText = '☀️';
         if (themeBtnMob) themeBtnMob.innerText = '☀️';
         if (headerLogoImg) {
-            headerLogoImg.src = 'images/project-images/logo-wide.webp';
+            headerLogoImg.src = getAssetPath('images/project-images/logo-wide.webp');
         }
         if (footerLogoImg) {
-            footerLogoImg.src = 'images/project-images/logo222.webp';
+            footerLogoImg.src = getAssetPath('images/project-images/logo222.webp');
         }
     }
 }

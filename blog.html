@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png?v=1.1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Real Estate Blog | 5 Hills Real Estate</title>
+    <meta name="description" content="Read expert insights on Dubai's luxury real estate market. Golden Visa guides, off-plan vs ready ROI analyses, and community reviews.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=1.17">
+</head>
+<body>
+
+    <!-- --- Premium Luxury Header --- -->
+    <header class="site-header" id="mainHeader">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">
+                <img src="images/project-images/logo-wide.webp" alt="5 Hills Logo" style="height: 56px; width: auto; object-fit: contain;">
+            </a>
+            
+            <nav class="main-navigation">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+                    <li><a href="projects.html" class="nav-link" id="navFeatured">Projects</a></li>
+                    <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+                    <li><a href="team.html" class="nav-link" id="navTeam">Our Team</a></li>
+                    <li><a href="blog.html" class="nav-link active" id="navBlog">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="lang-switch" id="langToggleBtn" onclick="toggleLanguage()">العربية</button>
+                <button class="theme-switch-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️</button>
+                <a href="contact.html" class="btn-gold" style="padding: 10px 20px; font-size: 0.8rem;" id="headerCtaBtn">Inquire Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Page Banner --- -->
+    <section class="page-banner">
+        <div class="container">
+            <h1 class="page-banner-title gold-gradient-text" id="blogBannerTitle">Dubai Real Estate Blog</h1>
+            <p class="page-banner-subtitle" id="blogBannerSubtitle">Expert insights, guides, and investment analyses from Dubai's leading advisors</p>
+        </div>
+    </section>
+
+    <!-- --- Blog Articles Grid --- -->
+    <section class="section-padding">
+        <div class="container">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+                
+                <!-- Article 1: Golden Visa -->
+                <div class="property-card" style="border-radius: 20px; overflow:hidden;">
+                    <div class="card-media" style="height: 240px; position:relative; overflow:hidden;">
+                        <img src="images/project-images/blog-golden-visa.webp" alt="Dubai Golden Visa Guide" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;" loading="lazy">
+                        <span class="card-badge badge-ready" id="lblGuideTag">GUIDE</span>
+                    </div>
+                    <div class="card-content" style="padding: 24px;">
+                        <h3 style="font-family:var(--font-heading); font-size:1.3rem; font-weight:600; color:var(--color-text-bright); margin-bottom:10px;" id="art1Title">How to Secure the Dubai Golden Visa via Property</h3>
+                        <p style="font-size:0.9rem; color:var(--color-text-muted); line-height:1.6; margin-bottom: 20px;" id="art1Desc">Learn the step-by-step requirements to obtain a 10-year residency Golden Visa in the UAE through real estate investments of AED 2M+.</p>
+                        <a href="blog-golden-visa.html" class="btn-gold" style="padding: 8px 18px; font-size:0.75rem;" id="art1Btn">Read Article</a>
+                    </div>
+                </div>
+
+                <!-- Article 2: ROI -->
+                <div class="property-card" style="border-radius: 20px; overflow:hidden;">
+                    <div class="card-media" style="height: 240px; position:relative; overflow:hidden;">
+                        <img src="images/project-images/blog-roi.webp" alt="Off-plan vs Ready Properties ROI" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;" loading="lazy">
+                        <span class="card-badge badge-ready" id="lblAnalysisTag">ANALYSIS</span>
+                    </div>
+                    <div class="card-content" style="padding: 24px;">
+                        <h3 style="font-family:var(--font-heading); font-size:1.3rem; font-weight:600; color:var(--color-text-bright); margin-bottom:10px;" id="art2Title">Off-Plan vs. Ready Properties: Which has Better ROI?</h3>
+                        <p style="font-size:0.9rem; color:var(--color-text-muted); line-height:1.6; margin-bottom: 20px;" id="art2Desc">An in-depth analysis of rental yields, capital appreciation rates, and tax-free returns between ready and off-plan assets in Dubai.</p>
+                        <a href="blog-offplan-vs-ready.html" class="btn-gold" style="padding: 8px 18px; font-size:0.75rem;" id="art2Btn">Read Article</a>
+                    </div>
+                </div>
+
+                <!-- Article 3: Neighborhoods -->
+                <div class="property-card" style="border-radius: 20px; overflow:hidden;">
+                    <div class="card-media" style="height: 240px; position:relative; overflow:hidden;">
+                        <img src="images/project-images/blog-areas.webp" alt="Top Luxury Areas in Dubai" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;" loading="lazy">
+                        <span class="card-badge badge-ready" id="lblReviewTag">REVIEW</span>
+                    </div>
+                    <div class="card-content" style="padding: 24px;">
+                        <h3 style="font-family:var(--font-heading); font-size:1.3rem; font-weight:600; color:var(--color-text-bright); margin-bottom:10px;" id="art3Title">Top 5 Luxury Areas in Dubai to Buy a Family Villa</h3>
+                        <p style="font-size:0.9rem; color:var(--color-text-muted); line-height:1.6; margin-bottom: 20px;" id="art3Desc">Exploring Meydan, Dubai Marina, Zabeel Park, Downtown Dubai, and Zabeel for premium family villa investments.</p>
+                        <a href="blog-luxury-areas.html" class="btn-gold" style="padding: 8px 18px; font-size:0.75rem;" id="art3Btn">Read Article</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Complete Luxury Footer --- -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="site-logo">
+                    <img src="images/project-images/logo222.webp" alt="5 Hills Logo" style="height: 120px; width: auto; object-fit: contain;">
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleQuick">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" id="flHome">Home</a></li>
+                    <li><a href="projects.html" id="flProjects">Projects Portfolio</a></li>
+                    <li><a href="about.html" id="flAbout">About Our Agency</a></li>
+                    <li><a href="about.html#propertyManagement" id="flMgmt">Property Management</a></li>
+                    <li><a href="team.html" id="flTeam">Our Leadership</a></li>
+                    <li><a href="blog.html" id="flBlog">Real Estate Blog</a></li>
+                    <li><a href="contact.html" id="flContact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleAreas">Key Areas</h4>
+                <ul class="footer-links">
+                    <li><a href="projects.html?location=downtown-dubai">Downtown Dubai</a></li>
+                    <li><a href="projects.html?location=dubai-marina">Dubai Marina</a></li>
+                    <li><a href="projects.html?location=meydan">Meydan</a></li>
+                    <li><a href="projects.html?location=wasl-1">Wasl 1 / Zabeel</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleContact">Contact Info</h4>
+                <div class="footer-contact-item" id="fPhone"><strong>Phone:</strong> +971 50 893 0996</div>
+                <div class="footer-contact-item" id="fWhatsapp"><strong>WhatsApp:</strong> <a href="https://wa.me/971564622103?text=Hello,%20I%20am%20interested%20in%20Dubai%20Luxury%20Properties" target="_blank" style="color: inherit; text-decoration: underline;">+971 56 462 2103</a></div>
+                <div class="footer-contact-item" id="fEmail"><strong>Email:</strong> info@fivehills.ae</div>
+                <div class="footer-contact-item" id="fAddress"><strong>Office:</strong> Marina Plaza, Suite 2402, Dubai Marina, Dubai, UAE</div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p id="fCopy">&copy; 2026 5 Hills Real Estate. All rights reserved. Registered with RERA No. 12849.</p>
+            <p id="fDevelop">Designed & Programmed by <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">Marketing Team</span></p>
+        </div>
+    </footer>
+
+    <!-- --- Floating WhatsApp Widget --- -->
+    <a href="https://wa.me/971564622103?text=Hello,%20I%20am%20interested%20in%20Dubai%20Luxury%20Properties" class="whatsapp-widget" id="whatsappFloatingBtn" target="_blank">
+        <svg viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+        <span>WhatsApp Us</span>
+    </a>
+
+    <!-- --- JS Core Functions Script --- -->
+    <script src="projects-data.js?v=1.2"></script>
+    <script src="app.js?v=1.15"></script>
+</body>
+</html>
