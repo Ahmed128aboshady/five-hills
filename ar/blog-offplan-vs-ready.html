@@ -1,42 +1,65 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <link rel="icon" type="image/png" href="../favicon.png?v=1.1">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Off-Plan vs. Ready Properties: ROI Analysis | 5 Hills</title>
-    <meta name="description" content="Detailed analysis of rental yields, capital appreciation, and payment plans for off-plan and ready properties in Dubai.">
-    
-    <!-- Google Fonts -->
+    <!-- --- Structured Data (JSON-LD) for Local SEO --- -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "5 Hills Real Estate",
+      "image": "https://ahmed128aboshady.github.io/five-hills/images/project-images/logo222.webp",
+      "@id": "https://ahmed128aboshady.github.io/five-hills/",
+      "url": "https://ahmed128aboshady.github.io/five-hills/",
+      "telephone": "+971508930996",
+      "priceRange": "$$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Marina Plaza, Suite 2402, Dubai Marina",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubai",
+        "postalCode": "00000",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.0768,
+        "longitude": 55.1416
+      },
+      "sameAs": [
+        "https://www.facebook.com/fivehills.ae",
+        "https://www.instagram.com/5hills.ae",
+        "https://www.tiktok.com/@fivehills.ae",
+        "https://wa.me/971564622103"
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العقارات قيد الإنشاء ضد العقارات الجاهزة: مقارنة العوائد الاستثمارية | 5 هيلز</title>
+    <meta name="description" content="تحليل مقارن مفصل لعوائد الإيجار ومعدلات نمو رأس المال وخطط السداد للعقارات قيد الإنشاء والجاهزة في دبي.">
     <link rel="stylesheet" href="../style.css?v=1.18">
 </head>
 <body>
-
-    <!-- --- Premium Header --- -->
     <header class="site-header" id="mainHeader">
         <div class="header-container">
             <a href="index.html" class="site-logo">
                 <img src="../images/project-images/logo-wide.webp" alt="5 Hills Logo" style="height: 56px; width: auto; object-fit: contain;">
             </a>
-            
             <nav class="main-navigation" id="mainNav">
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link " id="navHome">Home</a></li>
-                    <li><a href="projects.html" class="nav-link " id="navFeatured">Projects</a></li>
-                    <li><a href="about.html" class="nav-link " id="navAbout">About Us</a></li>
-                    <li><a href="team.html" class="nav-link " id="navTeam">Our Team</a></li>
+                    <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+                    <li><a href="projects.html" class="nav-link" id="navFeatured">Projects</a></li>
+                    <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+                    <li><a href="team.html" class="nav-link" id="navTeam">Our Team</a></li>
                     <li><a href="blog.html" class="nav-link active" id="navBlog">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link " id="navContact">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
                 </ul>
             </nav>
-            
             <div class="header-actions">
-                <button class="lang-switch" id="langToggleBtn" onclick="toggleLanguage()">العربية</button>
+                <button class="lang-switch" id="langToggleBtn" onclick="toggleLanguage()">English</button>
                 <button class="theme-switch-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️</button>
                 <a href="contact.html" class="btn-gold" style="padding: 10px 20px; font-size: 0.8rem;" id="headerCtaBtn">Inquire Now</a>
             </div>
@@ -45,56 +68,83 @@
 
     <section class="page-banner" style="min-height: 40vh;">
         <div class="container">
-            <h1 class="page-banner-title gold-gradient-text" id="roiTitle">Off-Plan vs. Ready Properties</h1>
-            <p class="page-banner-subtitle" id="roiSubtitle">Analyzing the highest yields and capital appreciation in Dubai</p>
+            <span class="section-tagline">تحليل السوق</span>
+            <h1 class="page-banner-title gold-gradient-text">العقارات قيد الإنشاء ضد الجاهزة</h1>
+            <p class="page-banner-subtitle">تحليل العوائد الاستثمارية ونمو رأس المال في سوق دبي العقاري</p>
         </div>
     </section>
 
     <section class="section-padding">
-        <div class="container" style="max-width: 800px; line-height: 1.8; color: var(--color-text-muted);">
+        <div class="container" style="max-width: 850px; line-height: 1.8; color: var(--color-text-muted); font-size: 1.05rem;">
             <img src="../images/project-images/blog-roi.webp" alt="Dubai Property Financial Analytics" style="width:100%; border-radius:16px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);" loading="lazy">
             
-            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin-bottom:20px;" id="roiH1">Ready Properties: Instant Rental Income</h2>
-            <p id="roiP1">Ready properties (key-in-hand) are highly attractive for traditional income-focused investors. By buying a completed property in established areas like Dubai Marina or Downtown Dubai, you can tenant the unit and receive rental payments immediately. Dubai Marina regularly yields 6% to 8% gross annual rents, which is higher than international benchmarks.</p>
-            
-            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 30px 0 20px;" id="roiH2">Off-Plan Properties: Maximum Capital Gains</h2>
-            <p id="roiP2">Off-plan properties (under construction) offer the highest potential for capital appreciation. Investors buy directly from developers at pre-launch pricing (VVIP releases), with structured payment plans (e.g. 60/40 or 70/30) extending throughout construction. As the community develops, the property value increases significantly by handover.</p>
+            <p>أحد أكثر الأسئلة شيوعاً التي يطرحها المستثمرون العقاريون الأجانب في دبي هو: **"هل أشتري عقاراً جاهزاً أم أستثمر في مشروع قيد الإنشاء؟"** كلا الاستراتيجيتين تقدمان عوائد ممتازة معفاة من الضرائب، ولكنهما تخدمان أهدافاً استثمارية مختلفة. في هذا الدليل، نقوم بتحليل الأصول الجاهزة وقيد الإنشاء في سياق سوق دبي الحالي، باستخدام أمثلة حقيقية من محفظتنا لمساعدتك في اتخاذ القرار الاستثماري الصحيح.</p>
 
-            <h3 style="color:var(--color-text-bright); margin: 30px 0 15px;" id="roiComparisonTitle">Quick Comparison:</h3>
-            <table style="width:100%; border-collapse:collapse; margin-bottom:30px; border:1px solid var(--color-border);">
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 40px 0 20px; font-size: 1.8rem;">1. العقارات الجاهزة: عوائد إيجارية فورية وسيولة عالية</h2>
+            <p>العقارات الجاهزة (المسلمة مفتاحاً) هي الخيار الأمثل للمستثمرين الذين يبحثون عن تدفق نقدي فوري ومخاطر أقل. عند شراء أصل جاهز، فإنك تشتري منتجاً ملموساً يمكنك معاينته وتأجيره والبدء في تحقيق الأرباح منه فوراً.</p>
+            
+            <h3 style="color:var(--color-text-bright); margin: 25px 0 15px;">الخصائص الاستثمارية الرئيسية:</h3>
+            <ul style="padding-left: 20px; margin-bottom: 24px; display:flex; flex-direction:column; gap:10px;">
+                <li><strong>تدفق نقدي فوري:</strong> بمجرد إتمام عملية نقل الملكية، تصبح الوحدة جاهزة للتأجير. وفي المناطق الحيوية ذات الطلب المرتفع، يمكنك العثور على مستأجرين خلال أيام قليلة.</li>
+                <li><strong>عوائد إيجار إجمالية مرتفعة:</strong> تحقق العقارات الجاهزة في المجمعات السكنية المتميزة عوائد تتراوح بين <strong>6% و 8% كعائد إيجار سنوي إجمالي</strong>. وخير مثال من محفظتنا هو مشروع <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">1 Residences</a> في منطقة وصل 1. تحظى هذه الشقق الجاهزة للسكن بإقبال كبير من المستأجرين من الشركات نظراً لقربها المباشر من محطة مترو ماكس وحديقة زعبيل، مما يضمن معدلات إشغال مرتفعة للغاية وعوائد مستقرة.</li>
+                <li><strong>تسهيلات تمويلية ميسرة:</strong> تتوفر القروض العقارية بسهولة للعقارات الجاهزة بنسبة تصل إلى 80% للمقيمين في دولة الإمارات و50% لغير المقيمين.</li>
+            </ul>
+
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 40px 0 20px; font-size: 1.8rem;">2. العقارات قيد الإنشاء (Off-Plan): أقصى نمو لرأس المال والأرباح</h2>
+            <p>العقارات قيد الإنشاء هي الوحدات التي يتم شراؤها مباشرة من المطورين أثناء مرحلة التشييد والبناء. يفضل هذا الخيار المستثمرون الذين يستهدفون مضاعفة رأس المال والاستفادة من فوارق الأسعار عند الاكتمال.</p>
+            
+            <h3 style="color:var(--color-text-bright); margin: 25px 0 15px;">الخصائص الاستثمارية الرئيسية:</h3>
+            <ul style="padding-left: 20px; margin-bottom: 24px; display:flex; flex-direction:column; gap:10px;">
+                <li><strong>سعر شراء منخفض عند البداية:</strong> يطرح المطورون المشاريع بأسعار الإطلاق الأولى المخفضة (مبيعات VVIP). الشراء في هذه المرحلة يضمن لك الحصول على الأصل بأقل تكلفة ممكنة للقدم المربع.</li>
+                <li><strong>خطط سداد مرنة بدون فوائد:</strong> بدلاً من سداد كامل المبلغ مقدماً، توفر المشاريع قيد الإنشاء خطط سداد ميسرة ممتدة طوال فترة البناء (مثلاً 60% أثناء البناء و40% عند التسليم) بدون أي فوائد بنكية.</li>
+                <li><strong>نمو استثنائي في قيمة رأس المال:</strong> مع تقدم أعمال البناء واكتمال المرافق، يرتفع سعر العقار بشكل كبير. وبحلول موعد التسليم، يمكن أن يتراوح نمو قيمة رأس المال بين <strong>20% و 35%</strong>. والمثال الأبرز هنا هو مشروع <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">Knightsbridge Phase 1</a> في ميدان، حيث يستفيد المستثمرون من التصميمات الفاخرة على الطراز الإنجليزي والتقنيات الذكية في منطقة تتوسع بسرعة فائقة، مما يضمن نمواً كبيراً في قيمة العقار عند التسليم.</li>
+            </ul>
+
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 40px 0 20px; font-size: 1.8rem;">3. جدول مقارنة استثمارية مبسط</h2>
+            <table style="width:100%; border-collapse:collapse; margin: 30px 0; border:1px solid var(--color-border); font-size:0.95rem;">
                 <thead>
                     <tr style="background:var(--color-bg-card); color:var(--color-text-bright); border-bottom:1px solid var(--color-border);">
-                        <th style="padding:12px; text-align:left;" id="thMetric">Metric</th>
-                        <th style="padding:12px; text-align:left;" id="thOffplan">Off-Plan</th>
-                        <th style="padding:12px; text-align:left;" id="thReady">Ready</th>
+                        <th style="padding:15px; text-align:right; font-weight: 600;">المعيار الاستثماري</th>
+                        <th style="padding:15px; text-align:right; font-weight: 600;">العقارات قيد الإنشاء</th>
+                        <th style="padding:15px; text-align:right; font-weight: 600;">العقارات الجاهزة</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr style="border-bottom:1px solid var(--color-border);">
-                        <td style="padding:12px;" id="tdPrice">Entry Price</td>
-                        <td style="padding:12px;" id="tdPriceVal1">Lower (Pre-launch rates)</td>
-                        <td style="padding:12px;" id="tdPriceVal2">Premium market rates</td>
+                        <td style="padding:15px; font-weight: 500;">تكلفة الشراء الأولى</td>
+                        <td style="padding:15px;">أقل (أسعار الإطلاق الأولى + أقساط ميسرة)</td>
+                        <td style="padding:15px;">أعلى (أسعار السوق الحالية + سداد فوري)</td>
                     </tr>
                     <tr style="border-bottom:1px solid var(--color-border);">
-                        <td style="padding:12px;" id="tdYield">Rental Yield</td>
-                        <td style="padding:12px;" id="tdYieldVal1">Delayed (At handover)</td>
-                        <td style="padding:12px;" id="tdYieldVal2">Immediate (6%-8% annual)</td>
+                        <td style="padding:15px; font-weight: 500;">بدء عوائد الإيجار</td>
+                        <td style="padding:15px;">مؤجل (عند اكتمال تسليم المشروع وتأجيره)</td>
+                        <td style="padding:15px;">فوري (تدفق نقدي مباشر بمجرد نقل الملكية)</td>
                     </tr>
                     <tr style="border-bottom:1px solid var(--color-border);">
-                        <td style="padding:12px;" id="tdCap">Capital Gain</td>
-                        <td style="padding:12px;" id="tdCapVal1">Higher (20%-35% appreciation)</td>
-                        <td style="padding:12px;" id="tdCapVal2">Steady (Based on market growth)</td>
+                        <td style="padding:15px; font-weight: 500;">فرص نمو رأس المال</td>
+                        <td style="padding:15px;">عالية جداً (20% إلى 35% زيادة قيمة)</td>
+                        <td style="padding:15px;">معتدلة (حسب نمو السوق العام المستقر)</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--color-border);">
+                        <td style="padding:15px; font-weight: 500;">التأهل للإقامة الذهبية</td>
+                        <td style="padding:15px;">نعم (إذا تجاوز الاستثمار 2 مليون درهم)</td>
+                        <td style="padding:15px;">نعم (إذا تجاوز الاستثمار 2 مليون درهم)</td>
                     </tr>
                 </tbody>
             </table>
-            
-            <div style="text-align:center; margin-top:50px;">
-                <a href="contact.html" class="btn-gold" style="padding:15px 35px; font-size:0.9rem;" id="roiCta">Get ROI Projections</a>
+
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 40px 0 20px; font-size: 1.8rem;">4. نصيحة خبير الاستثمار العقاري</h2>
+            <p>إذا كان هدفك الأساسي هو **تنمية ثروتك على المدى الطويل** ولديك أفق استثماري يمتد من 3 إلى 5 سنوات، فإن **العقارات قيد الإنشاء** هي الخيار الأنسب لك بفضل مرونة السداد وفرص الأرباح المرتفعة. أما إذا كنت تبحث عن **عوائد إيجارية مستقرة وفورية** تدعم دخلك الشهري الحالي، فإن **العقارات الجاهزة** في مناطق ذات طلب عالٍ مثل دبي مارينا أو وصل 1 هي خيارك الأفضل.</p>
+
+            <div style="background:var(--color-bg-card); border:1px solid var(--color-border); border-radius:16px; padding:30px; margin-top:40px; text-align:center;">
+                <h3 style="font-family:var(--font-heading); color:var(--color-text-bright); margin-bottom:15px;">هل تحتاج لجدول عوائد استثمارية (ROI) مخصص؟</h3>
+                <p style="font-size:0.95rem; margin-bottom:20px;">في 5 هيلز، نقوم بتحليل ومقارنة أفضل الخيارات الجاهزة وقيد الإنشاء التي تناسب ميزانيتك. اتصل بنا اليوم للحصول على دراسة جدوى مفصلة مجانية لمشروعك المستهدف.</p>
+                <a href="contact.html" class="btn-gold" style="padding:15px 35px; font-size:0.9rem;">ناقش خياراتك الاستثمارية معنا</a>
             </div>
         </div>
     </section>
 
-    <!-- --- Footer --- -->
+    <!-- --- Complete Luxury Footer --- -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-col footer-about">

@@ -2,38 +2,62 @@
 <html lang="en" dir="ltr">
 <head>
     <link rel="icon" type="image/png" href="favicon.png?v=1.1">
+    <!-- --- Structured Data (JSON-LD) for Local SEO --- -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "5 Hills Real Estate",
+      "image": "https://ahmed128aboshady.github.io/five-hills/images/project-images/logo222.webp",
+      "@id": "https://ahmed128aboshady.github.io/five-hills/",
+      "url": "https://ahmed128aboshady.github.io/five-hills/",
+      "telephone": "+971508930996",
+      "priceRange": "$$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Marina Plaza, Suite 2402, Dubai Marina",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubai",
+        "postalCode": "00000",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.0768,
+        "longitude": 55.1416
+      },
+      "sameAs": [
+        "https://www.facebook.com/fivehills.ae",
+        "https://www.instagram.com/5hills.ae",
+        "https://www.tiktok.com/@fivehills.ae",
+        "https://wa.me/971564622103"
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top 5 Luxury Areas in Dubai to Buy a Family Villa | 5 Hills</title>
-    <meta name="description" content="A guide to the best residential villa communities in Dubai, including Meydan, Dubai Marina, Zabeel, and Downtown Dubai.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet -->
+    <meta name="description" content="Discover Dubai's top luxury villa communities for families. Explore Meydan, Jumeirah Golf Estates, Wasl 1, and Dubai Marina.">
     <link rel="stylesheet" href="style.css?v=1.18">
 </head>
 <body>
-
     <header class="site-header" id="mainHeader">
         <div class="header-container">
             <a href="index.html" class="site-logo">
                 <img src="images/project-images/logo-wide.webp" alt="5 Hills Logo" style="height: 56px; width: auto; object-fit: contain;">
             </a>
-            
             <nav class="main-navigation" id="mainNav">
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link " id="navHome">Home</a></li>
-                    <li><a href="projects.html" class="nav-link " id="navFeatured">Projects</a></li>
-                    <li><a href="about.html" class="nav-link " id="navAbout">About Us</a></li>
-                    <li><a href="team.html" class="nav-link " id="navTeam">Our Team</a></li>
+                    <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+                    <li><a href="projects.html" class="nav-link" id="navFeatured">Projects</a></li>
+                    <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+                    <li><a href="team.html" class="nav-link" id="navTeam">Our Team</a></li>
                     <li><a href="blog.html" class="nav-link active" id="navBlog">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link " id="navContact">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
                 </ul>
             </nav>
-            
             <div class="header-actions">
                 <button class="lang-switch" id="langToggleBtn" onclick="toggleLanguage()">العربية</button>
                 <button class="theme-switch-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️</button>
@@ -44,31 +68,47 @@
 
     <section class="page-banner" style="min-height: 40vh;">
         <div class="container">
-            <h1 class="page-banner-title gold-gradient-text" id="areasTitle">Top 5 Luxury Areas in Dubai</h1>
-            <p class="page-banner-subtitle" id="areasSubtitle">The best premium communities to buy family villas and custom estates</p>
+            <span class="section-tagline">REVIEW</span>
+            <h1 class="page-banner-title gold-gradient-text">Top 5 Luxury Areas in Dubai to Buy a Family Villa</h1>
+            <p class="page-banner-subtitle">The ultimate guide to the UAE's most prestigious family villa neighborhoods</p>
         </div>
     </section>
 
     <section class="section-padding">
-        <div class="container" style="max-width: 800px; line-height: 1.8; color: var(--color-text-muted);">
+        <div class="container" style="max-width: 850px; line-height: 1.8; color: var(--color-text-muted); font-size: 1.05rem;">
             <img src="images/project-images/blog-areas.webp" alt="Dubai Luxury Residential Villa Suburb" style="width:100%; border-radius:16px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);" loading="lazy">
             
-            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin-bottom:20px;" id="areasH1">1. Meydan (District 11)</h2>
-            <p id="areasP1">Meydan represents the next generation of luxury villa living. Home to top-tier developments like Knightsbridge, it offers vast spaces, green parklands, and crystal lagoons just 15 minutes away from Downtown Dubai. Highly recommended for families seeking sustainable, high-tech smart villas.</p>
-            
-            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 30px 0 20px;" id="areasH2">2. Dubai Marina</h2>
-            <p id="areasP2">For those who prefer waterfront properties and yacht club access, Dubai Marina provides exclusive penthouses and custom marina-villas. It boasts strong rental yields, direct beach access, and immediate proximity to Dubai's primary commercial and retail zones.</p>
+            <p>Dubai is globally famous for its luxury property sector. For high-net-worth families, choosing the right neighborhood is just as crucial as finding the perfect property. From green golf course estates to modern lagoon-front residences, Dubai offers diverse premium neighborhoods. In this guide, we review the top 5 luxury villa areas in Dubai for families and highlight key properties from the 5 Hills portfolio.</p>
 
-            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 30px 0 20px;" id="areasH3">3. Zabeel Park / Wasl 1</h2>
-            <p id="areasP3">Providing a unique bridge between Old and New Dubai, Zabeel and Wasl 1 offer luxury apartments and townhouses with views of Zabeel Park and the Dubai Frame. It combines central connectivity with green open-space living.</p>
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 30px 0 15px; font-size: 1.6rem;">1. Meydan (Meydan District 11)</h2>
+            <p>Meydan represents the next generation of luxury villa living in Dubai. Located close to Downtown Dubai (12-15 minutes), it combines green parklands, crystalline lagoons, and contemporary design. It is highly sought after by modern families who value smart-home automation and eco-friendly features.
+            <br><strong>Key Projects:</strong> Our signature listing, <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">Knightsbridge Phase 1</a>, offers English-style luxury smart villas starting from AED 8.5 Million, as well as <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">Core Villas</a> and <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">Pinewood Estates</a>.</p>
             
-            <div style="text-align:center; margin-top:50px;">
-                <a href="contact.html" class="btn-gold" style="padding:15px 35px; font-size:0.9rem;" id="areasCta">Explore Exclusive Villa Listings</a>
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 30px 0 15px; font-size: 1.6rem;">2. Dubai Marina (Waterfront Estates)</h2>
+            <p>If you prefer seaside living, yacht harbor access, and vibrant metropolitan energy, Dubai Marina is the premier destination. While famous for skyscrapers, it also hosts exclusive waterfront townhouses and custom mansions.
+            <br><strong>Key Projects:</strong> Explore the <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">Corner 6-Bedroom Luxury Villa</a> and <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">P053 Premium Residences</a>, which provide unmatched marine views and luxury private docks.</p>
+
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 30px 0 15px; font-size: 1.6rem;">3. Jumeirah Golf Estates (JGE)</h2>
+            <p>Jumeirah Golf Estates is a world-class residential golf destination. Sprawling over championship golf courses (Earth and Fire courses), it is a peaceful, gated sanctuary filled with lush greenery and family-friendly walking trails.
+            <br><strong>Key Projects:</strong> Look no further than the newly launched <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">Cedarwood Estates South</a>, offering premium detached golf-course villas with modern, spacious floor plans designed for grand family living.</p>
+
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 30px 0 15px; font-size: 1.6rem;">4. Wasl 1 & Zabeel Park</h2>
+            <p>For families wishing to stay centrally connected between Downtown Dubai and the financial centers while enjoying green spaces, Wasl 1 is the ideal choice. Facing the historic Zabeel Park and the Dubai Frame, it offers central, premium parkside living.
+            <br><strong>Key Projects:</strong> Check out the ultra-luxury apartments at <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">Park Gate Residence</a>, <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">1 Residences</a>, and the exclusive townhouses at <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">Hillside Residences</a>.</p>
+
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 30px 0 15px; font-size: 1.6rem;">5. Downtown Dubai & Business Bay</h2>
+            <p>The beating heart of luxury and prestige. Downtown Dubai is perfect for those who want to be steps away from the Burj Khalifa, the Dubai Mall, and top international schools.
+            <br><strong>Key Projects:</strong> Our portfolio features premium residences like <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">Boulevard Park</a> and high-end luxury apartments by the developer <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">Ellington Project</a>.</p>
+
+            <div style="background:var(--color-bg-card); border:1px solid var(--color-border); border-radius:16px; padding:30px; margin-top:40px; text-align:center;">
+                <h3 style="font-family:var(--font-heading); color:var(--color-text-bright); margin-bottom:15px;">Discover Your Next Family Home</h3>
+                <p style="font-size:0.95rem; margin-bottom:20px;">At 5 Hills, we have access to exclusive, off-market villa inventory across Dubai's top golf and lagoon communities. Contact our luxury residential advisors today to schedule a viewing.</p>
+                <a href="contact.html" class="btn-gold" style="padding:15px 35px; font-size:0.9rem;">Browse Exclusive Listings</a>
             </div>
         </div>
     </section>
 
-    <!-- --- Footer --- -->
+    <!-- --- Complete Luxury Footer --- -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-col footer-about">

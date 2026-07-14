@@ -2,39 +2,62 @@
 <html lang="en" dir="ltr">
 <head>
     <link rel="icon" type="image/png" href="favicon.png?v=1.1">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Off-Plan vs. Ready Properties: ROI Analysis | 5 Hills</title>
-    <meta name="description" content="Detailed analysis of rental yields, capital appreciation, and payment plans for off-plan and ready properties in Dubai.">
-    
-    <!-- Google Fonts -->
+    <!-- --- Structured Data (JSON-LD) for Local SEO --- -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "5 Hills Real Estate",
+      "image": "https://ahmed128aboshady.github.io/five-hills/images/project-images/logo222.webp",
+      "@id": "https://ahmed128aboshady.github.io/five-hills/",
+      "url": "https://ahmed128aboshady.github.io/five-hills/",
+      "telephone": "+971508930996",
+      "priceRange": "$$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Marina Plaza, Suite 2402, Dubai Marina",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubai",
+        "postalCode": "00000",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.0768,
+        "longitude": 55.1416
+      },
+      "sameAs": [
+        "https://www.facebook.com/fivehills.ae",
+        "https://www.instagram.com/5hills.ae",
+        "https://www.tiktok.com/@fivehills.ae",
+        "https://wa.me/971564622103"
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Off-Plan vs. Ready Properties in Dubai: ROI Comparison | 5 Hills</title>
+    <meta name="description" content="A comprehensive analysis of rental yields, capital growth, and investment strategies for off-plan and ready properties in Dubai.">
     <link rel="stylesheet" href="style.css?v=1.18">
 </head>
 <body>
-
-    <!-- --- Premium Header --- -->
     <header class="site-header" id="mainHeader">
         <div class="header-container">
             <a href="index.html" class="site-logo">
                 <img src="images/project-images/logo-wide.webp" alt="5 Hills Logo" style="height: 56px; width: auto; object-fit: contain;">
             </a>
-            
             <nav class="main-navigation" id="mainNav">
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link " id="navHome">Home</a></li>
-                    <li><a href="projects.html" class="nav-link " id="navFeatured">Projects</a></li>
-                    <li><a href="about.html" class="nav-link " id="navAbout">About Us</a></li>
-                    <li><a href="team.html" class="nav-link " id="navTeam">Our Team</a></li>
+                    <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+                    <li><a href="projects.html" class="nav-link" id="navFeatured">Projects</a></li>
+                    <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+                    <li><a href="team.html" class="nav-link" id="navTeam">Our Team</a></li>
                     <li><a href="blog.html" class="nav-link active" id="navBlog">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link " id="navContact">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
                 </ul>
             </nav>
-            
             <div class="header-actions">
                 <button class="lang-switch" id="langToggleBtn" onclick="toggleLanguage()">العربية</button>
                 <button class="theme-switch-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️</button>
@@ -45,56 +68,83 @@
 
     <section class="page-banner" style="min-height: 40vh;">
         <div class="container">
-            <h1 class="page-banner-title gold-gradient-text" id="roiTitle">Off-Plan vs. Ready Properties</h1>
-            <p class="page-banner-subtitle" id="roiSubtitle">Analyzing the highest yields and capital appreciation in Dubai</p>
+            <span class="section-tagline">ANALYSIS</span>
+            <h1 class="page-banner-title gold-gradient-text">Off-Plan vs. Ready Properties: The ROI Battle</h1>
+            <p class="page-banner-subtitle">An in-depth guide to maximizing rental yield and capital appreciation in Dubai</p>
         </div>
     </section>
 
     <section class="section-padding">
-        <div class="container" style="max-width: 800px; line-height: 1.8; color: var(--color-text-muted);">
+        <div class="container" style="max-width: 850px; line-height: 1.8; color: var(--color-text-muted); font-size: 1.05rem;">
             <img src="images/project-images/blog-roi.webp" alt="Dubai Property Financial Analytics" style="width:100%; border-radius:16px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);" loading="lazy">
             
-            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin-bottom:20px;" id="roiH1">Ready Properties: Instant Rental Income</h2>
-            <p id="roiP1">Ready properties (key-in-hand) are highly attractive for traditional income-focused investors. By buying a completed property in established areas like Dubai Marina or Downtown Dubai, you can tenant the unit and receive rental payments immediately. Dubai Marina regularly yields 6% to 8% gross annual rents, which is higher than international benchmarks.</p>
-            
-            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 30px 0 20px;" id="roiH2">Off-Plan Properties: Maximum Capital Gains</h2>
-            <p id="roiP2">Off-plan properties (under construction) offer the highest potential for capital appreciation. Investors buy directly from developers at pre-launch pricing (VVIP releases), with structured payment plans (e.g. 60/40 or 70/30) extending throughout construction. As the community develops, the property value increases significantly by handover.</p>
+            <p>One of the most common questions from foreign real estate investors in Dubai is: <strong>"Should I buy a ready property or invest in an off-plan development?"</strong> Both strategies offer exceptional tax-free returns, but they serve different investment objectives. In this guide, we analyze ready and off-plan assets in the context of the current Dubai market, using real examples from our portfolio to help you make an informed decision.</p>
 
-            <h3 style="color:var(--color-text-bright); margin: 30px 0 15px;" id="roiComparisonTitle">Quick Comparison:</h3>
-            <table style="width:100%; border-collapse:collapse; margin-bottom:30px; border:1px solid var(--color-border);">
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 40px 0 20px; font-size: 1.8rem;">1. Ready Properties: Instant Rental Yields & Liquidity</h2>
+            <p>Completed, key-in-hand properties are ideal for investors seeking immediate cash flow and lower execution risk. By purchasing a ready asset, you buy a tangible product that you can inspect, tenant, and earn from immediately.</p>
+            
+            <h3 style="color:var(--color-text-bright); margin: 25px 0 15px;">Key Characteristics:</h3>
+            <ul style="padding-left: 20px; margin-bottom: 24px; display:flex; flex-direction:column; gap:10px;">
+                <li><strong>Immediate Cash Flow:</strong> Once the transfer is completed, the property is ready for tenancy. In high-demand central zones, you can secure tenants within days.</li>
+                <li><strong>High Gross Rental Yields:</strong> Ready properties in established communities yield between <strong>6% and 8% gross annual rents</strong>. A prime example in our portfolio is <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">1 Residences</a> in Wasl 1. These ready-to-move-in apartments are highly popular with corporate tenants due to their immediate proximity to the Max metro station and Zabeel Park, ensuring low vacancy rates and stable, premium monthly returns.</li>
+                <li><strong>Easier Financing:</strong> Mortgages are readily available for up to 80% of the property value for UAE residents and 50% for non-residents.</li>
+            </ul>
+
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 40px 0 20px; font-size: 1.8rem;">2. Off-Plan Properties: Maximum Capital Appreciation</h2>
+            <p>Off-plan properties are under-construction assets purchased directly from developers. This approach is highly favored by investors aiming for maximum capital gains rather than immediate cash flow.</p>
+            
+            <h3 style="color:var(--color-text-bright); margin: 25px 0 15px;">Key Characteristics:</h3>
+            <ul style="padding-left: 20px; margin-bottom: 24px; display:flex; flex-direction:column; gap:10px;">
+                <li><strong>Lower Purchase Price:</strong> Developers release off-plan projects at pre-launch pricing. Purchasing at this stage allows you to secure the asset at the lowest possible cost per square foot.</li>
+                <li><strong>Flexible Payment Plans:</strong> Rather than paying 100% upfront, off-plan projects offer interest-free payment plans. Typically, you pay a 10% or 20% down payment, followed by installments linked to construction milestones (e.g., 60/40 or 70/30).</li>
+                <li><strong>Substantial Capital Gains:</strong> As construction progresses and the community matures, the market value of the property increases. By the time of handover, capital appreciation can reach <strong>20% to 35%</strong>. A perfect example of this is the off-plan luxury development <a href="projects.html" style="color:var(--color-accent); text-decoration:underline;">Knightsbridge Phase 1</a> in Meydan. Investors benefit from premium English-style design and smart-home technology in a rapidly expanding luxury district, ensuring significant value growth by completion.</li>
+            </ul>
+
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 40px 0 20px; font-size: 1.8rem;">3. Strategic Comparison</h2>
+            <table style="width:100%; border-collapse:collapse; margin: 30px 0; border:1px solid var(--color-border); font-size:0.95rem;">
                 <thead>
                     <tr style="background:var(--color-bg-card); color:var(--color-text-bright); border-bottom:1px solid var(--color-border);">
-                        <th style="padding:12px; text-align:left;" id="thMetric">Metric</th>
-                        <th style="padding:12px; text-align:left;" id="thOffplan">Off-Plan</th>
-                        <th style="padding:12px; text-align:left;" id="thReady">Ready</th>
+                        <th style="padding:15px; text-align:left; font-weight: 600;">Metric</th>
+                        <th style="padding:15px; text-align:left; font-weight: 600;">Off-Plan Properties</th>
+                        <th style="padding:15px; text-align:left; font-weight: 600;">Ready Properties</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr style="border-bottom:1px solid var(--color-border);">
-                        <td style="padding:12px;" id="tdPrice">Entry Price</td>
-                        <td style="padding:12px;" id="tdPriceVal1">Lower (Pre-launch rates)</td>
-                        <td style="padding:12px;" id="tdPriceVal2">Premium market rates</td>
+                        <td style="padding:15px; font-weight: 500;">Average Purchase Cost</td>
+                        <td style="padding:15px;">Lower (Pre-launch, interest-free installments)</td>
+                        <td style="padding:15px;">Higher (Market rates + upfront fees)</td>
                     </tr>
                     <tr style="border-bottom:1px solid var(--color-border);">
-                        <td style="padding:12px;" id="tdYield">Rental Yield</td>
-                        <td style="padding:12px;" id="tdYieldVal1">Delayed (At handover)</td>
-                        <td style="padding:12px;" id="tdYieldVal2">Immediate (6%-8% annual)</td>
+                        <td style="padding:15px; font-weight: 500;">Rental Yield Commencement</td>
+                        <td style="padding:15px;">Delayed (At handover and tenancy stage)</td>
+                        <td style="padding:15px;">Immediate (Immediate cash flow upon transfer)</td>
                     </tr>
                     <tr style="border-bottom:1px solid var(--color-border);">
-                        <td style="padding:12px;" id="tdCap">Capital Gain</td>
-                        <td style="padding:12px;" id="tdCapVal1">Higher (20%-35% appreciation)</td>
-                        <td style="padding:12px;" id="tdCapVal2">Steady (Based on market growth)</td>
+                        <td style="padding:15px; font-weight: 500;">Capital Appreciation Potential</td>
+                        <td style="padding:15px;">High (Significant growth from build to handover)</td>
+                        <td style="padding:15px;">Moderate (Steady market growth)</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--color-border);">
+                        <td style="padding:15px; font-weight: 500;">Golden Visa Eligibility</td>
+                        <td style="padding:15px;">Yes (If investment exceeds AED 2 Million)</td>
+                        <td style="padding:15px;">Yes (If investment exceeds AED 2 Million)</td>
                     </tr>
                 </tbody>
             </table>
-            
-            <div style="text-align:center; margin-top:50px;">
-                <a href="contact.html" class="btn-gold" style="padding:15px 35px; font-size:0.9rem;" id="roiCta">Get ROI Projections</a>
+
+            <h2 class="gold-gradient-text" style="font-family:var(--font-heading); margin: 40px 0 20px; font-size: 1.8rem;">4. The Senior Advisor's Verdict</h2>
+            <p>If your primary objective is <strong>passive wealth growth</strong> and you have a 3-to-5 year investment horizon, <strong>Off-Plan</strong> is the ideal path. It offers payment flexibility and higher equity growth. However, if you seek <strong>consistent, immediate rental yields</strong> to support your cash flow, <strong>Ready Properties</strong> in high-demand communities like Wasl 1 or Dubai Marina are your best bet. </p>
+
+            <div style="background:var(--color-bg-card); border:1px solid var(--color-border); border-radius:16px; padding:30px; margin-top:40px; text-align:center;">
+                <h3 style="font-family:var(--font-heading); color:var(--color-text-bright); margin-bottom:15px;">Need a Personalized ROI Projection?</h3>
+                <p style="font-size:0.95rem; margin-bottom:20px;">At 5 Hills, we analyze ready and off-plan options tailored to your budget. Contact us today for a custom feasibility study and project comparison report.</p>
+                <a href="contact.html" class="btn-gold" style="padding:15px 35px; font-size:0.9rem;">Discuss Your Investment Options</a>
             </div>
         </div>
     </section>
 
-    <!-- --- Footer --- -->
+    <!-- --- Complete Luxury Footer --- -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-col footer-about">
