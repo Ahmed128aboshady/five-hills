@@ -1259,19 +1259,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Brochure Download Handler mapping project ID to local PDF brochures
-function triggerBrochureDownload() {
-    const form = document.getElementById('projectLeadForm');
-    if (!form) return;
-    
-    if (!form.reportValidity()) {
-        return; // validation failed, browser shows popup
+
+// Brochure modal controllers
+function openBrochureModal() {
+    const modal = document.getElementById('brochureModal');
+    if (modal) modal.style.display = 'flex';
+}
+
+function closeBrochureModal() {
+    const modal = document.getElementById('brochureModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.getElementById('modalBrochureForm')?.reset();
     }
-    
-    const name = document.getElementById('leadName').value;
-    const email = document.getElementById('leadEmail').value;
-    const phone = document.getElementById('leadPhone').value;
-    const message = document.getElementById('leadMessage').value;
+}
+
+// Brochure Download Modal Handler mapping project ID to local PDF brochures
+function submitBrochureModalForm() {
+    const name = document.getElementById('brochureName').value;
+    const phone = document.getElementById('brochurePhone').value;
     
     const params = new URLSearchParams(window.location.search);
     let projectId = params.get('project') || "Knightsbridge_P1";
@@ -1298,12 +1304,14 @@ function triggerBrochureDownload() {
     window.open(brochurePath, '_blank');
     
     // 2. Redirect the parent tab to WhatsApp after a short delay (second action, safe)
-    const textMsg = `Hello 5 Hills,\n\nI just downloaded the brochure for *${projectTitle}*:\n- *Name:* ${name}\n- *Email:* ${email}\n- *Phone:* ${phone}\n- *Note:* ${message}`;
+    const textMsg = `Hello 5 Hills,\n\nI just downloaded the brochure for *${projectTitle}*:\n- *Name:* ${name}\n- *Phone:* ${phone}`;
     const encoded = encodeURIComponent(textMsg);
     
     setTimeout(() => {
         window.location.href = `https://wa.me/971564622103?text=${encoded}`;
     }, 800);
+    
+    closeBrochureModal();
     
     const successMsg = currentLang === 'ar'
         ? "تم فتح الكتيب وسيتم توجيهك إلى الواتساب الآن..."

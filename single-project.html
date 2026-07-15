@@ -65,7 +65,7 @@
     <meta name="description" content="Explore Knightsbridge Phase 1 in Meydan, Dubai. Luxury English-style smart villas starting from AED 8.5 Million with premium payment plans.">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=1.22">
+    <link rel="stylesheet" href="style.css?v=1.23">
 </head>
 <body>
 
@@ -202,7 +202,7 @@
                 <section class="project-content-block">
                     <div class="block-title">
                         <span class="gold-gradient-text" id="floorPlanTitle">Floor Plans</span>
-                        <a href="#" class="btn-outline" style="padding: 6px 12px; font-size: 0.75rem;" id="btnDownloadBrochure">Download Brochure</a>
+                        <a href="javascript:void(0)" class="btn-outline" style="padding: 6px 12px; font-size: 0.75rem;" id="btnDownloadBrochure" onclick="openBrochureModal()">Download Brochure</a>
                     </div>
                     
                     <div class="tabs-navigation">
@@ -313,6 +313,7 @@
                             <textarea id="leadMessage" rows="3">I would like to inquire about Knightsbridge Phase 1.</textarea>
                         </div>
                         <button type="submit" class="btn-gold form-submit-btn" id="btnSubmitLead">Request Details</button>
+                        <button type="button" class="btn-outline" style="width: 100%; margin-top: 10px;" id="btnSidebarDownloadBrochure" onclick="openBrochureModal()">Download Brochure</button>
                     </form>
                     
                     <p class="lead-privacy-notice" id="lblPrivacy">Your data is secured under Dubai Real Estate regulatory norms.</p>
@@ -398,6 +399,29 @@
     </div>
 
     <!-- --- Lightbox Backdrop --- -->
+    
+    <!-- --- Brochure Download Modal --- -->
+    <div class="modal-backdrop" id="brochureModal" style="display: none;">
+        <div class="modal-window">
+            <button class="modal-close-btn" onclick="closeBrochureModal()">&times;</button>
+            <h3 class="modal-title gold-gradient-text" id="bmTitle">Download Brochure</h3>
+            <p class="modal-subtitle" id="bmSubtitle">Please enter your details to receive the official project catalog and pricing sheet.</p>
+            
+            <form id="modalBrochureForm" onsubmit="event.preventDefault(); submitBrochureModalForm();">
+                <div class="form-field">
+                    <label id="bmlblName">Your Name</label>
+                    <input type="text" id="brochureName" placeholder="John Doe" required>
+                </div>
+                <div class="form-field">
+                    <label id="bmlblPhone">Phone Number (with WhatsApp)</label>
+                    <input type="tel" id="brochurePhone" placeholder="+971 50 000 0000" pattern="^\+?[1-9]\d{1,14}$" required>
+                    <small style="color: var(--color-text-muted); font-size: 0.75rem; display:block; margin-top:4px;" id="bmlblPhoneHint">Include country code (e.g., +971...)</small>
+                </div>
+                <button type="submit" class="btn-gold" style="width:100%; margin-top: 15px;" id="bmSubmitBtn">Submit & Download</button>
+            </form>
+        </div>
+    </div>
+
     <div class="lightbox-backdrop" id="galleryLightbox" onclick="closeLightbox()">
         <button class="lightbox-nav lightbox-prev" onclick="prevLightboxImage(event)">❮</button>
         <div class="lightbox-content" onclick="event.stopPropagation()">
@@ -417,6 +441,6 @@
 
     <!-- --- JS Core Functions Script --- -->
     <script src="projects-data.js?v=1.2"></script>
-    <script src="app.js?v=1.19"></script>
+    <script src="app.js?v=1.20"></script>
 </body>
 </html>
