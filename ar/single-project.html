@@ -407,7 +407,7 @@
             <h3 class="modal-title gold-gradient-text" id="bmTitle">تحميل كتيب المشروع</h3>
             <p class="modal-subtitle" id="bmSubtitle">من فضلك أدخل بياناتك للحصول على الكتالوج الرسمي وجدول الأسعار.</p>
             
-            <form id="modalBrochureForm" onsubmit="event.preventDefault(); submitBrochureModalForm();">
+            <form id="modalBrochureForm" onsubmit="event.preventDefault();">
                 <div class="form-field">
                     <label id="bmlblName">الاسم الكامل</label>
                     <input type="text" id="brochureName" placeholder="الاسم الكريم" required>
@@ -417,7 +417,7 @@
                     <input type="tel" id="brochurePhone" placeholder="+971 50 000 0000" pattern="^\+?[1-9]\d{1,14}$" required>
                     <small style="color: var(--color-text-muted); font-size: 0.75rem; display:block; margin-top:4px;" id="bmlblPhoneHint">يرجى إضافة رمز الدولة (مثال: +971...)</small>
                 </div>
-                <button type="submit" class="btn-gold" style="width:100%; margin-top: 15px;" id="bmSubmitBtn">تأكيد وتحميل الكتيب</button>
+                <button type="button" class="btn-gold" style="width:100%; margin-top: 15px;" id="bmSubmitBtn" onclick="submitBrochureModalForm()">تأكيد وتحميل الكتيب</button>
             </form>
         </div>
     </div>
@@ -441,6 +441,6 @@
 
     <!-- --- JS Core Functions Script --- -->
     <script src="../projects-data.js?v=1.2"></script>
-    <script src="../app.js?v=1.23"></script>
+    <script src="../app.js?v=1.24"></script>
 </body>
 </html>

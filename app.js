@@ -1274,12 +1274,29 @@ function closeBrochureModal() {
     }
 }
 
-// Brochure Download Modal Handler - uses hidden anchor for reliable download
+// Brochure Download Modal Handler - manual validation + direct click window.open
 function submitBrochureModalForm() {
-    const name = document.getElementById('brochureName').value.trim();
-    const phone = document.getElementById('brochurePhone').value.trim();
+    const nameInput = document.getElementById('brochureName');
+    const phoneInput = document.getElementById('brochurePhone');
+    if (!nameInput || !phoneInput) return;
 
-    if (!name || !phone) return;
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const isAr = currentLang === 'ar';
+
+    if (!name) {
+        showNotification(isAr ? 'خطأ' : 'Error', isAr ? 'يرجى إدخال الاسم' : 'Please enter your name');
+        nameInput.focus();
+        return;
+    }
+
+    // Strict validation regex for international phone numbers
+    const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+    if (!phone || !phoneRegex.test(phone)) {
+        showNotification(isAr ? 'خطأ' : 'Error', isAr ? 'رقم الهاتف غير صحيح. يرجى إدخال رمز الدولة (مثال: +971...)' : 'Invalid phone number. Please include country code (e.g. +971...)');
+        phoneInput.focus();
+        return;
+    }
 
     const params = new URLSearchParams(window.location.search);
     const projectId = params.get('project') || 'Knightsbridge_P1';
@@ -1301,30 +1318,22 @@ function submitBrochureModalForm() {
     }
 
     // Resolve relative path (ar/ subdir needs ../)
-    const isAr = currentLang === 'ar';
     const brochurePath = (isAr ? '../brochures/' : 'brochures/') + brochureFile;
 
-    // --- Reliable download using a hidden <a download> element ---
-    // This bypasses popup-blocker restrictions on window.open()
-    const a = document.createElement('a');
-    a.href = brochurePath;
-    a.download = brochureFile;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    // 1. Open the PDF in a new tab synchronously (allowed because it runs inside direct onclick user action)
+    window.open(brochurePath, '_blank');
 
-    // Close modal and show success toast
+    // 2. Close modal and show notification
     closeBrochureModal();
     const successMsg = isAr
-        ? 'جاري تحميل الكتيب، سيتواصل معك فريقنا قريباً!'
-        : 'Brochure downloading! Our team will contact you shortly.';
+        ? 'تم فتح الكتيب بنجاح، جاري تحويلك للواتساب...'
+        : 'Brochure opened successfully! Redirecting you to WhatsApp...';
     showNotification(isAr ? 'تم التحميل' : 'Downloading', successMsg);
 
-    // Send lead to WhatsApp after 2 seconds (gives browser time to start download)
-    const textMsg = 'Hello 5 Hills,%0A%0AI just downloaded the brochure for *' + projectTitle + '*%0A- *Name:* ' + encodeURIComponent(name) + '%0A- *Phone:* ' + encodeURIComponent(phone);
+    // 3. Redirect the current tab to WhatsApp (failsafe, doesn't get blocked by popup blockers)
+    const textMsg = `Hello 5 Hills,\n\nI just downloaded the brochure for *${projectTitle}*:\n- *Name:* ${name}\n- *Phone:* ${phone}`;
+    const encoded = encodeURIComponent(textMsg);
     setTimeout(() => {
-        window.open('https://wa.me/971564622103?text=' + textMsg, '_blank');
-    }, 2000);
+        window.location.href = `https://wa.me/971564622103?text=${encoded}`;
+    }, 1000);
 }

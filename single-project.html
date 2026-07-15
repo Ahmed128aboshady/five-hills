@@ -407,7 +407,7 @@
             <h3 class="modal-title gold-gradient-text" id="bmTitle">Download Brochure</h3>
             <p class="modal-subtitle" id="bmSubtitle">Please enter your details to receive the official project catalog and pricing sheet.</p>
             
-            <form id="modalBrochureForm" onsubmit="event.preventDefault(); submitBrochureModalForm();">
+            <form id="modalBrochureForm" onsubmit="event.preventDefault();">
                 <div class="form-field">
                     <label id="bmlblName">Your Name</label>
                     <input type="text" id="brochureName" placeholder="John Doe" required>
@@ -417,7 +417,7 @@
                     <input type="tel" id="brochurePhone" placeholder="+971 50 000 0000" pattern="^\+?[1-9]\d{1,14}$" required>
                     <small style="color: var(--color-text-muted); font-size: 0.75rem; display:block; margin-top:4px;" id="bmlblPhoneHint">Include country code (e.g., +971...)</small>
                 </div>
-                <button type="submit" class="btn-gold" style="width:100%; margin-top: 15px;" id="bmSubmitBtn">Submit & Download</button>
+                <button type="button" class="btn-gold" style="width:100%; margin-top: 15px;" id="bmSubmitBtn" onclick="submitBrochureModalForm()">Submit & Download</button>
             </form>
         </div>
     </div>
@@ -441,6 +441,6 @@
 
     <!-- --- JS Core Functions Script --- -->
     <script src="projects-data.js?v=1.2"></script>
-    <script src="app.js?v=1.23"></script>
+    <script src="app.js?v=1.24"></script>
 </body>
 </html>
