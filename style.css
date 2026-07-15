@@ -1594,6 +1594,11 @@ body.light-theme .modal-backdrop {
     transition: var(--transition-smooth);
 }
 
+.modal-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .modal-backdrop.active .modal-window {
     transform: scale(1);
 }
