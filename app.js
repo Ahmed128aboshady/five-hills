@@ -1281,36 +1281,33 @@ function triggerBrochureDownload() {
     let brochureFile = "knightsbridge-brochure.pdf";
     if (projectId.includes("1 Residences")) {
         brochureFile = "1-residences-brochure.pdf";
-    } else if (projectId.includes("cedarwood estates") || projectId.includes("Cedarwood Estates South")) {
+    } else if (projectId.includes("cedarwood") || projectId.includes("Cedarwood")) {
         brochureFile = "cedarwood-estates-south-brochure.pdf";
     } else if (projectId.includes("Avenue Park Towers")) {
         brochureFile = "avenue-park-towers-brochure.pdf";
-    } else if (projectId.includes("Core Villas Projects")) {
+    } else if (projectId.includes("Core Villas")) {
         brochureFile = "core-villas-brochure.pdf";
-    } else if (projectId.includes("Park Gate Residence")) {
+    } else if (projectId.includes("Park Gate")) {
         brochureFile = "park-gate-residence-brochure.pdf";
     }
     
     // Resolve relative path for ar/ subdirectory
     const brochurePath = (currentLang === 'ar' ? '../brochures/' : 'brochures/') + brochureFile;
     
-    // 1. Submit lead details to WhatsApp
+    // 1. Open the PDF brochure in a new tab immediately (first action, allowed by browser)
+    window.open(brochurePath, '_blank');
+    
+    // 2. Redirect the parent tab to WhatsApp after a short delay (second action, safe)
     const textMsg = `Hello 5 Hills,\n\nI just downloaded the brochure for *${projectTitle}*:\n- *Name:* ${name}\n- *Email:* ${email}\n- *Phone:* ${phone}\n- *Note:* ${message}`;
     const encoded = encodeURIComponent(textMsg);
-    window.open(`https://wa.me/971564622103?text=${encoded}`, '_blank');
     
-    // 2. Trigger PDF download
-    const link = document.createElement('a');
-    link.href = brochurePath;
-    link.target = '_blank';
-    link.download = brochureFile;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    setTimeout(() => {
+        window.location.href = `https://wa.me/971564622103?text=${encoded}`;
+    }, 800);
     
     const successMsg = currentLang === 'ar'
-        ? "تم إرسال بياناتك وبدء تحميل الكتيب بنجاح!"
-        : "Your lead was captured and the PDF brochure download has started!";
+        ? "تم فتح الكتيب وسيتم توجيهك إلى الواتساب الآن..."
+        : "Opening brochure PDF and redirecting you to WhatsApp...";
         
-    showNotification(currentLang === 'ar' ? 'بدء تحميل الكتيب' : 'Brochure Download', successMsg);
+    showNotification(currentLang === 'ar' ? 'جاري التحميل' : 'Downloading', successMsg);
 }

@@ -65,7 +65,7 @@
     <meta name="description" content="Browse our luxury properties and off-plan projects in Dubai Marina, Downtown, Meydan, and Zabeel. Filter by price, type, and status.">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="../style.css?v=1.21">
+    <link rel="stylesheet" href="../style.css?v=1.22">
 </head>
 <body>
 
@@ -917,14 +917,35 @@
     </section>
 
     <!-- --- Complete Luxury Footer --- -->
-    <footer class="site-footer">
+        <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-col footer-about">
                 <a href="index.html" class="site-logo">
-                    <img src="../images/project-images/logo222.webp" alt="5 Hills Real Estate Agency Dubai Logo" loading="lazy" style="height: 120px; width: auto; object-fit: contain;">
+                    <img src="../images/project-images/logo222.webp" alt="5 Hills Real Estate Agency Dubai Logo" loading="lazy" width="120" height="120" style="height: 120px; width: auto; object-fit: contain;">
                 </a>
             </div>
-                        <div class="footer-col" itemscope itemtype="https://schema.org/RealEstateAgent">
+            <div class="footer-col">
+                <h4 id="fTitleQuick">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" id="flHome">Home</a></li>
+                    <li><a href="projects.html" id="flProjects">Projects Portfolio</a></li>
+                    <li><a href="about.html" id="flAbout">About Our Agency</a></li>
+                    <li><a href="about.html#propertyManagement" id="flMgmt">Property Management</a></li>
+                    <li><a href="team.html" id="flTeam">Our Leadership</a></li>
+                    <li><a href="blog.html" id="flBlog">Real Estate Blog</a></li>
+                    <li><a href="contact.html" id="flContact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleAreas">Key Areas</h4>
+                <ul class="footer-links">
+                    <li><a href="projects.html?location=downtown-dubai">Downtown Dubai</a></li>
+                    <li><a href="projects.html?location=dubai-marina">Dubai Marina</a></li>
+                    <li><a href="projects.html?location=meydan">Meydan</a></li>
+                    <li><a href="projects.html?location=wasl-1">Wasl 1 / Zabeel</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" itemscope itemtype="https://schema.org/RealEstateAgent">
                 <meta itemprop="name" content="5 Hills Real Estate">
                 <meta itemprop="image" content="https://ahmed128aboshady.github.io/five-hills/images/project-images/logo222.webp">
                 <h4 id="fTitleContact">Contact Info</h4>
@@ -932,7 +953,6 @@
                 <div class="footer-contact-item" id="fWhatsapp"><strong>WhatsApp:</strong> <a href="https://wa.me/971564622103?text=Hello,%20I%20am%20interested%20in%20Dubai%20Luxury%20Properties" target="_blank" style="color: inherit; text-decoration: underline;">+971 56 462 2103</a></div>
                 <div class="footer-contact-item" id="fEmail"><strong>Email:</strong> <span itemprop="email">info@fivehills.ae</span></div>
                 <div class="footer-contact-item" id="fAddress" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><strong>Office:</strong> <span itemprop="streetAddress">Marina Plaza, Suite 2402, Dubai Marina</span>, <span itemprop="addressLocality">Dubai</span>, <span itemprop="addressRegion">Dubai</span>, <span itemprop="addressCountry">AE</span></div>
-            </div>
             </div>
         </div>
         <div class="container footer-bottom">
@@ -951,6 +971,6 @@
 
     <!-- --- JS Core Functions Script --- -->
     <script src="../projects-data.js?v=1.2"></script>
-    <script src="../app.js?v=1.18"></script>
+    <script src="../app.js?v=1.19"></script>
 </body>
 </html>
