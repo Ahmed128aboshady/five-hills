@@ -1263,13 +1263,13 @@ document.addEventListener('DOMContentLoaded', () => {
 // Brochure modal controllers
 function openBrochureModal() {
     const modal = document.getElementById('brochureModal');
-    if (modal) modal.style.display = 'flex';
+    if (modal) modal.classList.add('active');
 }
 
 function closeBrochureModal() {
     const modal = document.getElementById('brochureModal');
     if (modal) {
-        modal.style.display = 'none';
+        modal.classList.remove('active');
         document.getElementById('modalBrochureForm')?.reset();
     }
 }
