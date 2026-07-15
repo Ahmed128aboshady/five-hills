@@ -1274,48 +1274,57 @@ function closeBrochureModal() {
     }
 }
 
-// Brochure Download Modal Handler mapping project ID to local PDF brochures
+// Brochure Download Modal Handler - uses hidden anchor for reliable download
 function submitBrochureModalForm() {
-    const name = document.getElementById('brochureName').value;
-    const phone = document.getElementById('brochurePhone').value;
-    
+    const name = document.getElementById('brochureName').value.trim();
+    const phone = document.getElementById('brochurePhone').value.trim();
+
+    if (!name || !phone) return;
+
     const params = new URLSearchParams(window.location.search);
-    let projectId = params.get('project') || "Knightsbridge_P1";
-    const projectTitle = document.getElementById('projectTitle')?.innerText || "General";
-    
+    const projectId = params.get('project') || 'Knightsbridge_P1';
+    const projectTitle = document.getElementById('projectTitle')?.innerText || 'General';
+
     // Map project ID to brochure filename
-    let brochureFile = "knightsbridge-brochure.pdf";
-    if (projectId.includes("1 Residences")) {
-        brochureFile = "1-residences-brochure.pdf";
-    } else if (projectId.includes("cedarwood") || projectId.includes("Cedarwood")) {
-        brochureFile = "cedarwood-estates-south-brochure.pdf";
-    } else if (projectId.includes("Avenue Park Towers")) {
-        brochureFile = "avenue-park-towers-brochure.pdf";
-    } else if (projectId.includes("Core Villas")) {
-        brochureFile = "core-villas-brochure.pdf";
-    } else if (projectId.includes("Park Gate")) {
-        brochureFile = "park-gate-residence-brochure.pdf";
+    let brochureFile = 'knightsbridge-brochure.pdf';
+    const pid = projectId.toLowerCase();
+    if (pid.includes('1 residences') || pid.includes('1residences') || pid.includes('wasl')) {
+        brochureFile = '1-residences-brochure.pdf';
+    } else if (pid.includes('cedarwood')) {
+        brochureFile = 'cedarwood-estates-south-brochure.pdf';
+    } else if (pid.includes('avenue') || pid.includes('park tower')) {
+        brochureFile = 'avenue-park-towers-brochure.pdf';
+    } else if (pid.includes('core')) {
+        brochureFile = 'core-villas-brochure.pdf';
+    } else if (pid.includes('park gate')) {
+        brochureFile = 'park-gate-residence-brochure.pdf';
     }
-    
-    // Resolve relative path for ar/ subdirectory
-    const brochurePath = (currentLang === 'ar' ? '../brochures/' : 'brochures/') + brochureFile;
-    
-    // 1. Open the PDF brochure in a new tab immediately (first action, allowed by browser)
-    window.open(brochurePath, '_blank');
-    
-    // 2. Redirect the parent tab to WhatsApp after a short delay (second action, safe)
-    const textMsg = `Hello 5 Hills,\n\nI just downloaded the brochure for *${projectTitle}*:\n- *Name:* ${name}\n- *Phone:* ${phone}`;
-    const encoded = encodeURIComponent(textMsg);
-    
-    setTimeout(() => {
-        window.location.href = `https://wa.me/971564622103?text=${encoded}`;
-    }, 800);
-    
+
+    // Resolve relative path (ar/ subdir needs ../)
+    const isAr = currentLang === 'ar';
+    const brochurePath = (isAr ? '../brochures/' : 'brochures/') + brochureFile;
+
+    // --- Reliable download using a hidden <a download> element ---
+    // This bypasses popup-blocker restrictions on window.open()
+    const a = document.createElement('a');
+    a.href = brochurePath;
+    a.download = brochureFile;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    // Close modal and show success toast
     closeBrochureModal();
-    
-    const successMsg = currentLang === 'ar'
-        ? "تم فتح الكتيب وسيتم توجيهك إلى الواتساب الآن..."
-        : "Opening brochure PDF and redirecting you to WhatsApp...";
-        
-    showNotification(currentLang === 'ar' ? 'جاري التحميل' : 'Downloading', successMsg);
+    const successMsg = isAr
+        ? 'جاري تحميل الكتيب، سيتواصل معك فريقنا قريباً!'
+        : 'Brochure downloading! Our team will contact you shortly.';
+    showNotification(isAr ? 'تم التحميل' : 'Downloading', successMsg);
+
+    // Send lead to WhatsApp after 2 seconds (gives browser time to start download)
+    const textMsg = 'Hello 5 Hills,%0A%0AI just downloaded the brochure for *' + projectTitle + '*%0A- *Name:* ' + encodeURIComponent(name) + '%0A- *Phone:* ' + encodeURIComponent(phone);
+    setTimeout(() => {
+        window.open('https://wa.me/971564622103?text=' + textMsg, '_blank');
+    }, 2000);
 }
