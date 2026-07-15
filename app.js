@@ -1000,13 +1000,19 @@ function submitLeadForm() {
     const email = document.getElementById('leadEmail').value;
     const phone = document.getElementById('leadPhone').value;
     const message = document.getElementById('leadMessage').value;
+    const project = document.getElementById('projectTitle')?.innerText || "General";
+
+    const textMsg = `Hello 5 Hills,\n\nI want to Register Interest in *${project}*:\n- *Name:* ${name}\n- *Email:* ${email}\n- *Phone:* ${phone}\n- *Inquiry:* ${message}`;
+    const encoded = encodeURIComponent(textMsg);
+    
+    // Redirect to WhatsApp
+    window.open(`https://wa.me/971564622103?text=${encoded}`, '_blank');
 
     const successMsg = currentLang === 'ar' 
-        ? `شكرًا لك يا ${name}. تم تسجيل اهتمامك بنجاح. سيتواصل معك أحد وكلاءنا العقاريين خلال 15 دقيقة.` 
-        : `Thank you, ${name}. Your registration of interest was submitted. A luxury property advisor will contact you within 15 minutes.`;
+        ? `شكرًا لك يا ${name}. تم توجيهك إلى الواتساب لإرسال بياناتك وحجز اهتمامك.` 
+        : `Thank you, ${name}. You are being redirected to WhatsApp to submit your inquiry.`;
 
-    showNotification(currentLang === 'ar' ? 'تم التسجيل بنجاح' : 'Success', successMsg);
-    console.log("Lead captured:", { name, email, phone, message, project: document.getElementById('projectTitle')?.innerText || "General" });
+    showNotification(currentLang === 'ar' ? 'تم التوجيه للواتساب' : 'WhatsApp Redirect', successMsg);
     document.getElementById('projectLeadForm').reset();
 }
 
@@ -1017,12 +1023,17 @@ function submitGeneralContactForm() {
     const budget = document.getElementById('cBudget').value;
     const message = document.getElementById('cMessage').value;
 
-    const successMsg = currentLang === 'ar'
-        ? `شكرًا لتواصلك معنا يا ${name}. لقد استلمنا استفسارك وسيقوم أحد خبرائنا العقاريين بإعداد الملفات المطلوبة وتزويدك بها قريباً.`
-        : `Thank you for contacting us, ${name}. We have received your query and are preparing your customized property catalog.`;
+    const textMsg = `Hello 5 Hills,\n\nI have a general website inquiry:\n- *Name:* ${name}\n- *Email:* ${email}\n- *Phone:* ${phone}\n- *Budget:* ${budget}\n- *Message:* ${message}`;
+    const encoded = encodeURIComponent(textMsg);
+    
+    // Redirect to WhatsApp
+    window.open(`https://wa.me/971564622103?text=${encoded}`, '_blank');
 
-    showNotification(currentLang === 'ar' ? 'تم استلام الاستفسار' : 'Inquiry Received', successMsg);
-    console.log("Contact Inquiry captured:", { name, email, phone, budget, message });
+    const successMsg = currentLang === 'ar'
+        ? `شكرًا لتواصلك معنا يا ${name}. تم توجيهك إلى الواتساب لإرسال استفسارك عقارياً.`
+        : `Thank you, ${name}. You are being redirected to WhatsApp to send your inquiry.`;
+
+    showNotification(currentLang === 'ar' ? 'تم التوجيه للواتساب' : 'WhatsApp Redirect', successMsg);
     document.getElementById('contactForm').reset();
 }
 
@@ -1032,12 +1043,17 @@ function submitBookingForm() {
     const date = document.getElementById('bookDate').value;
     const time = document.getElementById('bookTime').value;
 
-    const successMsg = currentLang === 'ar'
-        ? `تم حجز موعدك بنجاح يا ${name} بتاريخ ${date} الساعة ${time}. تم إرسال رابط تأكيد التقويم إلى بريدك الإلكتروني.`
-        : `Appointment scheduled successfully, ${name}! Your ${activeBookingType === 'online' ? 'Online Meeting' : 'Site Visit'} is set for ${date} at ${time}. Check your email for the calendar invitation.`;
+    const textMsg = `Hello 5 Hills,\n\nI would like to book a consultation (${activeBookingType === 'online' ? 'Online Meeting' : 'Site Visit'}):\n- *Name:* ${name}\n- *Email:* ${email}\n- *Date:* ${date}\n- *Time:* ${time}`;
+    const encoded = encodeURIComponent(textMsg);
+    
+    // Redirect to WhatsApp
+    window.open(`https://wa.me/971564622103?text=${encoded}`, '_blank');
 
-    showNotification(currentLang === 'ar' ? 'تم حجز الموعد' : 'Appointment Confirmed', successMsg);
-    console.log("Consultation booked:", { name, email, date, time, type: activeBookingType });
+    const successMsg = currentLang === 'ar'
+        ? `تم توجيهك للواتساب يا ${name} لإتمام حجز الموعد بتاريخ ${date} الساعة ${time}.`
+        : `Thank you, ${name}. Redirecting to WhatsApp to finalize your consultation booking for ${date} at ${time}.`;
+
+    showNotification(currentLang === 'ar' ? 'تم التوجيه للواتساب' : 'WhatsApp Redirect', successMsg);
     
     document.getElementById('modalBookingForm').reset();
     closeBookingModal();
@@ -1242,3 +1258,59 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Brochure Download Handler mapping project ID to local PDF brochures
+function triggerBrochureDownload() {
+    const form = document.getElementById('projectLeadForm');
+    if (!form) return;
+    
+    if (!form.reportValidity()) {
+        return; // validation failed, browser shows popup
+    }
+    
+    const name = document.getElementById('leadName').value;
+    const email = document.getElementById('leadEmail').value;
+    const phone = document.getElementById('leadPhone').value;
+    const message = document.getElementById('leadMessage').value;
+    
+    const params = new URLSearchParams(window.location.search);
+    let projectId = params.get('project') || "Knightsbridge_P1";
+    const projectTitle = document.getElementById('projectTitle')?.innerText || "General";
+    
+    // Map project ID to brochure filename
+    let brochureFile = "knightsbridge-brochure.pdf";
+    if (projectId.includes("1 Residences")) {
+        brochureFile = "1-residences-brochure.pdf";
+    } else if (projectId.includes("cedarwood estates") || projectId.includes("Cedarwood Estates South")) {
+        brochureFile = "cedarwood-estates-south-brochure.pdf";
+    } else if (projectId.includes("Avenue Park Towers")) {
+        brochureFile = "avenue-park-towers-brochure.pdf";
+    } else if (projectId.includes("Core Villas Projects")) {
+        brochureFile = "core-villas-brochure.pdf";
+    } else if (projectId.includes("Park Gate Residence")) {
+        brochureFile = "park-gate-residence-brochure.pdf";
+    }
+    
+    // Resolve relative path for ar/ subdirectory
+    const brochurePath = (currentLang === 'ar' ? '../brochures/' : 'brochures/') + brochureFile;
+    
+    // 1. Submit lead details to WhatsApp
+    const textMsg = `Hello 5 Hills,\n\nI just downloaded the brochure for *${projectTitle}*:\n- *Name:* ${name}\n- *Email:* ${email}\n- *Phone:* ${phone}\n- *Note:* ${message}`;
+    const encoded = encodeURIComponent(textMsg);
+    window.open(`https://wa.me/971564622103?text=${encoded}`, '_blank');
+    
+    // 2. Trigger PDF download
+    const link = document.createElement('a');
+    link.href = brochurePath;
+    link.target = '_blank';
+    link.download = brochureFile;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    const successMsg = currentLang === 'ar'
+        ? "تم إرسال بياناتك وبدء تحميل الكتيب بنجاح!"
+        : "Your lead was captured and the PDF brochure download has started!";
+        
+    showNotification(currentLang === 'ar' ? 'بدء تحميل الكتيب' : 'Brochure Download', successMsg);
+}
