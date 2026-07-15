@@ -1292,9 +1292,23 @@ function submitBrochureModalForm() {
 
     // Strict validation regex for international phone numbers
     const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+    
+    // Clear previous custom validations first
+    phoneInput.setCustomValidity('');
+    nameInput.setCustomValidity('');
+
+    if (!name) {
+        nameInput.setCustomValidity(isAr ? 'يرجى إدخال الاسم' : 'Please enter your name');
+        nameInput.reportValidity();
+        return;
+    }
+
     if (!phone || !phoneRegex.test(phone)) {
-        showNotification(isAr ? 'خطأ' : 'Error', isAr ? 'رقم الهاتف غير صحيح. يرجى إدخال رمز الدولة (مثال: +971...)' : 'Invalid phone number. Please include country code (e.g. +971...)');
-        phoneInput.focus();
+        phoneInput.setCustomValidity(isAr 
+            ? 'الرجاء إدخال رقم هاتف صحيح مع رمز الدولة (مثال: +971501234567)' 
+            : 'Please enter a valid phone number with country code (e.g., +971501234567)'
+        );
+        phoneInput.reportValidity();
         return;
     }
 
@@ -1337,3 +1351,12 @@ function submitBrochureModalForm() {
         window.location.href = `https://wa.me/971564622103?text=${encoded}`;
     }, 1000);
 }
+
+// Register real-time validation clearing on input
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('input', (e) => {
+        if (e.target && (e.target.id === 'brochurePhone' || e.target.id === 'brochureName')) {
+            e.target.setCustomValidity('');
+        }
+    });
+});
