@@ -1291,7 +1291,7 @@ function submitBrochureModalForm() {
     }
 
     // Strict validation regex for international phone numbers
-    const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+    const phoneRegex = /^(?:\+?[1-9]\d{7,14}|0\d{8,10})$/;
     
     // Clear previous custom validations first
     phoneInput.setCustomValidity('');
