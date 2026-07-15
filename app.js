@@ -960,6 +960,40 @@ function toggleTheme() {
     updateThemeUI();
 }
 
+// Premium Success Notification System
+function showNotification(title, message) {
+    let toast = document.getElementById('customToast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'customToast';
+        toast.className = 'custom-toast';
+        document.body.appendChild(toast);
+    }
+    
+    // Support RTL direction
+    if (currentLang === 'ar') {
+        document.body.classList.add('rtl-mode');
+    } else {
+        document.body.classList.remove('rtl-mode');
+    }
+    
+    toast.innerHTML = `
+        <div class="custom-toast-icon">✓</div>
+        <div class="custom-toast-content">
+            <h5>${title}</h5>
+            <p>${message}</p>
+        </div>
+    `;
+    
+    setTimeout(() => {
+        toast.classList.add('active');
+    }, 50);
+    
+    setTimeout(() => {
+        toast.classList.remove('active');
+    }, 5000);
+}
+
 // Form Handlers (Simulated Lead Capture Webhooks / CRM integrations)
 function submitLeadForm() {
     const name = document.getElementById('leadName').value;
@@ -971,7 +1005,7 @@ function submitLeadForm() {
         ? `شكرًا لك يا ${name}. تم تسجيل اهتمامك بنجاح. سيتواصل معك أحد وكلاءنا العقاريين خلال 15 دقيقة.` 
         : `Thank you, ${name}. Your registration of interest was submitted. A luxury property advisor will contact you within 15 minutes.`;
 
-    alert(successMsg);
+    showNotification(currentLang === 'ar' ? 'تم التسجيل بنجاح' : 'Success', successMsg);
     console.log("Lead captured:", { name, email, phone, message, project: document.getElementById('projectTitle')?.innerText || "General" });
     document.getElementById('projectLeadForm').reset();
 }
@@ -987,7 +1021,7 @@ function submitGeneralContactForm() {
         ? `شكرًا لتواصلك معنا يا ${name}. لقد استلمنا استفسارك وسيقوم أحد خبرائنا العقاريين بإعداد الملفات المطلوبة وتزويدك بها قريباً.`
         : `Thank you for contacting us, ${name}. We have received your query and are preparing your customized property catalog.`;
 
-    alert(successMsg);
+    showNotification(currentLang === 'ar' ? 'تم استلام الاستفسار' : 'Inquiry Received', successMsg);
     console.log("Contact Inquiry captured:", { name, email, phone, budget, message });
     document.getElementById('contactForm').reset();
 }
@@ -1002,7 +1036,7 @@ function submitBookingForm() {
         ? `تم حجز موعدك بنجاح يا ${name} بتاريخ ${date} الساعة ${time}. تم إرسال رابط تأكيد التقويم إلى بريدك الإلكتروني.`
         : `Appointment scheduled successfully, ${name}! Your ${activeBookingType === 'online' ? 'Online Meeting' : 'Site Visit'} is set for ${date} at ${time}. Check your email for the calendar invitation.`;
 
-    alert(successMsg);
+    showNotification(currentLang === 'ar' ? 'تم حجز الموعد' : 'Appointment Confirmed', successMsg);
     console.log("Consultation booked:", { name, email, date, time, type: activeBookingType });
     
     document.getElementById('modalBookingForm').reset();
