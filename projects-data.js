@@ -36,9 +36,9 @@ const projectsData = {
         "locationSlug": "wasl-1",
         "priceRaw": 2100000,
         "images": [
-            "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_0.webp",
+            "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_2.webp",
             "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_1.webp",
-            "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_2.webp"
+            "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_0.webp"
         ],
         "en": {
             "title": "1 Residences Wasl 1",
