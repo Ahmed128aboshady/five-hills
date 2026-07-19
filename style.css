@@ -13,7 +13,8 @@
     /* Color Palette */
     --color-bg-deep: #050b11;          /* Core Velvet Navy Black */
     --color-bg-card: rgba(12, 60, 102, 0.16); /* Frosted Glass Brand Blue */
-    --color-bg-nav: rgba(5, 11, 17, 0.85);  /* Nav Frosted Glass */
+    --color-bg-nav: rgba(5, 11, 17, 0);      /* Nav starts fully transparent */
+    --color-bg-nav-scrolled: rgba(5, 11, 17, 0.88); /* Nav Frosted Glass on scroll */
     --color-primary: #0c3c66;         /* Brand Deep Blue from Logo */
     --color-accent: #1b8243;          /* Brand Emerald Green from Logo */
     --color-accent-hover: #26a65b;    /* Light Accent Green */
@@ -48,7 +49,8 @@
 body.light-theme {
     --color-bg-deep: #F0F4F8;         /* Soft Blue-Gray Light Background */
     --color-bg-card: rgba(255, 255, 255, 0.85); /* Pure White Glass Card */
-    --color-bg-nav: rgba(240, 244, 248, 0.9);   /* Light Nav Glass */
+    --color-bg-nav: rgba(240, 244, 248, 0);      /* Light Nav starts transparent */
+    --color-bg-nav-scrolled: rgba(240, 244, 248, 0.93); /* Light Nav on scroll */
     --color-primary: #0c3c66;
     --color-text-bright: #050b11;     /* Dark Navy Text */
     --color-text-muted: #4e6172;      /* Muted Slate Gray Text */
@@ -206,9 +208,19 @@ body.light-theme .gold-gradient-text {
     width: 100%;
     z-index: 10000; /* Increased to stay above drawer */
     background: var(--color-bg-nav);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    transition: background 0.5s ease, backdrop-filter 0.5s ease, -webkit-backdrop-filter 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Header becomes frosted glass when user scrolls down */
+.site-header.scrolled {
+    background: var(--color-bg-nav-scrolled);
     backdrop-filter: blur(var(--glass-blur));
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    transition: var(--transition-smooth);
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
 }
 
 .header-container {
@@ -284,11 +296,15 @@ body.light-theme .gold-gradient-text {
     font-size: 0.8rem;
     background: transparent;
     border: 1px solid var(--color-border);
-    color: var(--color-accent);
+    color: #FFFFFF;
     padding: 6px 12px;
     border-radius: 4px;
     cursor: pointer;
     transition: var(--transition-smooth);
+}
+
+body.light-theme .lang-switch {
+    color: var(--color-accent);
 }
 
 .lang-switch:hover {
@@ -2468,5 +2484,124 @@ body.rtl-mode .custom-toast {
     body.rtl-mode .custom-toast {
         left: 20px;
         right: 20px;
+    }
+}
+
+
+/* ================================================================
+   PORTFOLIO PAGE — MOBILE RESPONSIVE FIXES
+   Targets: hero overflow, 3D panel sizing, card text, container
+   ================================================================ */
+
+
+
+@media (max-width: 768px) {
+
+    /* --- Hero Section --- */
+    .hero-section {
+        padding-top: 90px !important;
+        padding-bottom: 50px !important;
+        min-height: 100svh !important;
+        align-items: flex-start !important;
+    }
+
+    /* Hero container - proper safe padding */
+    .hero-section .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* --- Agency title sizing on mobile --- */
+    .agency-title {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+        word-break: break-word;
+    }
+
+    .agency-desc {
+        font-size: 0.95rem !important;
+        max-width: 100% !important;
+        color: rgba(255,255,255,0.9) !important;
+        font-weight: 500 !important;
+    }
+
+    .agency-tagline {
+        font-size: 0.7rem !important;
+        letter-spacing: 0.15em !important;
+    }
+
+    /* --- 3D Scroll Section --- */
+    /* Make the sticky panels properly contained */
+    .relative.z-10.mx-auto.max-w-700.px-6.text-center {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+    }
+
+    /* 3D panel card inner content */
+    .double-bezel-outer {
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .double-bezel-inner {
+        padding: 24px !important;
+    }
+
+    /* Panel headings on mobile */
+    .explode-text h2.agency-title {
+        font-size: 1.6rem !important;
+    }
+
+    /* Override inline large padding on hero for mobile */
+    section.hero-section[style] {
+        padding-top: 90px !important;
+    }
+
+    /* --- Bento grid section padding --- */
+    section[style*="padding: 100px"] {
+        padding: 60px 0 !important;
+    }
+
+    /* --- Founder / profile section --- */
+    .bento-grid {
+        padding: 0 16px !important;
+    }
+
+    /* --- General section container safe padding --- */
+    section > .container,
+    section > div > .container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Even tighter on very small phones */
+    .agency-title {
+        font-size: 1.75rem !important;
+    }
+
+    .double-bezel-inner {
+        padding: 18px !important;
+    }
+
+    .explode-text h2.agency-title {
+        font-size: 1.4rem !important;
+    }
+
+    /* Reduce hero top padding on tiny phones */
+    .hero-section {
+        padding-top: 80px !important;
+    }
+
+    section.hero-section[style] {
+        padding-top: 80px !important;
     }
 }
