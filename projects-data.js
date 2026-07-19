@@ -4,10 +4,11 @@ const projectsData = {
         "locationSlug": "wasl-1",
         "priceRaw": 2100000,
         "images": [
-            "images/project-images/1Residences_pdf_0.webp",
-            "images/project-images/1Residences_pdf_1.webp",
-            "images/project-images/1Residences_pdf_2.webp"
-        ],
+        "images/project-images/1Residences_brochure_0.webp",
+        "images/project-images/1Residences_brochure_1.webp",
+        "images/project-images/1Residences_brochure_2.webp",
+        "images/project-images/1Residences_brochure_3.webp"
+    ],
         "en": {
             "title": "1 Residences Wasl 1",
             "locationText": "Wasl 1, Zabeel, Dubai",
