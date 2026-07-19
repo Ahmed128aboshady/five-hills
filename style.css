@@ -461,6 +461,8 @@ body.light-theme .hero-overlay {
 .search-container {
     width: 100%;
     max-width: 1080px;
+    margin: 0 auto;
+    text-align: left;
     background: var(--color-bg-card);
     backdrop-filter: blur(var(--glass-blur));
     border: 1px solid var(--color-border);
@@ -2517,7 +2519,7 @@ body.rtl-mode .custom-toast {
         padding-top: 90px !important;
         padding-bottom: 50px !important;
         min-height: 100svh !important;
-        align-items: flex-start !important;
+        align-items: center !important;
     }
 
     /* Hero container - proper safe padding */
