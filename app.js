@@ -21,7 +21,7 @@ const translations = {
         navHome: "Home",
         navFeatured: "Projects",
         navAbout: "About Us",
-        navPortfolio: "Management",
+        navPortfolio: "Portfolio",
         navContact: "Contact",
         headerCtaBtn: "Inquire Now",
         
@@ -1085,7 +1085,7 @@ window.addEventListener('DOMContentLoaded', () => {
             <ul class="mobile-nav-links">
                 <li><a href="index.html" id="mobNavHome">Home</a></li>
                 <li><a href="projects.html" id="mobNavFeatured">Projects</a></li>
-                <li><a href="portfolio.html" id="mobNavPortfolio">Management</a></li>
+                <li><a href="portfolio.html" id="mobNavPortfolio">Portfolio</a></li>
                 <li><a href="about.html" id="mobNavAbout">About Us</a></li>
                 <li><a href="team.html" id="mobNavTeam">Our Team</a></li>
                 <li><a href="contact.html" id="mobNavContact">Contact</a></li>
