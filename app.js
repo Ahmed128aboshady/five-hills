@@ -21,6 +21,7 @@ const translations = {
         navHome: "Home",
         navFeatured: "Projects",
         navAbout: "About Us",
+        navPortfolio: "Management",
         navContact: "Contact",
         headerCtaBtn: "Inquire Now",
         
@@ -307,6 +308,7 @@ const translations = {
         navHome: "الرئيسية",
         navFeatured: "المشاريع",
         navAbout: "من نحن",
+        navPortfolio: "إدارة العقارات",
         navContact: "اتصل بنا",
         headerCtaBtn: "استفسر الآن",
         
@@ -627,6 +629,9 @@ function updateUI() {
     
     const mobAbout = document.getElementById('mobNavAbout');
     if (mobAbout) mobAbout.innerText = langData.navAbout;
+    
+    const mobPortfolio = document.getElementById('mobNavPortfolio');
+    if (mobPortfolio) mobPortfolio.innerText = langData.navPortfolio;
     
     const mobContact = document.getElementById('mobNavContact');
     if (mobContact) mobContact.innerText = langData.navContact;
@@ -1078,6 +1083,7 @@ window.addEventListener('DOMContentLoaded', () => {
             <ul class="mobile-nav-links">
                 <li><a href="index.html" id="mobNavHome">Home</a></li>
                 <li><a href="projects.html" id="mobNavFeatured">Projects</a></li>
+                <li><a href="portfolio.html" id="mobNavPortfolio">Management</a></li>
                 <li><a href="about.html" id="mobNavAbout">About Us</a></li>
                 <li><a href="team.html" id="mobNavTeam">Our Team</a></li>
                 <li><a href="contact.html" id="mobNavContact">Contact</a></li>

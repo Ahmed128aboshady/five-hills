@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="canonical" href="https://fivehills.ae/portfolio.html" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management & Leasing Portfolio | 5 Hills Real Estate</title>
+    <meta name="description" content="Explore Five Hills Real Estate's premium property management and leasing portfolio in Dubai. From luxury towers to commercial warehouses, we manage assets from A to Z.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=1.25">
+
+    <style>
+        /* ---- Portfolio Page Exclusive 3D & Responsive Styles ---- */
+        .portfolio-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 20px 60px;
+            background: radial-gradient(ellipse at 50% 0%, rgba(27,130,67,0.12) 0%, transparent 70%);
+        }
+
+        .portfolio-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231b8243' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .portfolio-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .portfolio-hero-tag {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            border: 1px solid rgba(27,130,67,0.4);
+            border-radius: 50px;
+            padding: 6px 20px;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-hero-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.15;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-hero-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-hero-title { font-size: 2.2rem; }
+            .portfolio-hero-subtitle { font-size: 0.95rem; }
+        }
+
+        /* ---- Interactive 3D Stats Strip ---- */
+        .portfolio-stats-strip {
+            background: var(--color-bg-nav);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: 50px 20px;
+            position: relative;
+        }
+
+        .portfolio-stats-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-stats-inner {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        .portfolio-stat-item .stat-num {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            display: block;
+            background: linear-gradient(135deg, #1b8243 0%, #a2d6b3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .portfolio-stat-item .stat-lbl {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ---- Filters Block ---- */
+        .filter-container {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            padding: 10px 22px;
+            font-size: 0.85rem;
+            font-family: var(--font-body);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #FFFFFF;
+            box-shadow: 0 0 15px rgba(27,130,67,0.3);
+        }
+
+        /* ---- 3D Asset Showcase Grid ---- */
+        .asset-grid {
+            max-width: 1200px;
+            margin: 20px auto 80px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            perspective: 1000px; /* Crucial for 3D card tilt effect */
+        }
+
+        @media (max-width: 992px) {
+            .asset-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .asset-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ---- 3D Tilt Card Structure ---- */
+        .tilt-card {
+            background: rgba(4, 9, 15, 0.6);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.1s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .tilt-card:hover {
+            box-shadow: 0 20px 40px rgba(27,130,67,0.15);
+            border-color: rgba(27,130,67,0.3);
+        }
+
+        .tilt-card-media {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            transform: translateZ(20px); /* 3D pop effect */
+        }
+
+        .tilt-card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .tilt-card:hover .tilt-card-media img {
+            transform: scale(1.08);
+        }
+
+        .tilt-card-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            transform: translateZ(10px);
+        }
+
+        .asset-category {
+            font-size: 0.75rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .asset-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+        }
+
+        .asset-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .asset-meta {
+            border-top: 1px solid var(--color-border);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .meta-val {
+            font-size: 0.8rem;
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+
+        /* ---- Services Flows Section ---- */
+        .services-flow-section {
+            background: rgba(255, 255, 255, 0.01);
+            border-top: 1px solid var(--color-border);
+            padding: 80px 20px;
+        }
+
+        .services-flow-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flow-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .flow-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+
+        .flow-card {
+            background: rgba(4, 9, 15, 0.4);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 30px;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .flow-card:hover {
+            border-color: var(--color-accent);
+            background: rgba(27, 130, 67, 0.03);
+            transform: translateY(-5px);
+        }
+
+        .flow-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(27, 130, 67, 0.1);
+            border: 1px solid var(--color-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+        }
+
+        .flow-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .flow-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+        }
+
+        .flow-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* ---- Renovation Feature Section ---- */
+        .renovation-strip {
+            background: linear-gradient(135deg, rgba(4,9,15,0.9) 0%, rgba(27,130,67,0.15) 100%);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: 80px 20px;
+        }
+
+        .renovation-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .renovation-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        .renovation-media {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-premium);
+            border: 1px solid var(--color-border);
+        }
+
+        .renovation-media img {
+            width: 100%;
+            display: block;
+        }
+
+        .renovation-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--color-accent);
+            color: #FFFFFF;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* ---- Interactive Modal Styles ---- */
+        .asset-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1200;
+            background: rgba(4,9,15,0.85);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition-smooth);
+        }
+
+        .asset-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .asset-modal-window {
+            background: #04090f;
+            border: 1px solid var(--color-border);
+            width: 90%;
+            max-width: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            padding: 30px;
+            transform: scale(0.9);
+            transition: var(--transition-smooth);
+        }
+
+        .asset-modal.active .asset-modal-window {
+            transform: scale(1);
+        }
+
+        .asset-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--color-text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .asset-modal-close:hover {
+            color: var(--color-accent);
+        }
+
+        .asset-modal-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+        }
+
+        .asset-modal-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+        }
+
+        .asset-modal-desc {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* ---- Property Submission Form ---- */
+        .submit-section {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .submit-form-card {
+            background: rgba(4,9,15,0.6);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --- Premium Luxury Header --- -->
+    <header class="site-header" id="mainHeader">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">
+                <img src="images/project-images/logo-wide.webp" alt="5 Hills Logo" style="height: 56px; width: auto; object-fit: contain;">
+            </a>
+
+            <nav class="main-navigation" id="mainNav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+                    <li><a href="projects.html" class="nav-link" id="navFeatured">Projects</a></li>
+                    <li><a href="portfolio.html" class="nav-link active" id="navPortfolio">Management</a></li>
+                    <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+                    <li><a href="team.html" class="nav-link" id="navTeam">Our Team</a></li>
+                    <li><a href="blog.html" class="nav-link" id="navBlog">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="lang-switch" id="langToggleBtn" onclick="toggleLanguage()">العربية</button>
+                <button class="theme-switch-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️</button>
+                <a href="contact.html" class="btn-gold" style="padding: 10px 20px; font-size: 0.8rem;" id="headerCtaBtn">Inquire Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Hero Section --- -->
+    <section class="portfolio-hero">
+        <div class="portfolio-hero-content">
+            <span class="portfolio-hero-tag">Asset Portfolio</span>
+            <h1 class="portfolio-hero-title">Management & Leasing</h1>
+            <p class="portfolio-hero-subtitle">We deliver premium end-to-end property management solutions for hotels, malls, residential towers, and warehouses across Dubai, optimizing yield and maximizing asset appreciation.</p>
+        </div>
+    </section>
+
+    <!-- ---- 3D Stats Strip ---- -->
+    <div class="portfolio-stats-strip">
+        <div class="portfolio-stats-inner">
+            <div class="portfolio-stat-item">
+                <span class="stat-num">500+</span>
+                <span class="stat-lbl">Managed Units</span>
+            </div>
+            <div class="portfolio-stat-item">
+                <span class="stat-num">20+</span>
+                <span class="stat-lbl">Towers & Assets</span>
+            </div>
+            <div class="portfolio-stat-item">
+                <span class="stat-num">98%</span>
+                <span class="stat-lbl">Occupancy Rate</span>
+            </div>
+            <div class="portfolio-stat-item">
+                <span class="stat-num">AED 32M</span>
+                <span class="stat-lbl">Record Acquisition</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---- Filters ---- -->
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterAssets('all')">All Assets</button>
+        <button class="filter-btn" onclick="filterAssets('residential')">Residential</button>
+        <button class="filter-btn" onclick="filterAssets('hospitality')">Hotels & Leisure</button>
+        <button class="filter-btn" onclick="filterAssets('office')">Offices & Business</button>
+        <button class="filter-btn" onclick="filterAssets('industrial')">Warehouses & Garages</button>
+    </div>
+
+    <!-- ---- 3D Asset Showcase Grid ---- -->
+    <section class="asset-grid">
+        <!-- Asset 1: Reem Residence -->
+        <div class="tilt-card" data-cat="residential" onclick="openAssetModal('reem')">
+            <div class="tilt-card-media">
+                <img src="images/project-images/asset_studio_0.webp" alt="Reem Residence Dubai South" loading="lazy">
+            </div>
+            <div class="tilt-card-content">
+                <span class="asset-category">Residential</span>
+                <h3 class="asset-title">Reem Residence</h3>
+                <p class="asset-desc">Premium residential complex in Dubai South's Residential District. Modern apartments managed from tenant sourcing to full building operations.</p>
+                <div class="asset-meta">
+                    <span class="meta-lbl" style="color: var(--color-text-muted); font-size: 0.8rem;">Location</span>
+                    <span class="meta-val">Dubai South</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asset 2: Liwan Wadi Safa -->
+        <div class="tilt-card" data-cat="residential" onclick="openAssetModal('liwan')">
+            <div class="tilt-card-media">
+                <img src="images/project-images/asset_studio_1.webp" alt="Liwan Wadi Safa" loading="lazy">
+            </div>
+            <div class="tilt-card-content">
+                <span class="asset-category">Residential</span>
+                <h3 class="asset-title">Liwan Wadi Safa</h3>
+                <p class="asset-desc">Modern 2BHK family residences featuring full gym, swimming pool, private parking, and integrated annual maintenance coordination.</p>
+                <div class="asset-meta">
+                    <span class="meta-lbl" style="color: var(--color-text-muted); font-size: 0.8rem;">Price Raw</span>
+                    <span class="meta-val">AED 75,000 / Year</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asset 3: Arabian Dreams Hotel -->
+        <div class="tilt-card" data-cat="hospitality" onclick="openAssetModal('arabian')">
+            <div class="tilt-card-media">
+                <img src="images/project-images/asset_hotel_0.webp" alt="Arabian Dreams Hotel" loading="lazy">
+            </div>
+            <div class="tilt-card-content">
+                <span class="asset-category">Hotels & Leisure</span>
+                <h3 class="asset-title">Arabian Dreams Hotel</h3>
+                <p class="asset-desc">Boutique hospitality apartments offering serviced studios and 1BHKs. Fully managed leasing, check-in services, and facility operations.</p>
+                <div class="asset-meta">
+                    <span class="meta-lbl" style="color: var(--color-text-muted); font-size: 0.8rem;">Handover</span>
+                    <span class="meta-val">Leased & Managed</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asset 4: Swiss Tower Dubai -->
+        <div class="tilt-card" data-cat="office" onclick="openAssetModal('swiss')">
+            <div class="tilt-card-media">
+                <img src="images/project-images/asset_office_0.webp" alt="Dubai Swiss Tower" loading="lazy">
+            </div>
+            <div class="tilt-card-content">
+                <span class="asset-category">Offices & Business</span>
+                <h3 class="asset-title">Dubai Swiss Tower</h3>
+                <p class="asset-desc">A premium corporate building in Dubai. High-end asset management facilitating corporate leasing and facilities supervision.</p>
+                <div class="asset-meta">
+                    <span class="meta-lbl" style="color: var(--color-text-muted); font-size: 0.8rem;">Acquisition Value</span>
+                    <span class="meta-val">AED 32 Million</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asset 5: Lapiz Blue Warehouse -->
+        <div class="tilt-card" data-cat="industrial" onclick="openAssetModal('lapiz')">
+            <div class="tilt-card-media">
+                <img src="images/project-images/asset_warehouse_0.webp" alt="Lapiz Blue Warehouse" loading="lazy">
+            </div>
+            <div class="tilt-card-content">
+                <span class="asset-category">Warehouses & Garages</span>
+                <h3 class="asset-title">Lapiz Blue Warehouse</h3>
+                <p class="asset-desc">Large industrial facility and commercial garages. Managed under RERA regulations with full civil defence and security compliance.</p>
+                <div class="asset-meta">
+                    <span class="meta-lbl" style="color: var(--color-text-muted); font-size: 0.8rem;">Property Type</span>
+                    <span class="meta-val">Industrial Garage</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asset 6: SPOT! Garages -->
+        <div class="tilt-card" data-cat="industrial" onclick="openAssetModal('spot')">
+            <div class="tilt-card-media">
+                <img src="images/project-images/asset_warehouse_1.webp" alt="SPOT! Garages & Logistics" loading="lazy">
+            </div>
+            <div class="tilt-card-content">
+                <span class="asset-category">Warehouses & Garages</span>
+                <h3 class="asset-title">SPOT! Garages & Logistics</h3>
+                <p class="asset-desc">Multi-unit commercial warehouses and logistical garages. Managed operations, annual service audits, and corporate leasing contracts.</p>
+                <div class="asset-meta">
+                    <span class="meta-lbl" style="color: var(--color-text-muted); font-size: 0.8rem;">Activity</span>
+                    <span class="meta-val">Leased & Operated</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---- Services Flow Timeline ---- -->
+    <section class="services-flow-section">
+        <div class="services-flow-inner">
+            <div class="section-header" style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+                <span class="section-tagline">Comprehensive Management</span>
+                <h2 class="gold-gradient-text" style="font-family: var(--font-heading); font-size: 2.2rem;">End-to-End Property Operations</h2>
+                <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 15px;">We coordinate all operational, financial, and legal aspects of leasing on behalf of owners, ensuring a stress-free experience.</p>
+            </div>
+
+            <div class="flow-grid">
+                <div class="flow-card">
+                    <div class="flow-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    </div>
+                    <h3 class="flow-title">1. Tenant Sourcing & Ejari</h3>
+                    <p class="flow-desc">Active marketing of vacant spaces, full tenant screening, lease negotiations, tenancy contract preparation, and Ejari registration.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">
+                        <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-2.6.56-4.16 2.32-4.16 4.57 0 2.53 2.05 3.8 5.3 4.55 2.54.58 3.03 1.5 3.03 2.5 0 .98-.91 1.76-2.6 1.76-1.89 0-2.62-.85-2.73-2.16H5c.17 2.14 1.83 3.64 4 4.18V21h3v-2.18c2.63-.52 4.18-2.12 4.18-4.59 0-2.7-1.92-3.8-5.38-4.33z"/></svg>
+                    </div>
+                    <h3 class="flow-title">2. Rent Collection & Finance</h3>
+                    <p class="flow-desc">Supervising financial transactions, cheque deposits, rent collections, operational expenses management, and delivering detailed financial reports.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.8 2.9 11.8c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.6z"/></svg>
+                    </div>
+                    <h3 class="flow-title">3. AMC, Inspections & Government</h3>
+                    <p class="flow-desc">Coordinating annual maintenance (AMC), government approvals (Dubai Municipality, Civil Defence), repairs, and building facility oversight.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---- Renovation Strip ---- -->
+    <section class="renovation-strip">
+        <div class="renovation-grid">
+            <div class="renovation-media">
+                <span class="renovation-badge">Yield Booster</span>
+                <img src="images/project-images/asset_office_1.webp" alt="Old Building Renovation and Upgrades" loading="lazy">
+            </div>
+            <div class="renovation-content">
+                <span class="section-tagline">Maximize Asset Value</span>
+                <h2 class="gold-gradient-text" style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 20px;">Renovations & Redevelopment</h2>
+                <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">We specialize in modernizing older, legacy properties. By upgrading key building infrastructure, common areas, and individual apartments, we actively attract high-profile tenants, optimize lease values, and secure maximum rental yield for property owners.</p>
+                <a href="#submitProperty" class="btn-gold" style="display:inline-block; padding:12px 28px; font-size:0.85rem;">Discuss Property Upgrades</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---- Submission Form ---- -->
+    <section class="submit-section" id="submitProperty">
+        <div class="submit-form-card">
+            <div class="section-header" style="text-align: center; margin-bottom: 35px;">
+                <span class="section-tagline">Partner With Us</span>
+                <h3 class="gold-gradient-text" style="font-family: var(--font-heading); font-size: 1.8rem;">Submit Property for Management</h3>
+                <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 10px;">Fill out the form below, and our property management team will get back to you with a tailor-made proposal.</p>
+            </div>
+
+            <form id="mgmtSubmitForm" onsubmit="event.preventDefault(); handleMgmtSubmit();">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom: 20px;">
+                    <div class="form-field">
+                        <label>Your Name</label>
+                        <input type="text" id="mName" placeholder="Full Name" required style="width:100%; padding:12px; background:rgba(255,255,255,0.03); border:1px solid var(--color-border); border-radius:6px; color:#FFFFFF;">
+                    </div>
+                    <div class="form-field">
+                        <label>Phone Number (WhatsApp)</label>
+                        <input type="tel" id="mPhone" placeholder="+971 50..." required style="width:100%; padding:12px; background:rgba(255,255,255,0.03); border:1px solid var(--color-border); border-radius:6px; color:#FFFFFF;">
+                    </div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom: 20px;">
+                    <div class="form-field">
+                        <label>Property Location</label>
+                        <input type="text" id="mLoc" placeholder="e.g. Dubai Marina" required style="width:100%; padding:12px; background:rgba(255,255,255,0.03); border:1px solid var(--color-border); border-radius:6px; color:#FFFFFF;">
+                    </div>
+                    <div class="form-field">
+                        <label>Property Type</label>
+                        <select id="mType" style="width:100%; padding:12px; background:#04090f; border:1px solid var(--color-border); border-radius:6px; color:#FFFFFF;">
+                            <option value="Residential Building">Residential Building / Apartment</option>
+                            <option value="Hotel / Serviced Apartments">Hotel / Serviced Apartments</option>
+                            <option value="Commercial Office Space">Commercial Office Space</option>
+                            <option value="Warehouse / Garage / Industrial">Warehouse / Garage / Industrial</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-field" style="margin-bottom: 25px;">
+                    <label>Brief Message</label>
+                    <textarea id="mMsg" placeholder="Describe your property portfolio or management needs..." style="width:100%; padding:12px; background:rgba(255,255,255,0.03); border:1px solid var(--color-border); border-radius:6px; color:#FFFFFF; min-height:120px;"></textarea>
+                </div>
+                <button type="submit" class="btn-gold" style="width:100%; padding:14px; font-weight:600; font-size:0.9rem;">Submit Portfolio Details</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- --- Complete Luxury Footer --- -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <a href="index.html" class="site-logo">
+                    <img src="images/project-images/logo222.webp" alt="5 Hills Real Estate Agency Dubai Logo" loading="lazy" width="120" height="120" style="height: 120px; width: auto; object-fit: contain;">
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleQuick">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" id="flHome">Home</a></li>
+                    <li><a href="projects.html" id="flProjects">Projects Portfolio</a></li>
+                    <li><a href="about.html" id="flAbout">About Our Agency</a></li>
+                    <li><a href="portfolio.html" id="flMgmt">Property Management</a></li>
+                    <li><a href="team.html" id="flTeam">Our Leadership</a></li>
+                    <li><a href="blog.html" id="flBlog">Real Estate Blog</a></li>
+                    <li><a href="contact.html" id="flContact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 id="fTitleAreas">Key Areas</h4>
+                <ul class="footer-links">
+                    <li><a href="projects.html?location=downtown-dubai">Downtown Dubai</a></li>
+                    <li><a href="projects.html?location=dubai-marina">Dubai Marina</a></li>
+                    <li><a href="projects.html?location=meydan">Meydan</a></li>
+                    <li><a href="projects.html?location=wasl-1">Wasl 1 / Zabeel</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" itemscope itemtype="https://schema.org/RealEstateAgent">
+                <meta itemprop="name" content="5 Hills Real Estate">
+                <meta itemprop="image" content="https://ahmed128aboshady.github.io/five-hills/images/project-images/logo222.webp">
+                <h4 id="fTitleContact">Contact Info</h4>
+                <div class="footer-contact-item" id="fPhone"><strong>Phone:</strong> <span itemprop="telephone">+971 50 893 0996</span></div>
+                <div class="footer-contact-item" id="fWhatsapp"><strong>WhatsApp:</strong> <a href="https://wa.me/971564622103?text=Hello,%20I%20am%20interested%20in%20Dubai%20Luxury%20Properties" target="_blank" style="color: inherit; text-decoration: underline;">+971 56 462 2103</a></div>
+                <div class="footer-contact-item" id="fEmail"><strong>Email:</strong> <span itemprop="email">info@fivehills.ae</span></div>
+                <div class="footer-contact-item" id="fAddress" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><strong>Office:</strong> <span itemprop="streetAddress">Marina Plaza, Suite 2402, Dubai Marina</span>, <span itemprop="addressLocality">Dubai</span>, <span itemprop="addressRegion">Dubai</span>, <span itemprop="addressCountry">AE</span></div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p id="fCopy">&copy; 2026 5 Hills Real Estate. All rights reserved. Registered with RERA No. 12849.</p>
+            <p id="fDevelop">Designed & Programmed by <span id="marketingTeamBtn" style="cursor: pointer; text-decoration: underline; color: var(--color-accent); font-weight: 500; transition: opacity 0.2s;">Marketing Team</span></p>
+        </div>
+    </footer>
+
+    <!-- --- Floating WhatsApp Widget --- -->
+    <a href="https://wa.me/971564622103?text=Hello,%20I%20am%20interested%20in%20Dubai%20Luxury%20Properties" class="whatsapp-widget" id="whatsappFloatingBtn" target="_blank">
+        <svg viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+        <span>WhatsApp Us</span>
+    </a>
+
+    <!-- --- 3D Asset Details Modal --- -->
+    <div class="asset-modal" id="assetDetailModal">
+        <div class="asset-modal-window">
+            <button class="asset-modal-close" onclick="closeAssetModal()">&times;</button>
+            <h3 class="asset-modal-title gold-gradient-text" id="amTitle">Asset Details</h3>
+            <p class="asset-modal-desc" id="amDesc"></p>
+            <div class="asset-modal-meta">
+                <div><strong>Location:</strong> <span id="amLocText"></span></div>
+                <div><strong>Rate / Status:</strong> <span id="amRateText"></span></div>
+            </div>
+            <a href="#" id="amCtaBtn" target="_blank" class="btn-gold" style="display:block; text-align:center; padding:12px; font-weight:600;">Inquire About This Asset</a>
+        </div>
+    </div>
+
+    <!-- --- JS Core Functions Script --- -->
+    <script src="projects-data.js?v=1.4"></script>
+    <script src="app.js?v=1.26"></script>
+
+    <script>
+        // ---- 3D Card Tilt Effect ----
+        const cards = document.querySelectorAll('.tilt-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                // Calculate rotation based on cursor offset
+                const rotateX = -y / 8;
+                const rotateY = x / 8;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            });
+        });
+
+        // ---- Filter Assets ----
+        function filterAssets(category) {
+            const btns = document.querySelectorAll('.filter-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const allCards = document.querySelectorAll('.tilt-card');
+            allCards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-cat') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // ---- Asset Modal Detail Database ----
+        const assetDb = {
+            reem: {
+                title: "Reem Residence (Dubai South)",
+                desc: "Premium residential building featuring multi-family apartment options located in the Residential District of Dubai South. Our operations encompass complete tenant relations, rental collection, regular maintenance cycles, and Ejari certifications on behalf of the owner to maintain a 98% occupancy rating.",
+                loc: "Dubai South",
+                rate: "Fully Leased",
+                whatsapp: "https://wa.me/971564622103?text=Inquiry%20-%20Reem%20Residence%20Dubai%20South"
+            },
+            liwan: {
+                title: "Liwan Wadi Safa (2BHK Apartments)",
+                desc: "Spacious 2BHK family residences located in Liwan, Wadi Safa. Property includes dedicated secure parking, a fully-equipped gym, clean swimming pool, and annual maintenance agreements. Currently offering competitive renting schedules with flexible grace periods.",
+                loc: "Liwan, Wadi Safa, Dubai",
+                rate: "AED 75,000 / Year",
+                whatsapp: "https://wa.me/971564622103?text=Inquiry%20-%20Liwan%20Wadi%20Safa%202BHK"
+            },
+            arabian: {
+                title: "Arabian Dreams Hotel Apartments",
+                desc: "Elegant boutique hospitality apartments in Dubai. Providing complete serviced studio leases starting at AED 55,000 and 1BHK layouts scaling from AED 65,000 to AED 84,000. Features fully-managed reception, tenant check-in operations, and comprehensive hospitality coordination.",
+                loc: "Dubai, UAE",
+                rate: "Studio 55k | 1BHK 65k-84k",
+                whatsapp: "https://wa.me/971564622103?text=Inquiry%20-%20Arabian%20Dreams%20Hotel"
+            },
+            swiss: {
+                title: "Swiss Tower Dubai",
+                desc: "An acquisition transaction of a complete corporate tower structure valued at AED 32 Million, fully facilitated by Ashraf El-Shennawy. Currently managing commercial leasing, tenant relations, and high-level corporate facilities operations.",
+                loc: "JLT / Dubai",
+                rate: "Fully Managed",
+                whatsapp: "https://wa.me/971564622103?text=Inquiry%20-%20Dubai%20Swiss%20Tower"
+            },
+            lapiz: {
+                title: "Lapiz Blue Industrial Warehouse",
+                desc: "Large commercial garage and logistical warehouse complex located in Dubai. Fully compliant with all civil defence and municipal regulations, managed under structured property management contracts with integrated annual facility audits.",
+                loc: "Dubai Industrial Area",
+                rate: "Leased & Operated",
+                whatsapp: "https://wa.me/971564622103?text=Inquiry%20-%20Lapiz%20Blue%20Warehouse"
+            },
+            spot: {
+                title: "SPOT! Commercial Garages",
+                desc: "High-occupancy commercial storage, garages, and logistical warehousing. Featuring full-cycle operational support, annual maintenance contracts (AMC), rent collections, and municipal coordination.",
+                loc: "Dubai Branch",
+                rate: "Fully Occupied",
+                whatsapp: "https://wa.me/971564622103?text=Inquiry%20-%20SPOT!%20Garages"
+            }
+        };
+
+        function openAssetModal(id) {
+            const data = assetDb[id];
+            if (!data) return;
+            
+            document.getElementById('amTitle').innerText = data.title;
+            document.getElementById('amDesc').innerText = data.desc;
+            document.getElementById('amLocText').innerText = data.loc;
+            document.getElementById('amRateText').innerText = data.rate;
+            document.getElementById('amCtaBtn').href = data.whatsapp;
+
+            document.getElementById('assetDetailModal').classList.add('active');
+        }
+
+        function closeAssetModal() {
+            document.getElementById('assetDetailModal').classList.remove('active');
+        }
+
+        function handleMgmtSubmit() {
+            const name = document.getElementById('mName').value.trim();
+            const phone = document.getElementById('mPhone').value.trim();
+            const loc = document.getElementById('mLoc').value.trim();
+            const type = document.getElementById('mType').value;
+            const msg = document.getElementById('mMsg').value.trim();
+
+            if (!name || !phone || !loc) return;
+
+            const textMsg = `Hello 5 Hills,\n\nI would like to submit a property for Management:\n- *Name:* ${name}\n- *Phone:* ${phone}\n- *Location:* ${loc}\n- *Type:* ${type}\n- *Message:* ${msg}`;
+            const encoded = encodeURIComponent(textMsg);
+            
+            showNotification('Success', 'Redirecting you to WhatsApp...');
+            setTimeout(() => {
+                window.location.href = `https://wa.me/971564622103?text=${encoded}`;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
