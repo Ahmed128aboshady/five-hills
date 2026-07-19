@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Business Portfolio | 5 Hills Real Estate</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+
+    <style>
+        :root {
+            --color-bg: #02060c;
+            --color-card: rgba(10, 20, 32, 0.7);
+            --color-accent: #1b8243;
+            --color-gold: #cfa15c;
+            --color-text: #e2e8f0;
+            --color-text-muted: #94a3b8;
+            --color-border: rgba(207, 161, 92, 0.2);
+            --font-heading: 'Cormorant Garamond', serif;
+            --transition-smooth: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: 'Inter', sans-serif;
+            user-select: none;
+        }
+
+        /* ---- Neural Particle Background ---- */
+        #particleCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: auto;
+        }
+
+        /* ---- Fullscreen Presentation Container ---- */
+        .presentation-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ---- Top Controls Header ---- */
+        .pres-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .control-btn:hover {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            box-shadow: 0 0 15px rgba(27, 130, 67, 0.4);
+        }
+
+        /* ---- Slides Wrapper ---- */
+        .slides-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 80px 80px;
+            transform: scale(0.95) translateY(20px);
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: scale(1) translateY(0);
+        }
+
+        /* ---- Glassmorphic Slide Layout ---- */
+        .slide-content {
+            background: var(--color-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 1100px;
+            height: 100%;
+            max-height: 680px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            overflow-y: auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6), inset 0 0 20px rgba(207, 161, 92, 0.05);
+            position: relative;
+        }
+
+        /* Custom Scrollbar for slide content */
+        .slide-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .slide-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .slide-content::-webkit-scrollbar-thumb {
+            background: rgba(207, 161, 92, 0.2);
+            border-radius: 10px;
+        }
+
+        /* ---- Split Layout Grid ---- */
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .split-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .split-media {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            height: 100%;
+            max-height: 420px;
+        }
+
+        .split-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 900px) {
+            .slide { padding: 90px 20px 70px; }
+            .slide-content { max-height: 85vh; padding: 25px; }
+            .split-grid { grid-template-columns: 1fr; gap: 20px; }
+            .split-media { display: none; }
+        }
+
+        /* ---- Slide Elements Styling ---- */
+        .tagline {
+            font-size: 0.8rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .slide-title {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            line-height: 1.15;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 30%, var(--color-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .slide-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        /* ---- Floating Sidebar dots navigation ---- */
+        .side-nav {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        html[dir="rtl"] .side-nav {
+            right: auto;
+            left: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .side-nav { display: none; }
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-dot.active {
+            background: var(--color-gold);
+            transform: scale(1.3);
+            box-shadow: 0 0 10px var(--color-gold);
+        }
+
+        /* ---- Bottom Navigation Footer ---- */
+        .pres-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .page-num {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .nav-arrows {
+            display: flex;
+            gap: 15px;
+        }
+
+        .arrow-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .arrow-btn:hover {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #FFFFFF;
+            box-shadow: 0 0 15px rgba(27, 130, 67, 0.4);
+        }
+
+        /* ---- Hexagonal / Cards Grid ---- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            transition: var(--transition-smooth);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-5px) scale(1.02);
+            background: rgba(207, 161, 92, 0.03);
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            color: var(--color-gold);
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+
+        .card-desc {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        /* ---- Credentials Slide Grid ---- */
+        .cred-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .cred-wrapper { grid-template-columns: 1fr; }
+        }
+
+        .cred-card {
+            background: linear-gradient(135deg, rgba(10, 20, 32, 0.9) 0%, rgba(27, 130, 67, 0.05) 100%);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cred-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(207, 161, 92, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cred-label {
+            font-size: 0.75rem;
+            color: var(--color-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 5px;
+        }
+
+        .cred-name {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        .cred-detail {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+        }
+
+        .cred-activity-box {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 15px;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        /* ---- Start Gate Overlay ---- */
+        .start-gate {
+            position: fixed;
+            inset: 0;
+            background: #02060c;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .start-gate.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .start-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .start-logo img {
+            height: 120px;
+            margin-bottom: 30px;
+            animation: pulse-logo 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse-logo {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(207, 161, 92, 0.2)); }
+            50% { transform: scale(1.03); filter: drop-shadow(0 0 25px rgba(207, 161, 92, 0.5)); }
+        }
+
+        .start-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+        }
+
+        .start-subtitle {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 40px;
+            letter-spacing: 0.05em;
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, var(--color-accent) 0%, #176f39 100%);
+            border: none;
+            color: #FFFFFF;
+            padding: 16px 36px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            box-shadow: 0 10px 25px rgba(27, 130, 67, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(27, 130, 67, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ---- Neural Particle Canvas ---- -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- ---- Start Presentation Gate ---- -->
+    <div class="start-gate" id="startGate">
+        <div class="start-content">
+            <div class="start-logo">
+                <img src="images/project-images/logo222.webp" alt="5 Hills Logo">
+            </div>
+            <h1 class="start-title gold-gradient-text">FIVE HILLS</h1>
+            <p class="start-subtitle">Interactive Business & Asset Portfolio</p>
+            <button class="start-btn" onclick="startPresentation()">Start Presentation</button>
+        </div>
+    </div>
+
+    <!-- ---- Main Presentation App ---- -->
+    <div class="presentation-container">
+        
+        <!-- ---- Header Controls ---- -->
+        <header class="pres-header">
+            <a href="index.html" class="logo">
+                <img src="images/project-images/logo-wide.webp" alt="5 Hills Logo">
+            </a>
+            <div class="header-controls">
+                <button class="control-btn" onclick="togglePresentationLang()">العربية</button>
+                <a href="index.html" class="control-btn">Back to Website &rarr;</a>
+            </div>
+        </header>
+
+        <!-- ---- Sidebar Dot Nav ---- -->
+        <div class="side-nav" id="sideNav"></div>
+
+        <!-- ---- Slides Wrapper ---- -->
+        <div class="slides-wrapper">
+            
+            <!-- Slide 1: Welcome Story -->
+            <div class="slide active" id="slide1">
+                <div class="slide-content">
+                    <div class="split-grid">
+                        <div class="split-text">
+                            <span class="tagline">Welcome to Five Hills</span>
+                            <h2 class="slide-title gold-gradient-text">About 5Hills Real Estate</h2>
+                            <p class="slide-desc">At 5Hills, we understand that purchasing property in Dubai is a major financial decision. That’s why we provide clients with a comprehensive solution that goes beyond finding the right property.<br><br>We also offer integrated mortgage services in partnership with top local and international banks to ensure a smooth, hassle-free buying experience.</p>
+                            <p class="slide-desc" style="color: var(--color-accent); font-weight: 500;">Our mission is to combine our real estate expertise with custom financing services to help clients secure their dream properties confidently.</p>
+                        </div>
+                        <div class="split-media">
+                            <img src="images/project-images/asset_office_1.webp" alt="Dubai Premium Offices">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Vision & Future Goals -->
+            <div class="slide" id="slide2">
+                <div class="slide-content">
+                    <div class="split-grid">
+                        <div class="split-text">
+                            <span class="tagline">Our Direction</span>
+                            <h2 class="slide-title gold-gradient-text">Vision & Future Goals</h2>
+                            <p class="slide-desc">Our vision is to build a strong and trusted name in real estate brokerage and development while helping clients achieve successful, tax-free investments in the UAE market.</p>
+                            <div class="cards-grid" style="grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <div class="feature-card">
+                                    <h4 class="card-title">Development Expansion</h4>
+                                    <p class="card-desc">Expanding into direct project development to design future-ready residential projects.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h4 class="card-title">All-in-One Office</h4>
+                                    <p class="card-desc">Establishing a specialized office combining real estate, property operations, and financing under one roof.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h4 class="card-title">Youth Financing</h4>
+                                    <p class="card-desc">Supporting young investors and new buyers through simplified mortgage and developer-backed options.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h4 class="card-title">Integrated Communities</h4>
+                                    <p class="card-desc">Contributing to building sustainable, modern, and fully integrated residential complexes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="split-media">
+                            <img src="images/project-images/asset_office_2.webp" alt="Futuristic Dubai Architecture">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Founder Biography -->
+            <div class="slide" id="slide3">
+                <div class="slide-content">
+                    <div class="split-grid">
+                        <div class="split-text">
+                            <span class="tagline">Our Leadership</span>
+                            <h2 class="slide-title gold-gradient-text">Ashraf El-Shennawy</h2>
+                            <p class="slide-desc" style="color: var(--color-gold); font-weight: 500;">Co-Founder, Real Estate Broker & Financial Consultant</p>
+                            <p class="slide-desc">Ashraf El-Shennawy is a seasoned real estate advisor with over 3 years of hands-on experience in the UAE market, primarily in Dubai.<br><br>He specializes in residential and commercial properties, land development, and project management from concept to delivery. His unique background in property operations and mortgage advisory allows him to deliver comprehensive, high-yield solutions for institutional investors and private buyers.</p>
+                        </div>
+                        <div class="split-media">
+                            <img src="images/project-images/founder-ashraf.webp" alt="Ashraf El-Shennawy" style="object-position: top center;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Licensing & Verification -->
+            <div class="slide" id="slide4">
+                <div class="slide-content">
+                    <span class="tagline">Official Verification</span>
+                    <h2 class="slide-title gold-gradient-text" style="margin-bottom: 30px;">Licensed & Registered L.L.C</h2>
+                    <div class="cred-wrapper">
+                        <!-- Card 1: Trade License -->
+                        <div class="cred-card">
+                            <span class="cred-label">Dubai Economic Department</span>
+                            <h3 class="cred-name">FIVE HILLS REAL ESTATE L.L.C</h3>
+                            <div class="cred-detail">
+                                <div><strong>License No:</strong> 1519862</div>
+                                <div><strong>Valid Until:</strong> 22/06/2026</div>
+                            </div>
+                            <div class="cred-activity-box">
+                                <strong>Registered Activities:</strong><br>
+                                • Real Estate Buying & Selling Brokerage<br>
+                                • Leasing Property Brokerage Agents
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Broker Card -->
+                        <div class="cred-card">
+                            <span class="cred-label">Real Estate Regulatory Agency (RERA)</span>
+                            <h3 class="cred-name">ASHRAF ELSHENNAWI</h3>
+                            <div class="cred-detail">
+                                <div><strong>Broker Card:</strong> 85865</div>
+                                <div><strong>Valid Until:</strong> 22/06/2026</div>
+                            </div>
+                            <div class="cred-activity-box">
+                                <strong>Registered Professional Broker</strong><br>
+                                Authorized to conduct property brokerage, leasing mediation, and acquisition advisory in the Emirate of Dubai.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Core Services Lifecycle -->
+            <div class="slide" id="slide5">
+                <div class="slide-content">
+                    <span class="tagline">Business Offerings</span>
+                    <h2 class="slide-title gold-gradient-text" style="margin-bottom: 25px;">Management & Leasing Services</h2>
+                    <div class="cards-grid">
+                        <div class="feature-card">
+                            <div class="card-icon">🔑</div>
+                            <h4 class="card-title">Tenant Sourcing & Ejari</h4>
+                            <p class="card-desc">Marketing vacant spaces, rigorous tenant screening, rent negotiations, contract prep, and Ejari registration.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="card-icon">💳</div>
+                            <h4 class="card-title">Rent Collection & Finance</h4>
+                            <p class="card-desc">Managing financial transactions, rent collections, operational expenses, and generating reports.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="card-icon">🛠️</div>
+                            <h4 class="card-title">Maintenance & AMC</h4>
+                            <p class="card-desc">Coordinating annual maintenance (AMC), building facility operations, repairs, and inspections.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="card-icon">🏛️</div>
+                            <h4 class="card-title">Government Coordination</h4>
+                            <p class="card-desc">Liaising with municipal authorities and service providers like civil defence and utilities.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="card-icon">📈</div>
+                            <h4 class="card-title">Renovation & Value Add</h4>
+                            <p class="card-desc">Upgrading older properties to boost rental yield, attract premium tenants, and maximize value.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="card-icon">🏦</div>
+                            <h4 class="card-title">Mortgage & Financing</h4>
+                            <p class="card-desc">Structuring transactions and mortgage financing via partnerships with major local/global banks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Managed Assets Showcase -->
+            <div class="slide" id="slide6">
+                <div class="slide-content">
+                    <span class="tagline">Track Record</span>
+                    <h2 class="slide-title gold-gradient-text" style="margin-bottom: 25px;">Managed Portfolio & Rentals</h2>
+                    <div class="cards-grid">
+                        <div class="feature-card">
+                            <span class="cred-label" style="font-size: 0.65rem;">Residential</span>
+                            <h4 class="card-title" style="margin-top:5px;">Reem Residence</h4>
+                            <p class="card-desc">Premium residential apartment complex in Dubai South's Residential District. Managed end-to-end.</p>
+                            <p class="card-desc" style="color:var(--color-gold); font-weight:600; margin-top:10px;">Status: Leased & Managed</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="cred-label" style="font-size: 0.65rem;">Residential</span>
+                            <h4 class="card-title" style="margin-top:5px;">Liwan Wadi Safa</h4>
+                            <p class="card-desc">Modern 2BHK family residences featuring full gym, swimming pool, and private parking spaces.</p>
+                            <p class="card-desc" style="color:var(--color-gold); font-weight:600; margin-top:10px;">Price: AED 75,000 / Yr</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="cred-label" style="font-size: 0.65rem;">Hospitality</span>
+                            <h4 class="card-title" style="margin-top:5px;">Arabian Dreams Hotel</h4>
+                            <p class="card-desc">Boutique hotel apartment complex. Offering fully serviced studios and 1BHK layouts.</p>
+                            <p class="card-desc" style="color:var(--color-gold); font-weight:600; margin-top:10px;">Rates: Studio 55k | 1BHK 65k-84k</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="cred-label" style="font-size: 0.65rem;">Offices</span>
+                            <h4 class="card-title" style="margin-top:5px;">Swiss Tower Dubai</h4>
+                            <p class="card-desc">Full commercial building purchase facilitated and managed for a private investor.</p>
+                            <p class="card-desc" style="color:var(--color-gold); font-weight:600; margin-top:10px;">Acquisition: AED 32 Million</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="cred-label" style="font-size: 0.65rem;">Industrial</span>
+                            <h4 class="card-title" style="margin-top:5px;">Lapiz Blue Warehouse</h4>
+                            <p class="card-desc">Large-scale commercial logistics warehouse and garage complex in Dubai branch.</p>
+                            <p class="card-desc" style="color:var(--color-gold); font-weight:600; margin-top:10px;">Status: Compliant & Operated</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="cred-label" style="font-size: 0.65rem;">Industrial</span>
+                            <h4 class="card-title" style="margin-top:5px;">SPOT! Garages</h4>
+                            <p class="card-desc">Multi-unit industrial garage and storage facilities with AMC and civil defence compliance.</p>
+                            <p class="card-desc" style="color:var(--color-gold); font-weight:600; margin-top:10px;">Status: Leased & Managed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Featured Off-Plan Projects -->
+            <div class="slide" id="slide7">
+                <div class="slide-content">
+                    <span class="tagline">Exclusive Developments</span>
+                    <h2 class="slide-title gold-gradient-text" style="margin-bottom: 25px;">Featured Off-Plan Projects</h2>
+                    <div class="cards-grid">
+                        <div class="feature-card">
+                            <h4 class="card-title">1 Residences</h4>
+                            <p class="card-desc">Wasl 1, Zabeel. Ready-to-move luxury apartments with panoramic views of Zabeel Park and Dubai Frame.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4 class="card-title">Knightsbridge</h4>
+                            <p class="card-desc">District 11, Meydan. Dubai's first wellness-focused smart estate featuring ultra-luxury villas and lagoons.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4 class="card-title">Avenue Park Towers</h4>
+                            <p class="card-desc">High-rise luxury residential towers with world-class wellness, retail, and lifestyle amenities.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4 class="card-title">Cedarwood Estates</h4>
+                            <p class="card-desc">Luxury townhouses and private family villas in Wadi Al Safa, designed for premium suburban living.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4 class="card-title">Hillside Residences</h4>
+                            <p class="card-desc">Contemporary mid-rise residences with lush green landscapes and direct access to major transit lines.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4 class="card-title">Boulevard Park</h4>
+                            <p class="card-desc">Elite residential community strategically positioned near high-value commercial centers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Contact / Closing -->
+            <div class="slide" id="slide8">
+                <div class="slide-content">
+                    <div class="split-grid">
+                        <div class="split-text">
+                            <span class="tagline">Partner with Us</span>
+                            <h2 class="slide-title gold-gradient-text">Let's Connect</h2>
+                            <p class="slide-desc">Ready to buy, sell, lease, or register your property portfolio for A-to-Z management? Get in touch with Ashraf El-Shennawy today for expert solutions.</p>
+                            
+                            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:30px; font-size: 0.95rem;">
+                                <div><strong>Phone:</strong> +971 50 893 0996</div>
+                                <div><strong>Email:</strong> ashrafelshennawy4@gmail.com / info@fivehills.ae</div>
+                                <div><strong>Office:</strong> Marina Plaza, Suite 2402, Dubai Marina, Dubai, UAE</div>
+                            </div>
+
+                            <a href="https://wa.me/971564622103?text=Hello%20Ashraf,%20I%20am%20interested%20in%20your%20property%20management%20services" target="_blank" class="control-btn" style="background:var(--color-accent); border-color:var(--color-accent); font-weight:600; padding:12px 28px; font-size:0.9rem; justify-content:center;">Inquire on WhatsApp</a>
+                        </div>
+                        <div class="split-media">
+                            <img src="images/project-images/logo222.webp" alt="5 Hills Logo" style="object-fit: contain; background: rgba(255,255,255,0.01); padding:40px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ---- Footer Navigation ---- -->
+        <footer class="pres-footer">
+            <span class="page-num" id="pageNum">Slide 1 of 8</span>
+            <div class="nav-arrows">
+                <button class="arrow-btn" onclick="prevSlide()" aria-label="Previous Slide">&larr;</button>
+                <button class="arrow-btn" onclick="nextSlide()" aria-label="Next Slide">&rarr;</button>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // ---- Interactive Canvas Particles ----
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null, radius: 100 };
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            const count = Math.floor((canvas.width * canvas.height) / 16000);
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    size: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(207, 161, 92, 0.15)';
+            ctx.strokeStyle = 'rgba(27, 130, 67, 0.05)';
+            
+            // Update & Draw particles
+            particles.forEach((p, idx) => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                // Wall bounds
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                // Mouse interaction
+                if (mouse.x !== null) {
+                    const dx = p.x - mouse.x;
+                    const dy = p.y - mouse.y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    if (dist < mouse.radius) {
+                        const force = (mouse.radius - dist) / mouse.radius;
+                        p.x += (dx / dist) * force * 1.5;
+                        p.y += (dy / dist) * force * 1.5;
+                    }
+                }
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Draw connections
+                for (let j = idx + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p.x - p2.x;
+                    const dy = p.y - p2.y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    if (dist < 110) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animateCanvas);
+        }
+
+        window.addEventListener('resize', initCanvas);
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+        window.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        initCanvas();
+        animateCanvas();
+
+        // ---- Slide Controls & Flow Navigation ----
+        let currentSlideIdx = 0;
+        const slides = document.querySelectorAll('.slide');
+        const pageNum = document.getElementById('pageNum');
+        const sideNav = document.getElementById('sideNav');
+
+        // Create navigation dots
+        slides.forEach((s, idx) => {
+            const dot = document.createElement('div');
+            dot.className = `nav-dot ${idx === 0 ? 'active' : ''}`;
+            dot.onclick = () => goToSlide(idx);
+            sideNav.appendChild(dot);
+        });
+
+        function updateSlideUI() {
+            slides.forEach((s, idx) => {
+                s.classList.toggle('active', idx === currentSlideIdx);
+            });
+            const dots = document.querySelectorAll('.nav-dot');
+            dots.forEach((d, idx) => {
+                d.classList.toggle('active', idx === currentSlideIdx);
+            });
+            
+            // Format slide number text
+            const slideWord = "Slide";
+            const ofWord = "of";
+            pageNum.innerText = `${slideWord} ${currentSlideIdx + 1} ${ofWord} ${slides.length}`;
+        }
+
+        function nextSlide() {
+            if (currentSlideIdx < slides.length - 1) {
+                currentSlideIdx++;
+                updateSlideUI();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlideIdx > 0) {
+                currentSlideIdx--;
+                updateSlideUI();
+            }
+        }
+
+        function goToSlide(idx) {
+            currentSlideIdx = idx;
+            updateSlideUI();
+        }
+
+        function startPresentation() {
+            document.getElementById('startGate').classList.add('hidden');
+        }
+
+        // Language toggle
+        function togglePresentationLang() {
+            const currentPath = window.location.pathname;
+            if (currentPath.includes('/ar/')) {
+                // Go to English
+                window.location.href = '../presentation.html';
+            } else {
+                // Go to Arabic
+                window.location.href = 'ar/presentation.html';
+            }
+        }
+
+        // Keyboard controls
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                prevSlide();
+            }
+        });
+    </script>
+</body>
+</html>
