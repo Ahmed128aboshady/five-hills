@@ -1,5 +1,59 @@
 /* Dynamic Projects Metadata Database Generated automatically */
 const projectsData = {
+    "Building 6 Al Jafiliyah": {
+        "locationSlug": "al-jafiliyah",
+        "priceRaw": 0,
+        "images": [
+            "images/project-images/jafiliyah6_0.webp",
+            "images/project-images/jafiliyah6_1.webp",
+            "images/project-images/jafiliyah6_2.webp",
+            "images/project-images/jafiliyah6_3.webp",
+            "images/project-images/jafiliyah6_4.webp",
+            "images/project-images/jafiliyah6_5.webp",
+            "images/project-images/jafiliyah6_6.webp",
+            "images/project-images/jafiliyah6_7.webp",
+            "images/project-images/jafiliyah6_8.webp",
+            "images/project-images/jafiliyah6_9.webp",
+            "images/project-images/jafiliyah6_10.webp",
+            "images/project-images/jafiliyah6_11.webp",
+            "images/project-images/jafiliyah6_12.webp",
+            "images/project-images/jafiliyah6_13.webp",
+            "images/project-images/jafiliyah6_14.webp",
+            "images/project-images/jafiliyah6_15.webp",
+            "images/project-images/jafiliyah6_16.webp",
+            "images/project-images/jafiliyah6_17.webp",
+            "images/project-images/jafiliyah6_18.webp",
+            "images/project-images/jafiliyah6_19.webp",
+            "images/project-images/jafiliyah6_20.webp",
+            "images/project-images/jafiliyah6_21.webp",
+            "images/project-images/jafiliyah6_22.webp",
+            "images/project-images/jafiliyah6_23.webp",
+            "images/project-images/jafiliyah6_24.webp",
+            "images/project-images/jafiliyah6_25.webp"
+        ],
+        "en": {
+            "title": "Building 6 - Al Jafiliyah",
+            "locationText": "Al Jafiliyah, Dubai",
+            "developer": "Five Hills Property Operations",
+            "price": "Fully Managed",
+            "type": "Residential & Commercial",
+            "status": "Fully Managed",
+            "handover": "Active Operations",
+            "plan": "Property Operations",
+            "desc": "Building 6 in Al Jafiliyah is a prime multi-unit residential asset fully managed by Five Hills Property Operations. Located in central Dubai near Max Metro Station and Zabeel Park."
+        },
+        "ar": {
+            "title": "مبنى 6 - الجافلية",
+            "locationText": "الجافلية، دبي",
+            "developer": "فايف هيلز لإدارة وتأجير العقارات",
+            "price": "مُدار بالكامل",
+            "type": "سكني وتجاري",
+            "status": "مُدار بالكامل",
+            "handover": "تشغيل كامل",
+            "plan": "إدارة تشغيلية شاملة",
+            "desc": "مبنى 6 في منطقة الجافلية هو أصل عقاري سكني وتجاري متميز مُدار بالكامل بواسطة فايف هيلز في موقع استراتيجي بقلب دبي بالقرب من محطة مترو ماكس وحديقة زعبيل."
+        }
+    },
     "Rem 30 Building": {
         "locationSlug": "dubai-south",
         "priceRaw": 0,
