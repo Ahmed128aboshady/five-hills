@@ -547,6 +547,38 @@
             border-top: 1px solid rgba(255,255,255,0.06);
             padding-top: 20px;
         }
+        .asset-modal-gallery {
+            margin-bottom: 20px;
+        }
+        .asset-modal-main-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid var(--color-border-hairline);
+            margin-bottom: 10px;
+        }
+        .asset-modal-thumbs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+        .asset-modal-thumb {
+            width: 65px;
+            height: 52px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.6;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+        .asset-modal-thumb.active, .asset-modal-thumb:hover {
+            opacity: 1;
+            border-color: var(--color-gold-agency);
+        }
 
         /* Match index.html hero overlay style properties */
         .hero-overlay {
@@ -1040,15 +1072,15 @@
             </div>
 
             <div class="bento-grid" id="agencyAssetsGrid">
-                <!-- Asset 1: Reem Residence -->
+                <!-- Asset 1: Rem 30 Building -->
                 <div class="bento-item-4 hover-card-3d reveal-left" data-category="residential" onclick="openAgencyModal('reem')">
                     <div class="double-bezel-outer" style="border-radius: 20px;">
                         <div class="double-bezel-inner" style="border-radius: calc(20px - 12px); padding: 20px;">
                             <div class="agency-media-wrap">
-                                <img src="images/project-images/asset_studio_0.webp" alt="Reem Residence" loading="lazy">
+                                <img src="images/project-images/rem30_0.webp" alt="Rem 30 Building" loading="lazy">
                             </div>
                             <span class="agency-tagline" style="font-size: 0.65rem; margin-bottom: 5px;">Residential</span>
-                            <h3 class="agency-title" style="font-size: 1.3rem; margin-bottom: 12px;">Reem Residence</h3>
+                            <h3 class="agency-title" style="font-size: 1.3rem; margin-bottom: 12px;">Rem 30</h3>
                             <div class="agency-meta">
                                 <span style="font-size: 0.8rem; color: var(--color-text-muted);">Dubai South</span>
                                 <span style="font-size: 0.8rem; color: var(--color-text-bright); font-weight: 500;">Managed Development</span>
@@ -1254,6 +1286,7 @@
         <div class="asset-modal-window">
             <button class="asset-modal-close" onclick="closeAgencyModal()">&times;</button>
             <h3 class="asset-modal-title gold-gradient-text" id="amTitle">Asset Details</h3>
+            <div id="amGallery" class="asset-modal-gallery"></div>
             <p class="asset-modal-desc" id="amDesc"></p>
             <div class="asset-modal-meta">
                 <div><strong>Location:</strong> <span id="amLocText"></span></div>
@@ -1399,13 +1432,21 @@
         // ---- Asset Detail Modals Database ----
         const assetDb = {
             reem: {
-                title: lang => lang === 'en' ? "Reem Residence (Dubai South)" : "ريم ريزيدنس (دبي الجنوب)",
+                title: lang => lang === 'en' ? "Rem 30 Building (Dubai South)" : "مبنى ريم 30 (دبي الجنوب)",
                 desc: lang => lang === 'en' 
-                    ? "Premium residential building featuring multi-family apartment options located in the Residential District of Dubai South. Our operations encompass complete tenant relations, rental collection, regular maintenance cycles, and Ejari certifications on behalf of the owner to maintain a 98% occupancy rating."
-                    : "مجمع سكني عائلي متميز يضم شققاً حديثة ومتنوعة المساحة يقع في المنطقة السكنية بدبي الجنوب. تشمل عمليات الإشراف عليه استقطاب المستأجرين، تحصيل الشيكات الدورية، والصيانة الدورية وإصدار وثائق الإيجاري بالنيابة عن المالك لضمان استمرار معدل إشغال يبلغ 98%.",
-                loc: lang => lang === 'en' ? "Dubai South" : "دبي الجنوب",
-                rate: lang => lang === 'en' ? "Fully Leased" : "مؤجر بالكامل",
-                whatsapp: "https://wa.me/971564622103?text=Inquiry%20-%20Reem%20Residence%20Dubai%20South"
+                    ? "Rem 30 is a premier multi-family residential building managed by Five Hills in the Residential District of Dubai South. Our operations encompass complete building management, tenant onboarding, rental collection, facility maintenance, and Ejari certifications on behalf of the owner."
+                    : "مبنى ريم 30 هو مجمع سكني متميز مُدار بالكامل بواسطة فايف هيلز في المنطقة السكنية بدبي الجنوب. تشمل عمليات الإشراف الإدارة الكاملة للمبنى، استقطاب وتأجير الوحدات، تحصيل الشيكات الدورية، والصيانة الدورية وإصدار وثائق الإيجاري بالنيابة عن المالك لضمان استقرار العائد الاستثماري.",
+                loc: lang => lang === 'en' ? "Dubai South, Dubai" : "دبي الجنوب، دبي",
+                rate: lang => lang === 'en' ? "Fully Managed" : "مُدار بالكامل",
+                images: [
+                    "images/project-images/rem30_0.webp",
+                    "images/project-images/rem30_1.webp",
+                    "images/project-images/rem30_2.webp",
+                    "images/project-images/rem30_3.webp",
+                    "images/project-images/rem30_4.webp",
+                    "images/project-images/rem30_5.webp"
+                ],
+                whatsapp: "https://wa.me/971564622103?text=Inquiry%20-%20Rem%2030%20Building%20Dubai%20South"
             },
             liwan: {
                 title: lang => lang === 'en' ? "Liwan Wadi Safa (2BHK Apartments)" : "شقق ليوان وادي الصفا (2BHK)",
@@ -1466,7 +1507,26 @@
             document.getElementById('amRateText').innerText = data.rate(pageLang);
             document.getElementById('amCtaBtn').href = data.whatsapp;
 
+            const galleryEl = document.getElementById('amGallery');
+            if (data.images && data.images.length > 0) {
+                let mainImg = `<img id="amMainImg" src="${data.images[0]}" class="asset-modal-main-img" alt="Building Image">`;
+                let thumbs = `<div class="asset-modal-thumbs">` + data.images.map((img, idx) => 
+                    `<img src="${img}" class="asset-modal-thumb ${idx === 0 ? 'active' : ''}" onclick="setModalMainImg(this, '${img}')" alt="Thumb ${idx+1}">`
+                ).join('') + `</div>`;
+                galleryEl.innerHTML = mainImg + thumbs;
+                galleryEl.style.display = 'block';
+            } else {
+                galleryEl.innerHTML = '';
+                galleryEl.style.display = 'none';
+            }
+
             document.getElementById('agencyModal').classList.add('active');
+        }
+
+        function setModalMainImg(thumbEl, src) {
+            document.getElementById('amMainImg').src = src;
+            document.querySelectorAll('.asset-modal-thumb').forEach(t => t.classList.remove('active'));
+            thumbEl.classList.add('active');
         }
 
         function closeAgencyModal() {

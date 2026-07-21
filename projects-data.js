@@ -1,5 +1,39 @@
 /* Dynamic Projects Metadata Database Generated automatically */
 const projectsData = {
+    "Rem 30 Building": {
+        "locationSlug": "dubai-south",
+        "priceRaw": 0,
+        "images": [
+            "images/project-images/rem30_0.webp",
+            "images/project-images/rem30_1.webp",
+            "images/project-images/rem30_2.webp",
+            "images/project-images/rem30_3.webp",
+            "images/project-images/rem30_4.webp",
+            "images/project-images/rem30_5.webp"
+        ],
+        "en": {
+            "title": "Rem 30 Building",
+            "locationText": "Dubai South, Dubai",
+            "developer": "Five Hills Property Operations",
+            "price": "Fully Managed",
+            "type": "Residential Building",
+            "status": "Fully Managed",
+            "handover": "Active Operations",
+            "plan": "Property Operations",
+            "desc": "Rem 30 is a premier multi-family residential building managed by Five Hills in the Residential District of Dubai South. Operations encompass complete building management, tenant onboarding, rental collection, facility maintenance, and Ejari certifications."
+        },
+        "ar": {
+            "title": "مبنى ريم 30",
+            "locationText": "دبي الجنوب، دبي",
+            "developer": "فايف هيلز لإدارة وتأجير العقارات",
+            "price": "مُدار بالكامل",
+            "type": "مجمع سكني",
+            "status": "مُدار بالكامل",
+            "handover": "تشغيل كامل",
+            "plan": "إدارة تشغيلية شاملة",
+            "desc": "مبنى ريم 30 هو مجمع سكني متميز مُدار بالكامل بواسطة فايف هيلز في المنطقة السكنية بدبي الجنوب. تشمل عمليات الإشراف الإدارة الكاملة للمبنى، استقطاب وتأجير الوحدات، تحصيل الإيجارات، والصيانة الدورية."
+        }
+    },
     "1 Residences": {
         "locationSlug": "wasl-1",
         "priceRaw": 2100000,
