@@ -39,12 +39,9 @@ const projectsData = {
         "locationSlug": "dubai-south",
         "priceRaw": 0,
         "images": [
-            "images/project-images/rem30_0.webp",
-            "images/project-images/rem30_1.webp",
-            "images/project-images/rem30_2.webp",
             "images/project-images/rem30_3.webp",
-            "images/project-images/rem30_4.webp",
-            "images/project-images/rem30_5.webp"
+            "images/project-images/rem30_2.webp",
+            "images/project-images/rem30_1.webp"
         ],
         "en": {
             "title": "Rem 30 Building",
