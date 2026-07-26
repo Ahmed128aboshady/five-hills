@@ -108,47 +108,6 @@ const projectsData = {
             "desc": "عش تجربة السكن الفخم في مشروع 1 ريزيدنسز زعبيل بمنطقة زعبيل، دبي. يتميز المشروع بإطلالاته البانورامية الخلابة على حديقة زعبيل، ويوفر سهولة تنقل تامة لوسط المدينة ومطار دبي، ومجهز بنادٍ رياضي ومرافق ترفيهية ممتازة."
         }
     },
-    "1 Residences Wasl 1 Ready-20260701T113518Z-3-001": {
-        "locationSlug": "wasl-1",
-        "priceRaw": 2100000,
-        "images": [
-            "images/project-images/1residences/1.webp",
-            "images/project-images/1residences/2.webp",
-            "images/project-images/1residences/3.webp",
-            "images/project-images/1residences/4.webp",
-            "images/project-images/1residences/5.webp",
-            "images/project-images/1residences/6.webp",
-            "images/project-images/1residences/7.webp",
-            "images/project-images/1residences/8.webp",
-            "images/project-images/1residences/9.webp",
-            "images/project-images/1residences/10.webp",
-            "images/project-images/1residences/11.webp",
-            "images/project-images/1residences/12.webp",
-            "images/project-images/1residences/13.webp"
-        ],
-        "en": {
-            "title": "1 Residences Wasl 1",
-            "locationText": "Wasl 1, Zabeel, Dubai",
-            "developer": "Wasl Asset Management",
-            "price": "AED 2,100,000",
-            "type": "Apartment",
-            "status": "Ready",
-            "handover": "Ready",
-            "plan": "Post-Handover Plan",
-            "desc": "Experience luxury living at 1 Residences Wasl 1 in Zabeel, Dubai. Situated overlooking Zabeel Park, this high-end residential complex offers easy access to Downtown and DXB Airport, equipped with top-tier fitness and leisure amenities."
-        },
-        "ar": {
-            "title": "1 ريزيدنسز زعبيل",
-            "locationText": "الوصل 1، زعبيل، دبي",
-            "developer": "الوصل لإدارة الأصول",
-            "price": "2,100,000 درهم",
-            "type": "شقق سكنية فاخرة",
-            "status": "جاهز للتسليم",
-            "handover": "جاهز للتسليم الفوري",
-            "plan": "خطة دفع بعد التسليم",
-            "desc": "عش تجربة السكن الفخم في مشروع 1 ريزيدنسز زعبيل بمنطقة زعبيل، دبي. يتميز المشروع بإطلالاته البانورامية الخلابة على حديقة زعبيل، ويوفر سهولة تنقل تامة لوسط المدينة ومطار دبي، ومجهز بنادٍ رياضي ومرافق ترفيهية ممتازة."
-        }
-    },
     "Avenue Park Towers": {
         "locationSlug": "wasl-1",
         "priceRaw": 4500000,
@@ -390,35 +349,6 @@ const projectsData = {
             "handover": "الربع الرابع 2028",
             "plan": "خطة دفع 60/40",
             "desc": "يقدم مشروع مشروع إلينغتون الفاخر مساحات عيش عصرية استثنائية في أكثر مناطق دبي حيوية وجاذبية. تم تصميم هذا التطوير ببراعة فائقة ليجمع بين الفن المعماري الراقي واللمسات العملية الفاخرة."
-        }
-    },
-    "Hillside Residences": {
-        "locationSlug": "dubai-marina",
-        "priceRaw": 2400000,
-        "images": [
-            "images/project-images/HillsideResidences_vid_0.webp"
-        ],
-        "en": {
-            "title": "Hillside Residences",
-            "locationText": "Dubai Marina, Dubai",
-            "developer": "5 Hills Signature",
-            "price": "AED 2,400,000",
-            "type": "Apartment",
-            "status": "Off-Plan",
-            "handover": "Q4 2028",
-            "plan": "60/40 Plan",
-            "desc": "Hillside Residences offers exceptional contemporary living spaces in Dubai's most sought-after district. Expertly crafted, this development merges high-end architectural aesthetics with luxurious practical layouts."
-        },
-        "ar": {
-            "title": "هيل سايد ريزيدنسز",
-            "locationText": "دبي مارينا، دبي",
-            "developer": "5 هيلز العقارية",
-            "price": "2,400,000 درهم",
-            "type": "شقق سكنية فاخرة",
-            "status": "قيد الإنشاء",
-            "handover": "الربع الرابع 2028",
-            "plan": "خطة دفع 60/40",
-            "desc": "يقدم مشروع هيل سايد ريزيدنسز مساحات عيش عصرية استثنائية في أكثر مناطق دبي حيوية وجاذبية. تم تصميم هذا التطوير ببراعة فائقة ليجمع بين الفن المعماري الراقي واللمسات العملية الفاخرة."
         }
     },
     "Hotel Project": {
