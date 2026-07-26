@@ -71,11 +71,20 @@ const projectsData = {
         "locationSlug": "wasl-1",
         "priceRaw": 2100000,
         "images": [
-        "images/project-images/1Residences_brochure_0.webp",
-        "images/project-images/1Residences_brochure_1.webp",
-        "images/project-images/1Residences_brochure_2.webp",
-        "images/project-images/1Residences_brochure_3.webp"
-    ],
+            "images/project-images/1residences/1.webp",
+            "images/project-images/1residences/2.webp",
+            "images/project-images/1residences/3.webp",
+            "images/project-images/1residences/4.webp",
+            "images/project-images/1residences/5.webp",
+            "images/project-images/1residences/6.webp",
+            "images/project-images/1residences/7.webp",
+            "images/project-images/1residences/8.webp",
+            "images/project-images/1residences/9.webp",
+            "images/project-images/1residences/10.webp",
+            "images/project-images/1residences/11.webp",
+            "images/project-images/1residences/12.webp",
+            "images/project-images/1residences/13.webp"
+        ],
         "en": {
             "title": "1 Residences Wasl 1",
             "locationText": "Wasl 1, Zabeel, Dubai",
@@ -103,9 +112,19 @@ const projectsData = {
         "locationSlug": "wasl-1",
         "priceRaw": 2100000,
         "images": [
-            "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_2.webp",
-            "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_1.webp",
-            "images/project-images/1ResidencesWasl1Ready-20260701T113518Z-3-001_pdf_0.webp"
+            "images/project-images/1residences/1.webp",
+            "images/project-images/1residences/2.webp",
+            "images/project-images/1residences/3.webp",
+            "images/project-images/1residences/4.webp",
+            "images/project-images/1residences/5.webp",
+            "images/project-images/1residences/6.webp",
+            "images/project-images/1residences/7.webp",
+            "images/project-images/1residences/8.webp",
+            "images/project-images/1residences/9.webp",
+            "images/project-images/1residences/10.webp",
+            "images/project-images/1residences/11.webp",
+            "images/project-images/1residences/12.webp",
+            "images/project-images/1residences/13.webp"
         ],
         "en": {
             "title": "1 Residences Wasl 1",
