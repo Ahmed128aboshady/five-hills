@@ -150,35 +150,6 @@ const projectsData = {
             "desc": "يقدم مشروع أفينيو بارك تاورز مساحات عيش عصرية استثنائية في أكثر مناطق دبي حيوية وجاذبية. تم تصميم هذا التطوير ببراعة فائقة ليجمع بين الفن المعماري الراقي واللمسات العملية الفاخرة."
         }
     },
-    "Bayn Project": {
-        "locationSlug": "dubai-marina",
-        "priceRaw": 2400000,
-        "images": [
-            "images/project-images/BaynProject_vid_0.webp"
-        ],
-        "en": {
-            "title": "Bayn Project",
-            "locationText": "Dubai Marina, Dubai",
-            "developer": "5 Hills Signature",
-            "price": "AED 2,400,000",
-            "type": "Apartment",
-            "status": "Off-Plan",
-            "handover": "Q4 2028",
-            "plan": "60/40 Plan",
-            "desc": "Bayn Project offers exceptional contemporary living spaces in Dubai's most sought-after district. Expertly crafted, this development merges high-end architectural aesthetics with luxurious practical layouts."
-        },
-        "ar": {
-            "title": "Bayn Project",
-            "locationText": "دبي مارينا، دبي",
-            "developer": "5 هيلز العقارية",
-            "price": "2,400,000 درهم",
-            "type": "شقق سكنية فاخرة",
-            "status": "قيد الإنشاء",
-            "handover": "الربع الرابع 2028",
-            "plan": "خطة دفع 60/40",
-            "desc": "يقدم مشروع Bayn Project مساحات عيش عصرية استثنائية في أكثر مناطق دبي حيوية وجاذبية. تم تصميم هذا التطوير ببراعة فائقة ليجمع بين الفن المعماري الراقي واللمسات العملية الفاخرة."
-        }
-    },
     "Boulevard Park": {
         "locationSlug": "wasl-1",
         "priceRaw": 4500000,
