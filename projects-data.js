@@ -236,9 +236,21 @@ const projectsData = {
         "locationSlug": "meydan",
         "priceRaw": 6700000,
         "images": [
-            "images/project-images/CedarwoodEstatesSouth_pdf_0.webp",
-            "images/project-images/CedarwoodEstatesSouth_pdf_1.webp",
-            "images/project-images/CedarwoodEstatesSouth_pdf_2.webp"
+            "images/project-images/cedarwood-south/1.webp",
+            "images/project-images/cedarwood-south/2.webp",
+            "images/project-images/cedarwood-south/3.webp",
+            "images/project-images/cedarwood-south/4.webp",
+            "images/project-images/cedarwood-south/5.webp",
+            "images/project-images/cedarwood-south/6.webp",
+            "images/project-images/cedarwood-south/7.webp",
+            "images/project-images/cedarwood-south/8.webp",
+            "images/project-images/cedarwood-south/9.webp",
+            "images/project-images/cedarwood-south/10.webp",
+            "images/project-images/cedarwood-south/11.webp",
+            "images/project-images/cedarwood-south/12.webp",
+            "images/project-images/cedarwood-south/13.webp",
+            "images/project-images/cedarwood-south/14.webp",
+            "images/project-images/cedarwood-south/15.webp"
         ],
         "en": {
             "title": "Cedarwood Estates South",
