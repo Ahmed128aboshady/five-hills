@@ -112,7 +112,20 @@ const projectsData = {
         "locationSlug": "wasl-1",
         "priceRaw": 4500000,
         "images": [
-            "images/project-images/AvenueParkTowers_pdf_0.webp"
+            "images/project-images/avenue-park-towers/1.webp",
+            "images/project-images/avenue-park-towers/2.webp",
+            "images/project-images/avenue-park-towers/3.webp",
+            "images/project-images/avenue-park-towers/4.webp",
+            "images/project-images/avenue-park-towers/5.webp",
+            "images/project-images/avenue-park-towers/6.webp",
+            "images/project-images/avenue-park-towers/7.webp",
+            "images/project-images/avenue-park-towers/8.webp",
+            "images/project-images/avenue-park-towers/9.webp",
+            "images/project-images/avenue-park-towers/10.webp",
+            "images/project-images/avenue-park-towers/11.webp",
+            "images/project-images/avenue-park-towers/12.webp",
+            "images/project-images/avenue-park-towers/13.webp",
+            "images/project-images/avenue-park-towers/14.webp"
         ],
         "en": {
             "title": "Avenue Park Towers",
