@@ -528,8 +528,6 @@ const projectsData = {
         "locationSlug": "wasl-1",
         "priceRaw": 4500000,
         "images": [
-            "images/project-images/ParkGateResidence_0.webp",
-            "images/project-images/ParkGateResidence_1.webp",
             "images/project-images/ParkGateResidence_2.webp"
         ],
         "en": {
