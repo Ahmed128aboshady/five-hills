@@ -1,6 +1,6 @@
 /* Dynamic Projects Metadata Database Generated automatically */
 const projectsData = {
-    "Building 6 Al Jafiliyah": {
+    "The Community of 6 - Al Jafiliyah Villas": {
         "locationSlug": "al-jafiliyah",
         "priceRaw": 0,
         "images": [
@@ -13,26 +13,26 @@ const projectsData = {
             "images/project-images/jafiliyah6_6.webp"
         ],
         "en": {
-            "title": "Building 6 - Al Jafiliyah",
+            "title": "The Community of 6 - Al Jafiliyah Villas",
             "locationText": "Al Jafiliyah, Dubai",
             "developer": "Five Hills Property Operations",
             "price": "Fully Managed",
-            "type": "Residential & Commercial",
+            "type": "Villas Community",
             "status": "Fully Managed",
             "handover": "Active Operations",
             "plan": "Property Operations",
-            "desc": "Building 6 in Al Jafiliyah is a prime multi-unit residential asset fully managed by Five Hills Property Operations. Located in central Dubai near Max Metro Station and Zabeel Park."
+            "desc": "The Community of 6 - Al Jafiliyah Villas is a prime residential asset fully managed by Five Hills Property Operations. Located in central Dubai near Max Metro Station and Zabeel Park."
         },
         "ar": {
-            "title": "مبنى 6 - الجافلية",
+            "title": "مجمع فلل 6 - الجافلية",
             "locationText": "الجافلية، دبي",
             "developer": "فايف هيلز لإدارة وتأجير العقارات",
             "price": "مُدار بالكامل",
-            "type": "سكني وتجاري",
+            "type": "مجمع فلل",
             "status": "مُدار بالكامل",
             "handover": "تشغيل كامل",
             "plan": "إدارة تشغيلية شاملة",
-            "desc": "مبنى 6 في منطقة الجافلية هو أصل عقاري سكني وتجاري متميز مُدار بالكامل بواسطة فايف هيلز في موقع استراتيجي بقلب دبي بالقرب من محطة مترو ماكس وحديقة زعبيل."
+            "desc": "مجمع فلل 6 في منطقة الجافلية هو أصل عقاري سكني متميز مُدار بالكامل بواسطة فايف هيلز في موقع استراتيجي بقلب دبي بالقرب من محطة مترو ماكس وحديقة زعبيل."
         }
     },
     "Rem 30 Building": {
