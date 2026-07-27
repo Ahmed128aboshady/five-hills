@@ -458,12 +458,13 @@ const projectsData = {
         "locationSlug": "dubai-marina",
         "priceRaw": 12500000,
         "images": [
-            "images/project-images/OfficeProject_0.webp",
-            "images/project-images/OfficeProject_1.webp",
-            "images/project-images/OfficeProject_2.webp"
+            "images/project-images/corporate-office-tower/1.webp",
+            "images/project-images/corporate-office-tower/2.webp",
+            "images/project-images/corporate-office-tower/3.webp",
+            "images/project-images/corporate-office-tower/4.webp"
         ],
         "en": {
-            "title": "Office Project",
+            "title": "Corporate Office Tower",
             "locationText": "Dubai Marina, Dubai",
             "developer": "5 Hills Signature",
             "price": "AED 12,500,000",
@@ -471,10 +472,10 @@ const projectsData = {
             "status": "Off-Plan",
             "handover": "Ready",
             "plan": "Bespoke Terms",
-            "desc": "Office Project is a premium commercial asset in a strategically vital business zone of Dubai. Designed for large corporations and boutique entities, it offers unmatched connectivity and modern infrastructure."
+            "desc": "Corporate Office Tower is a premium commercial asset in a strategically vital business zone of Dubai. Designed for large corporations and boutique entities, it offers unmatched connectivity and modern infrastructure."
         },
         "ar": {
-            "title": "مشروع المكاتب الإدارية",
+            "title": "برج المكاتب الإدارية (Corporate Office Tower)",
             "locationText": "دبي مارينا، دبي",
             "developer": "5 هيلز العقارية",
             "price": "12,500,000 درهم",
@@ -482,7 +483,7 @@ const projectsData = {
             "status": "قيد الإنشاء",
             "handover": "جاهز للتسليم الفوري",
             "plan": "شروط دفع مخصصة",
-            "desc": "يمثل مشروع مشروع المكاتب الإدارية عقاراً تجارياً استثنائياً في منطقة أعمال استراتيجية وحيوية في دبي. تم تصميمه للشركات الكبرى والأعمال الفاخرة، ويوفر بنية تحتية حديثة ومستويات ربط لا مثيل لها."
+            "desc": "يمثل مشروع برج المكاتب الإدارية عقاراً تجارياً استثنائياً في منطقة أعمال استراتيجية وحيوية في دبي. تم تصميمه للشركات الكبرى والأعمال الفاخرة، ويوفر بنية تحتية حديثة ومستويات ربط لا مثيل لها."
         }
     },
     "P053 Project": {
