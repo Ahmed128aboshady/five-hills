@@ -364,9 +364,19 @@ const projectsData = {
         "locationSlug": "dubai-marina",
         "priceRaw": 2400000,
         "images": [
-            "images/project-images/HotelProject_0.webp",
-            "images/project-images/HotelProject_1.webp",
-            "images/project-images/HotelProject_2.webp"
+            "images/project-images/hotel-project/1.webp",
+            "images/project-images/hotel-project/2.webp",
+            "images/project-images/hotel-project/3.webp",
+            "images/project-images/hotel-project/4.webp",
+            "images/project-images/hotel-project/5.webp",
+            "images/project-images/hotel-project/6.webp",
+            "images/project-images/hotel-project/7.webp",
+            "images/project-images/hotel-project/8.webp",
+            "images/project-images/hotel-project/9.webp",
+            "images/project-images/hotel-project/10.webp",
+            "images/project-images/hotel-project/11.webp",
+            "images/project-images/hotel-project/12.webp",
+            "images/project-images/hotel-project/13.webp"
         ],
         "en": {
             "title": "Hotel Project",
