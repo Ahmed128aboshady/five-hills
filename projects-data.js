@@ -379,7 +379,7 @@ const projectsData = {
             "images/project-images/hotel-project/13.webp"
         ],
         "en": {
-            "title": "Hotel Project",
+            "title": "Arabian Dreams Hotel Apartments",
             "locationText": "Dubai Marina, Dubai",
             "developer": "5 Hills Signature",
             "price": "AED 2,400,000",
@@ -390,7 +390,7 @@ const projectsData = {
             "desc": "Hotel Project offers exceptional contemporary living spaces in Dubai's most sought-after district. Expertly crafted, this development merges high-end architectural aesthetics with luxurious practical layouts."
         },
         "ar": {
-            "title": "مشروع الفندق الفاخر",
+            "title": "شقق أرابيان دريمز الفندقية",
             "locationText": "دبي مارينا، دبي",
             "developer": "5 هيلز العقارية",
             "price": "2,400,000 درهم",
