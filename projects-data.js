@@ -490,30 +490,35 @@ const projectsData = {
         "locationSlug": "dubai-marina",
         "priceRaw": 2400000,
         "images": [
-            "images/project-images/P053Project_zip_0.webp",
-            "images/project-images/P053Project_zip_1.webp"
+            "images/project-images/p053-warehouse/1.webp",
+            "images/project-images/p053-warehouse/2.webp",
+            "images/project-images/p053-warehouse/3.webp",
+            "images/project-images/p053-warehouse/4.webp",
+            "images/project-images/p053-warehouse/5.webp",
+            "images/project-images/p053-warehouse/6.webp",
+            "images/project-images/p053-warehouse/7.webp"
         ],
         "en": {
-            "title": "P053 Premium Residences",
+            "title": "P053 Warehouse",
             "locationText": "Dubai Marina, Dubai",
             "developer": "5 Hills Signature",
             "price": "AED 2,400,000",
-            "type": "Apartment",
+            "type": "Commercial",
             "status": "Off-Plan",
             "handover": "Q4 2028",
             "plan": "60/40 Plan",
-            "desc": "P053 Premium Residences offers exceptional contemporary living spaces in Dubai's most sought-after district. Expertly crafted, this development merges high-end architectural aesthetics with luxurious practical layouts."
+            "desc": "P053 Warehouse offers state-of-the-art commercial and industrial storage spaces in Dubai's most accessible logistics hubs."
         },
         "ar": {
-            "title": "بي 053 ريزيدنسز الفاخرة",
+            "title": "مستودعات P053 (P053 Warehouse)",
             "locationText": "دبي مارينا، دبي",
             "developer": "5 هيلز العقارية",
             "price": "2,400,000 درهم",
-            "type": "شقق سكنية فاخرة",
+            "type": "مستودعات ومساحات تجارية",
             "status": "قيد الإنشاء",
             "handover": "الربع الرابع 2028",
             "plan": "خطة دفع 60/40",
-            "desc": "يقدم مشروع بي 053 ريزيدنسز الفاخرة مساحات عيش عصرية استثنائية في أكثر مناطق دبي حيوية وجاذبية. تم تصميم هذا التطوير ببراعة فائقة ليجمع بين الفن المعماري الراقي واللمسات العملية الفاخرة."
+            "desc": "يقدم مشروع مستودعات P053 مساحات تخزين تجارية وصناعية حديثة في أبرز المناطق اللوجستية بدبي."
         }
     },
     "Park Gate Residence": {
