@@ -360,36 +360,6 @@ const projectsData = {
             "desc": "يعيد مشروع فيلا فاخرة زاوية 6 غرف نوم تعريف مفهوم السكن الفاخر للفيلات المستقلة في دبي. يقع المشروع في مجتمع سكني راقٍ جداً، وتضم كل فيلا مسبحاً خاصاً، وأسقفاً مرتفعة، وتجهيزات ذكية بالكامل مع إطلالات ساحرة."
         }
     },
-    "Ellington project": {
-        "locationSlug": "meydan",
-        "priceRaw": 3100000,
-        "images": [
-            "images/project-images/Ellingtonproject_0.webp",
-            "images/project-images/Ellingtonproject_1.webp"
-        ],
-        "en": {
-            "title": "Ellington Project",
-            "locationText": "Meydan, District 11, Dubai",
-            "developer": "Ellington Properties",
-            "price": "AED 3,100,000",
-            "type": "Apartment",
-            "status": "Off-Plan",
-            "handover": "Q4 2028",
-            "plan": "60/40 Plan",
-            "desc": "Ellington Project offers exceptional contemporary living spaces in Dubai's most sought-after district. Expertly crafted, this development merges high-end architectural aesthetics with luxurious practical layouts."
-        },
-        "ar": {
-            "title": "مشروع إلينغتون الفاخر",
-            "locationText": "ميدان، المنطقة 11، دبي",
-            "developer": "إلينغتون العقارية",
-            "price": "3,100,000 درهم",
-            "type": "شقق سكنية فاخرة",
-            "status": "قيد الإنشاء",
-            "handover": "الربع الرابع 2028",
-            "plan": "خطة دفع 60/40",
-            "desc": "يقدم مشروع مشروع إلينغتون الفاخر مساحات عيش عصرية استثنائية في أكثر مناطق دبي حيوية وجاذبية. تم تصميم هذا التطوير ببراعة فائقة ليجمع بين الفن المعماري الراقي واللمسات العملية الفاخرة."
-        }
-    },
     "Hotel Project": {
         "locationSlug": "dubai-marina",
         "priceRaw": 2400000,
