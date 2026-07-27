@@ -329,37 +329,7 @@ const projectsData = {
             "desc": "يعيد مشروع كور فيلاز العقارية تعريف مفهوم السكن الفاخر للفيلات المستقلة في دبي. يقع المشروع في مجتمع سكني راقٍ جداً، وتضم كل فيلا مسبحاً خاصاً، وأسقفاً مرتفعة، وتجهيزات ذكية بالكامل مع إطلالات ساحرة."
         }
     },
-    "corner6bedroom": {
-        "locationSlug": "dubai-marina",
-        "priceRaw": 7800000,
-        "images": [
-            "images/project-images/corner6bedroom_0.webp",
-            "images/project-images/corner6bedroom_1.webp",
-            "images/project-images/corner6bedroom_2.webp"
-        ],
-        "en": {
-            "title": "Corner 6-Bedroom Luxury Villa",
-            "locationText": "Dubai Marina, Dubai",
-            "developer": "5 Hills Signature",
-            "price": "AED 7,800,000",
-            "type": "Villa",
-            "status": "Off-Plan",
-            "handover": "Q4 2028",
-            "plan": "60/40 Plan",
-            "desc": "Corner 6-Bedroom Luxury Villa redefines luxury villa living in Dubai. Nestled in a premium community, each residence features expansive landscape views, private swimming pool, high-ceiling spaces, and state-of-the-art home automation."
-        },
-        "ar": {
-            "title": "فيلا فاخرة زاوية 6 غرف نوم",
-            "locationText": "دبي مارينا، دبي",
-            "developer": "5 هيلز العقارية",
-            "price": "7,800,000 درهم",
-            "type": "فيلات مستقلة فاخرة",
-            "status": "قيد الإنشاء",
-            "handover": "الربع الرابع 2028",
-            "plan": "خطة دفع 60/40",
-            "desc": "يعيد مشروع فيلا فاخرة زاوية 6 غرف نوم تعريف مفهوم السكن الفاخر للفيلات المستقلة في دبي. يقع المشروع في مجتمع سكني راقٍ جداً، وتضم كل فيلا مسبحاً خاصاً، وأسقفاً مرتفعة، وتجهيزات ذكية بالكامل مع إطلالات ساحرة."
-        }
-    },
+
     "Hotel Project": {
         "locationSlug": "dubai-marina",
         "priceRaw": 2400000,
