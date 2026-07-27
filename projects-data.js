@@ -221,7 +221,7 @@ const projectsData = {
             "desc": "Cedarwood Estates redefines luxury villa living in Dubai. Nestled in a premium community, each residence features expansive landscape views, private swimming pool, high-ceiling spaces, and state-of-the-art home automation."
         },
         "ar": {
-            "title": "سيداروود إستيتس الفاخرة",
+            "title": "مشروع الطيف للتطوير العقاري - الخوانيج",
             "locationText": "ميدان، المنطقة 11، دبي",
             "developer": "مجموعة شوبا العقارية",
             "price": "6,700,000 درهم",
@@ -253,7 +253,7 @@ const projectsData = {
             "images/project-images/cedarwood-south/15.webp"
         ],
         "en": {
-            "title": "Cedarwood Estates South",
+            "title": "Al Tayf Land Development (Al Khawaneej)",
             "locationText": "Meydan, District 11, Dubai",
             "developer": "Sobha Group",
             "price": "AED 6,700,000",
