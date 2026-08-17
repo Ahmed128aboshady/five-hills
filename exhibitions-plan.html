@@ -212,45 +212,41 @@
             color: var(--text-muted);
         }
 
-        /* --- Navigation Tabs --- */
+        /* --- Navigation Tabs (Fully Responsive Wrapping) --- */
         .tabs-wrapper {
             max-width: 1200px;
             margin: 0 auto 30px;
             padding: 0 24px;
-            overflow-x: auto;
-            scrollbar-width: none;
-        }
-
-        .tabs-wrapper::-webkit-scrollbar {
-            display: none;
         }
 
         .tabs-nav {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 10px;
             border-bottom: 1px solid var(--border-subtle);
-            padding-bottom: 10px;
-            min-width: max-content;
+            padding-bottom: 14px;
+            width: 100%;
         }
 
         .tab-btn {
-            background: transparent;
+            background: var(--bg-card);
             color: var(--text-muted);
-            border: 1px solid transparent;
-            padding: 10px 20px;
+            border: 1px solid var(--border-subtle);
+            padding: 10px 18px;
             border-radius: var(--radius-sm);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition-smooth);
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
             white-space: nowrap;
         }
 
         .tab-btn.active {
-            background: var(--bg-card);
+            background: rgba(207, 161, 92, 0.15);
             color: var(--gold-primary);
             border-color: var(--border-color);
             box-shadow: 0 4px 15px var(--gold-glow);
@@ -258,7 +254,8 @@
 
         .tab-btn:hover:not(.active) {
             color: var(--text-white);
-            background: rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.15);
         }
 
         /* --- Main Content Sections --- */
@@ -722,6 +719,62 @@
             line-height: 1.6 !important;
         }
 
+        /* --- Roadmap & Timeline Styling --- */
+        .roadmap-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .roadmap-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            transition: var(--transition-smooth);
+            border-right: 4px solid var(--gold-primary);
+        }
+
+        .roadmap-card:hover {
+            border-color: var(--border-color);
+            background: var(--bg-card-hover);
+            transform: translateX(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .roadmap-step {
+            background: rgba(207, 161, 92, 0.15);
+            color: var(--gold-light);
+            border: 1px solid var(--border-color);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .roadmap-info h4 {
+            color: var(--gold-primary);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .roadmap-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
         /* --- Summary Table --- */
         .summary-table-wrap {
             overflow-x: auto;
@@ -788,6 +841,10 @@
             .ex-card-header {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+
+            .tabs-nav {
+                justify-content: flex-start;
             }
         }
     </style>
@@ -1229,7 +1286,7 @@
                     <div class="roadmap-step">2</div>
                     <div class="roadmap-info">
                         <h4>الأسبوع الثاني: تجهيز الأجهزة والأتمتة</h4>
-                        <p>إعداد تطبيق تجميع البيانات على الآيباد، تجهيز كروت الـ QR والـ NFC الرقمية، واختبار أتمتة رسائل الواتساب الفورية.</p>
+                        <p>إعداد تطبيق تجميع البيانات على الآيباد، تجهيز كروت الـ QR والـ NFC الرقمية، وااختبار أتمتة رسائل الواتساب الفورية.</p>
                     </div>
                 </div>
 
