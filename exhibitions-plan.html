@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخطة الشاملة للمعارض وتجميع الليدز | 5 Hills Real Estate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #03070c;
+            --bg-card: #0a111a;
+            --bg-card-hover: #121c2b;
+            --gold-primary: #cfa15c;
+            --gold-light: #e6c587;
+            --gold-glow: rgba(207, 161, 92, 0.25);
+            --green-accent: #10b981;
+            --text-white: #ffffff;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --border-color: rgba(207, 161, 92, 0.2);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 8px;
+            --font-main: 'Cairo', sans-serif;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-main);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+            padding-bottom: 60px;
+            overflow-x: hidden;
+        }
+
+        /* --- Header Styling --- */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(3, 7, 12, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 24px;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand-wrap {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-logo {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .brand-badge {
+            background: rgba(207, 161, 92, 0.15);
+            color: var(--gold-light);
+            border: 1px solid var(--border-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-action {
+            background: var(--bg-card);
+            color: var(--gold-primary);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .btn-action:hover {
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px var(--gold-glow);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 40px 24px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, var(--gold-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 750px;
+            margin: 0 auto 30px;
+        }
+
+        /* --- Key Metrics Bar --- */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 24px;
+        }
+
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .metric-card:hover {
+            border-color: var(--border-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold-primary), transparent);
+        }
+
+        .metric-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gold-primary);
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Navigation Tabs --- */
+        .tabs-wrapper {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            padding: 0 24px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .tabs-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tabs-nav {
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 10px;
+            min-width: max-content;
+        }
+
+        .tab-btn {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid transparent;
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-btn.active {
+            background: var(--bg-card);
+            color: var(--gold-primary);
+            border-color: var(--border-color);
+            box-shadow: 0 4px 15px var(--gold-glow);
+        }
+
+        .tab-btn:hover:not(.active) {
+            color: var(--text-white);
+            background: rgba(255,255,255,0.03);
+        }
+
+        /* --- Main Content Sections --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Exhibition Cards --- */
+        .exhibitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .exhibition-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .exhibition-card:hover {
+            border-color: var(--border-color);
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
+        }
+
+        .ex-priority {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        .priority-high {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--green-accent);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .priority-mid {
+            background: rgba(207, 161, 92, 0.15);
+            color: var(--gold-light);
+            border: 1px solid var(--border-color);
+        }
+
+        .ex-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 8px;
+            padding-left: 60px;
+        }
+
+        .ex-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .ex-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .ex-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .ex-target {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            font-size: 0.85rem;
+        }
+
+        .ex-target strong {
+            color: var(--gold-light);
+        }
+
+        /* --- Interactive Booth Component --- */
+        .booth-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .booth-visual {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .booth-diagram {
+            width: 100%;
+            height: 320px;
+            border-radius: var(--radius-sm);
+            background: radial-gradient(circle at center, #172436 0%, #070d15 100%);
+            border: 1px dashed var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booth-hotspot {
+            background: rgba(207, 161, 92, 0.2);
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-light);
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .booth-hotspot:hover, .booth-hotspot.active {
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px var(--gold-glow);
+        }
+
+        .booth-details-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 24px;
+        }
+
+        .booth-details-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            margin-bottom: 12px;
+        }
+
+        .booth-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .booth-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.02);
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            border-right: 3px solid var(--gold-primary);
+        }
+
+        /* --- Lead Simulator Form --- */
+        .lead-sim-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-white);
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .form-input:focus, .form-select:focus {
+            border-color: var(--gold-primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            color: var(--bg-dark);
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px var(--gold-glow);
+        }
+
+        .lead-result {
+            margin-top: 20px;
+            padding: 16px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: var(--radius-sm);
+            display: none;
+        }
+
+        /* --- Content Roadmap Timeline --- */
+        .roadmap-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .roadmap-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .roadmap-step {
+            background: rgba(207, 161, 92, 0.15);
+            color: var(--gold-light);
+            border: 1px solid var(--border-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .roadmap-info h4 {
+            font-size: 1.1rem;
+            color: var(--text-white);
+            margin-bottom: 6px;
+        }
+
+        .roadmap-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Mobile Responsive Fixes --- */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+
+            .hero-title {
+                font-size: 1.6rem;
+            }
+
+            .booth-container {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .ex-title {
+                padding-left: 0;
+                margin-top: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --- Header --- -->
+    <header class="header">
+        <div class="header-container">
+            <div class="brand-wrap">
+                <img src="images/project-images/logo-wide.webp" alt="5 Hills Logo" class="brand-logo" onerror="this.src='images/project-images/logo222.webp'">
+                <div>
+                    <div class="brand-title">5 Hills Real Estate</div>
+                    <span class="brand-badge">خطة المعارض وتسويق 2026 - 2027</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn-action" onclick="window.print()">
+                    🖨️ طباعة الخطة
+                </button>
+                <a href="index.html" class="btn-action">
+                    🏠 الرئيسية
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Hero --- -->
+    <section class="hero">
+        <span class="hero-tag">🌟 الدليل التكتيكي للفعاليات والمبيعات</span>
+        <h1 class="hero-title">الخطة الشاملة للمشاركة في المعارض العقارية وتجميع الليدز</h1>
+        <p class="hero-subtitle">استراتيجية متكاملة لاختيار أفضل المعارض في دبي والمنطقة، تصميم البوث الذكي، تجميع بيانات المستثمرين فورياً، وتأسيس بنك محتوى مرئي يغذي إعلانات الشركة لعدة أشهر.</p>
+    </section>
+
+    <!-- --- Key Metrics --- -->
+    <section class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-number">4</div>
+            <div class="metric-label">معارض عقارية مستهدفة (2026-2027)</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-number">3x2m</div>
+            <div class="metric-label">مساحة البوث المدمج الذكي (Micro-Booth)</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-number">+500</div>
+            <div class="metric-label">مستهدف الليدز المؤهلة لكل حدث</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-number">100%</div>
+            <div class="metric-label">أتمتة المتابعة الفورية عبر الواتساب</div>
+        </div>
+    </section>
+
+    <!-- --- Tabs Navigation --- -->
+    <div class="tabs-wrapper">
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('exhibitions')">📅 جدول المعارض المستهدفة</button>
+            <button class="tab-btn" onclick="switchTab('booth')">🏛️ تصميم البوث الذكي (3x2m)</button>
+            <button class="tab-btn" onclick="switchTab('leadgen')">🎣 تجربة نظام تجميع الليدز</button>
+            <button class="tab-btn" onclick="switchTab('media')">🎥 استراتيجية صناعة المحتوى</button>
+            <button class="tab-btn" onclick="switchTab('timeline')">⏱️ الجدول الزمني للتنفيذ</button>
+        </div>
+    </div>
+
+    <!-- --- Container for Tab Contents --- -->
+    <main class="container">
+
+        <!-- TAB 1: EXHIBITIONS -->
+        <div id="tab-exhibitions" class="tab-content active">
+            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 16px;">أبرز المعارض العقارية والاستثمارية الموصى بها</h2>
+            
+            <div class="exhibitions-grid">
+                
+                <!-- Card 1 -->
+                <div class="exhibition-card">
+                    <span class="ex-priority priority-high">أعلى أولوية ⭐⭐⭐⭐⭐</span>
+                    <h3 class="ex-title">International Property Show (IPS 2026)</h3>
+                    <div class="ex-meta">
+                        <div class="ex-meta-item">📅 7 - 9 سبتمبر 2026</div>
+                        <div class="ex-meta-item">📍 مركز دبي التجاري العالمي (DWTC)</div>
+                    </div>
+                    <p class="ex-desc">أبرز منصة مبيعات عقارية مباشرة في الشرق الأوسط تجمع المستثمرين والمشترين المباشرين والوكلاء المحليين والدوليين.</p>
+                    <div class="ex-target">
+                        <strong>الهدف الرئيسي:</strong> البيع المباشر لمشاريع دبي وتجميع الليدز المؤهلة للشراء والاستثمار.
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="exhibition-card">
+                    <span class="ex-priority priority-high">ممتاز للبوث الصغير ⭐⭐⭐⭐⭐</span>
+                    <h3 class="ex-title">IREX Dubai 2026 (International Real Estate)</h3>
+                    <div class="ex-meta">
+                        <div class="ex-meta-item">📅 5 - 6 سبتمبر 2026</div>
+                        <div class="ex-meta-item">📍 فندق أنانتارا داون تاون دبي</div>
+                    </div>
+                    <p class="ex-desc">معرض نخبوي يستهدف كبار المستثمرين (HNWIs) الباحثين عن فرص استثمارية وحلول إدارة وتأجير الأصول العقارية.</p>
+                    <div class="ex-target">
+                        <strong>الهدف الرئيسي:</strong> عرض خدمات إدارة الأصول والفلل وتأجير المحافظ السكنية.
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="exhibition-card">
+                    <span class="ex-priority priority-mid">توسع خليجي ⭐⭐⭐⭐</span>
+                    <h3 class="ex-title">Cityscape Global 2026</h3>
+                    <div class="ex-meta">
+                        <div class="ex-meta-item">📅 16 - 19 نوفمبر 2026</div>
+                        <div class="ex-meta-item">📍 مركز الرياض للمعارض، السعودية</div>
+                    </div>
+                    <p class="ex-desc">أكبر حدث عقاري بالمنطقة، يتيح الوصول المباشر للمستثمرين الخليجيين والسعوديين المهتمين بشراء فلل وشقق في دبي.</p>
+                    <div class="ex-target">
+                        <strong>الهدف الرئيسي:</strong> استقطاب مستثمرين خليجيين لعقارات دبي وتوسيع شبكة العملاء.
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="exhibition-card">
+                    <span class="ex-priority priority-mid">معرض B2B شريك ⭐⭐⭐⭐</span>
+                    <h3 class="ex-title">INDEX Dubai & Big 5 Global 2026</h3>
+                    <div class="ex-meta">
+                        <div class="ex-meta-item">📅 سبتمبر - نوفمبر 2026</div>
+                        <div class="ex-meta-item">📍 دبي (DWTC / Expo City)</div>
+                    </div>
+                    <p class="ex-desc">معارض التصميم والتطوير والمقاولات، توفر فرصة لبناء علاقات مع المطورين وموردي تشطيبات إدارة الأصول.</p>
+                    <div class="ex-target">
+                        <strong>الهدف الرئيسي:</strong> اتصالات B2B وشراكات إدارة وتجهيز الأصول.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TAB 2: BOOTH DESIGN -->
+        <div id="tab-booth" class="tab-content">
+            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 16px;">مكونات البوث الصغير التفاعلي (Micro-Booth 3x2m)</h2>
+            
+            <div class="booth-container">
+                <div class="booth-visual">
+                    <h3 style="margin-bottom: 16px; font-size: 1.1rem; color: var(--text-white);">محاكاة توزيع عناصر البوث</h3>
+                    <div class="booth-diagram">
+                        <div class="booth-hotspot active" onclick="showBoothDetail('backdrop')">1️⃣ الجدار الخلفي المضيء (Backlit Backdrop)</div>
+                        <div style="display: flex; gap: 10px; width: 80%; justify-content: center;">
+                            <div class="booth-hotspot" onclick="showBoothDetail('kiosk')">2️⃣ شاشة العرض 55"</div>
+                            <div class="booth-hotspot" onclick="showBoothDetail('counter')">3️⃣ طاولة الآيباد والـ QR</div>
+                        </div>
+                        <div class="booth-hotspot" onclick="showBoothDetail('media')">4️⃣ محطة التصوير واللقاءات (Media Stand)</div>
+                    </div>
+                </div>
+
+                <div class="booth-details-panel">
+                    <div class="booth-details-title" id="boothDetailTitle">1️⃣ الجدار الخلفي المضيء (Backlit Backdrop)</div>
+                    <ul class="booth-list" id="boothDetailList">
+                        <li class="booth-item">مصنوع من الإطار الألومنيوم الخفيف القابل للطي والفك السريع.</li>
+                        <li class="booth-item">إضاءة LED خلفية قوية تبرز شعار 5 Hills والألوان الذهبية الفاخرة.</li>
+                        <li class="booth-item">تكلفة تصنيع منخفضة وإمكانية إعادة استخدامه في جميع المعارض القادمة.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: LEADGEN SIMULATOR -->
+        <div id="tab-leadgen" class="tab-content">
+            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 16px; text-align: center;">نموذج تسجيل بيانات الزوار بالبوث (Lead Capture Form Demo)</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 24px; font-size: 0.9rem;">تجربة الشاشة التفاعلية التي يملأها مسؤولو البوث أو الزائر عبر الآيباد في أقل من 30 ثانية.</p>
+            
+            <div class="lead-sim-container">
+                <form id="leadForm" onsubmit="handleLeadSubmit(event)">
+                    <div class="form-group">
+                        <label class="form-label">الاسم الكريم</label>
+                        <input type="text" class="form-input" id="leadName" placeholder="أدخل اسم الزائر..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">رقم الهاتف / الواتساب</label>
+                        <input type="tel" class="form-input" id="leadPhone" placeholder="+971 50 XXX XXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">نوع الاهتمام العقاري</label>
+                        <select class="form-select" id="leadInterest">
+                            <option value="Off-Plan Investment">شراء عقار تحت الإنشاء (Off-Plan)</option>
+                            <option value="Ready Luxury Property">شراء شقة / فيلا جاهزة</option>
+                            <option value="Property Management">خدمات إدارة وتأجير أملاك</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">الميزانية المتوقعة</label>
+                        <select class="form-select" id="leadBudget">
+                            <option value="1.5M - 3M AED">1.5 - 3 مليون درهم</option>
+                            <option value="3M - 7M AED">3 - 7 مليون درهم</option>
+                            <option value="7M+ AED">أكثر من 7 مليون درهم</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-submit">تسجيل البيانات وأتمتة الواتساب 🚀</button>
+                </form>
+
+                <div class="lead-result" id="leadResult">
+                    <h4 style="color: var(--green-accent); margin-bottom: 6px;">✅ تم تسجيل الليد بنجاح!</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);" id="leadResultText"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: MEDIA STRATEGY -->
+        <div id="tab-media" class="tab-content">
+            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 16px;">خطة إنتاج الفيديوهات والمحتوى التسويقي</h2>
+            
+            <div class="roadmap-list">
+                <div class="roadmap-card">
+                    <div class="roadmap-step">1</div>
+                    <div class="roadmap-info">
+                        <h4>قبل المعرض (Pre-Show Hype)</h4>
+                        <p>تصميم فيديو تشويقي 15 ثانية يعلن حضور فايف هيلز في المعرض، مع إرسال دعوات خاصة للعملاء المميزين وتشغيل إعلانات استهداف جغرافي لمحيط المعرض.</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-card">
+                    <div class="roadmap-step">2</div>
+                    <div class="roadmap-info">
+                        <h4>مقابلات Vox Pop سريعة بالمعرض</h4>
+                        <p>سؤال زوار المعرض والمستثمرين أسئلة تشويقية مثل: "ما هي أفضل منطقة للاستثمار في دبي في 2026؟" وصناعة ريلز قصيرة تحقق انتشاراً واسعاً على انستغرام وتيك توك.</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-card">
+                    <div class="roadmap-step">3</div>
+                    <div class="roadmap-info">
+                        <h4>لقاءات الخبراء والكواليس (Booth Vlogs)</h4>
+                        <p>تصوير لقاءات سريعة للمديرة ومستشاري الشركة يحللون فيها مشروعاً محدداً (مثل بالم سنترال) لاستخدامه كإعلانات موجهة بعناية لزيادة ثقة العملاء.</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-card">
+                    <div class="roadmap-step">4</div>
+                    <div class="roadmap-info">
+                        <h4>تأسيس بنك المحتوى والحملات الممولة</h4>
+                        <p>تجميع وتعديل المحتوى المصور بالمعرض وتجهيز 15-20 فيديو قصير يتم جدولتها وإطلاقها كإعلانات ممولة لعدة أشهر بعد المعرض.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: TIMELINE -->
+        <div id="tab-timeline" class="tab-content">
+            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 16px;">مراحل التنفيذ والجدول الزمني</h2>
+            
+            <div class="roadmap-list">
+                <div class="roadmap-card">
+                    <div class="roadmap-step">1</div>
+                    <div class="roadmap-info">
+                        <h4>الأسبوع الأول: الحجز والتصميم</h4>
+                        <p>اختيار المعرض المناسب (توصية: IPS 2026 أو IREX)، حجز موقع البوث، واعتماد التصميم النهائي للـ Backdrop والشاشات.</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-card">
+                    <div class="roadmap-step">2</div>
+                    <div class="roadmap-info">
+                        <h4>الأسبوع الثاني: تجهيز الأجهزة والأتمتة</h4>
+                        <p>إعداد تطبيق تجميع البيانات على الآيباد، تجهيز كروت الـ QR والـ NFC الرقمية، واختبار أتمتة رسائل الواتساب الفورية.</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-card">
+                    <div class="roadmap-step">3</div>
+                    <div class="roadmap-info">
+                        <h4>فترة المعرض: التشغيل والتصوير الكثيف</h4>
+                        <p>استقبال الزوار بالبوث، تسجيل البيانات لحظياً، وتصوير الفيديوهات والمقابلات اليومية بأعلى جودة.</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-card">
+                    <div class="roadmap-step">4</div>
+                    <div class="roadmap-info">
+                        <h4>ما بعد المعرض: المتابعة وإعلانات السوشيال ميديا</h4>
+                        <p>بدء اتصالات المبيعات بالعملاء المهتمين خلال 24-48 ساعة، إطلاق الفيديوهات المصورة كحملات إعلانية ممولة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- --- JavaScript for Interactivity --- -->
+    <script>
+        function switchTab(tabId) {
+            // Remove active class from buttons & contents
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            // Find clicked button
+            const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(btn => btn.getAttribute('onclick').includes(tabId));
+            if (activeBtn) activeBtn.classList.add('active');
+
+            // Show target content
+            const targetContent = document.getElementById('tab-' + tabId);
+            if (targetContent) targetContent.classList.add('active');
+        }
+
+        const boothData = {
+            backdrop: {
+                title: "1️⃣ الجدار الخلفي المضيء (Backlit Backdrop)",
+                items: [
+                    "مصنوع من الإطار الألومنيوم الخفيف القابل للطي والفك السريع.",
+                    "إضاءة LED خلفية قوية تبرز شعار 5 Hills والألوان الذهبية الفاخرة.",
+                    "تكلفة تصنيع منخفضة وإمكانية إعادة استخدامه في جميع المعارض القادمة."
+                ]
+            },
+            kiosk: {
+                title: "2️⃣ شاشة العرض الراسية 55 بوصة",
+                items: [
+                    "عرض فيديو ريلز 4K مستمر لعقارات وفلل دبي المميزة.",
+                    "جذب انتباه زوار المعرض من المسافات البعيدة داخل الصالة.",
+                    "إمكانية تحديث المحتوى والفيديوهات بسهولة عبر وحدة USB أو Wi-Fi."
+                ]
+            },
+            counter: {
+                title: "3️⃣ طاولة الاستقبال التفاعلية (iPad & QR)",
+                items: [
+                    "تتضمن جهاز آيباد مثبت لتسجيل بيانات المستثمرين فورياً.",
+                    "ستاند أكريليك فاخر يحتوي على QR Code ينقل الزائر للبروشور الرقمي والواتساب.",
+                    "تصميم عصري منخفض الحجم يناسب المساحة 3×2 متر."
+                ]
+            },
+            media: {
+                title: "4️⃣ محطة التصوير واللقاءات (Media Station)",
+                items: [
+                    "تجهيز ميكروفونات لاسلكية عازلة للضوضاء (DJI Mic 2) للتصوير.",
+                    "إضاءة محمولة وتثبيت موبايل لالتقاط المقابلات والريلز السريعة بالبوث.",
+                    "صناعة بنك محتوى تسويقي متكامل للاستخدام في الإعلانات المدفوعة."
+                ]
+            }
+        };
+
+        function showBoothDetail(key) {
+            const data = boothData[key];
+            if (!data) return;
+
+            document.querySelectorAll('.booth-hotspot').forEach(el => el.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.getElementById('boothDetailTitle').innerText = data.title;
+            const listEl = document.getElementById('boothDetailList');
+            listEl.innerHTML = data.items.map(item => `<li class="booth-item">${item}</li>`).join('');
+        }
+
+        function handleLeadSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('leadName').value;
+            const phone = document.getElementById('leadPhone').value;
+            const interest = document.getElementById('leadInterest').value;
+            const budget = document.getElementById('leadBudget').value;
+
+            const resultEl = document.getElementById('leadResult');
+            const resultText = document.getElementById('leadResultText');
+
+            resultText.innerText = `تم تسجيل المستثمر "${name}" (${phone}) بنجاح في قاعدة البيانات. تم توجيه اهتمامه (${interest} - ميزانية ${budget}) وتم تجهيز رسالة الترحيب الآلية عبر الواتساب.`;
+            resultEl.style.display = 'block';
+
+            document.getElementById('leadForm').reset();
+        }
+    </script>
+
+</body>
+</html>
