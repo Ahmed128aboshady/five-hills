@@ -519,6 +519,49 @@
             line-height: 1.5;
         }
 
+        /* --- Gifts & Incentives Section --- */
+        .gifts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .gift-card {
+            background: rgba(207, 161, 92, 0.08);
+            border: 1px solid rgba(207, 161, 92, 0.3);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: var(--transition-smooth);
+        }
+
+        .gift-card:hover {
+            background: rgba(207, 161, 92, 0.15);
+            border-color: var(--gold-primary);
+            transform: translateY(-2px);
+        }
+
+        .gift-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .gift-info h5 {
+            color: var(--gold-light);
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .gift-info p {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            line-height: 1.4;
+        }
+
         /* --- Lead Simulator Form Fix & Premium Styling --- */
         .lead-sim-container {
             background: var(--bg-card) !important;
@@ -530,6 +573,19 @@
             margin: 0 auto !important;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
             box-sizing: border-box !important;
+        }
+
+        .form-gift-banner {
+            background: linear-gradient(135deg, rgba(207, 161, 92, 0.2), rgba(16, 185, 129, 0.15)) !important;
+            border: 1px solid var(--border-color) !important;
+            border-radius: var(--radius-sm) !important;
+            padding: 12px 16px !important;
+            margin-bottom: 20px !important;
+            font-size: 0.9rem !important;
+            color: var(--gold-light) !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
         }
 
         #leadForm {
@@ -603,7 +659,7 @@
         .btn-submit {
             display: block !important;
             width: 100% !important;
-            height: 52px !important;
+            height: 54px !important;
             background: linear-gradient(135deg, var(--gold-primary), var(--gold-light)) !important;
             color: #03070c !important;
             border: none !important;
@@ -726,9 +782,9 @@
 
     <!-- --- Hero --- -->
     <section class="hero">
-        <span class="hero-tag">🌟 الدليل التكتيكي للفعاليات والمبيعات والأسعار</span>
+        <span class="hero-tag">🌟 الدليل التكتيكي للفعاليات والمبيعات وحوافز المعرض</span>
         <h1 class="hero-title">الخطة الشاملة للمشاركة في المعارض العقارية وتجميع الليدز</h1>
-        <p class="hero-subtitle">استراتيجية متكاملة لاختيار أفضل المعارض في دبي والمنطقة، مع توضيح تكاليف المشاركة التقديرية، روابط التسجيل المباشرة، طريقة التقديم، وتصميم البوث التفاعلي.</p>
+        <p class="hero-subtitle">استراتيجية متكاملة لاختيار أفضل المعارض في دبي والمنطقة، مع توضيح تكاليف المشاركة التقديرية، روابط التسجيل المباشرة، طريقة التقديم، وحوافز الجذب لزوار البوث.</p>
     </section>
 
     <!-- --- Key Metrics --- -->
@@ -738,8 +794,8 @@
             <div class="metric-label">معارض عقارية مستهدفة (2026-2027)</div>
         </div>
         <div class="metric-card">
-            <div class="metric-number">9,000 - 18,000 AED</div>
-            <div class="metric-label">متوسط تكلفة البوث الصغير المعروض</div>
+            <div class="metric-number">🎁 4 هدايا</div>
+            <div class="metric-label">حوافز جذب فورية لزوار البوث</div>
         </div>
         <div class="metric-card">
             <div class="metric-number">+500</div>
@@ -756,7 +812,7 @@
         <div class="tabs-nav">
             <button class="tab-btn active" onclick="switchTab('exhibitions')">📅 المعارض، التكاليف، وطريقة التسجيل</button>
             <button class="tab-btn" onclick="switchTab('booth')">🏛️ تصميم البوث الذكي (3x2m)</button>
-            <button class="tab-btn" onclick="switchTab('leadgen')">🎣 تجربة نظام تجميع الليدز</button>
+            <button class="tab-btn" onclick="switchTab('leadgen')">🎁 تجربة تجميع الليدز وحوافز المعرض</button>
             <button class="tab-btn" onclick="switchTab('media')">🎥 استراتيجية صناعة المحتوى</button>
             <button class="tab-btn" onclick="switchTab('timeline')">⏱️ الجدول الزمني للتنفيذ</button>
         </div>
@@ -795,7 +851,7 @@
                             <span class="ex-steps-title">📋 خطوات التقديم والحجز:</span>
                             <ol>
                                 <li>الدخول على رابط حجز البوث المباشر بالأسفل.</li>
-                                <li>تعبئة طلب العارضين (Exhibitor Booking Form) وااختيار المساحة (9m² Shell Scheme).</li>
+                                <li>تعبئة طلب العارضين (Exhibitor Booking Form) واختيار المساحة (9m² Shell Scheme).</li>
                                 <li>يتواصل مشروع الفعالية لتأكيد خريطة البوث وإرسال عقد الحجز الرسمي.</li>
                             </ol>
                         </div>
@@ -987,12 +1043,52 @@
             </div>
         </div>
 
-        <!-- TAB 3: LEADGEN SIMULATOR -->
+        <!-- TAB 3: LEADGEN SIMULATOR & INCENTIVES -->
         <div id="tab-leadgen" class="tab-content">
-            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 12px; text-align: center;">نموذج تسجيل بيانات الزوار بالبوث (Lead Capture Form Demo)</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 24px; font-size: 0.9rem;">تجربة الشاشة التفاعلية التي يملأها مسؤولو البوث أو الزائر عبر الآيباد في أقل من 30 ثانية.</p>
+            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 10px; text-align: center;">🎁 منظومة حوافز المعرض وجذب الزوار بالبوث (Call to Action System)</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 24px; font-size: 0.9rem;">عرض الهدايا والمزايا الفورية التي تشجع كل زائر على إدخال بياناته في الآيباد دون تردد.</p>
             
+            <!-- Gifts & Incentives Grid -->
+            <div class="gifts-grid">
+                <div class="gift-card">
+                    <div class="gift-icon">🎁</div>
+                    <div class="gift-info">
+                        <h5>دراسة وتقييم مجاني للإدارة</h5>
+                        <p>دراسة العائد الإيجاري (Yield Audit) مجاناً لملاك العقارات بقيمة 5,000 درهم.</p>
+                    </div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-icon">📉</div>
+                    <div class="gift-info">
+                        <h5>خصم 0% رسوم إشراف</h5>
+                        <p>إعفاء من رسوم الإدارة والتأجير لأول 3 أشهر للمباني والفلل المدارة جديدة.</p>
+                    </div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-icon">📜</div>
+                    <div class="gift-info">
+                        <h5>دليل دبي الاستثماري الرقمي</h5>
+                        <p>إرسال كتالوج المشاريع ودليل الفيزا الذهبية والاستثمار فورياً عبر الواتساب.</p>
+                    </div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-icon">🎟️</div>
+                    <div class="gift-info">
+                        <h5>سحب على قسائم التسجيل</h5>
+                        <p>دخول سحب زوار البوث على قسائم خصم رسوم التسجيل العقاري (DLD Subsidy).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Container with Active Gift Banner -->
             <div class="lead-sim-container">
+                <div class="form-gift-banner">
+                    <span>🎁 <strong>عرض المعرض الحصري:</strong> اختر هديتك الاستثمارية المجانية ليتم تفعيلها فوراً عبر الواتساب!</span>
+                </div>
+
                 <form id="leadForm" onsubmit="handleLeadSubmit(event)">
                     <div class="form-group">
                         <label class="form-label">الاسم الكريم</label>
@@ -1002,6 +1098,16 @@
                     <div class="form-group">
                         <label class="form-label">رقم الهاتف / الواتساب</label>
                         <input type="tel" class="form-input" id="leadPhone" placeholder="+971 50 XXX XXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">🎁 اختر هدية / حافز المعرض الخاص بك</label>
+                        <select class="form-select" id="leadGift">
+                            <option value="دراسة وتقييم مجاني للإدارة والعائد الإيجاري (بقيمة 5,000 درهم)">🎁 دراسة وتقييم مجاني لإدارة العقار والعائد الإيجاري (بقيمة 5,000 درهم)</option>
+                            <option value="خصم 0% رسوم إدارة وتأجير لأول 3 أشهر">📉 خصم 0% رسوم إدارة وتأجير لأول 3 أشهر</option>
+                            <option value="دليل دبي الاستثماري الرقمي الحصري + كتالوج 2026/2027">📜 دليل دبي الاستثماري الرقمي الحصري + كتالوج 2026/2027</option>
+                            <option value="دخول السحب على قسيمة خصم رسوم التسجيل العقاري (DLD Voucher)">🎟️ دخول السحب على قسيمة خصم رسوم التسجيل العقاري (DLD Voucher)</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -1022,12 +1128,12 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="btn-submit">تسجيل البيانات وأتمتة الواتساب 🚀</button>
+                    <button type="submit" class="btn-submit">🎁 احصل على هديتك وسجل البيانات وأتمتة الواتساب 🚀</button>
                 </form>
 
                 <div class="lead-result" id="leadResult">
-                    <h4 style="color: var(--green-accent); margin-bottom: 6px;">✅ تم تسجيل الليد بنجاح!</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);" id="leadResultText"></p>
+                    <h4 style="color: var(--green-accent); margin-bottom: 6px;">🎉 تم تسجيل بياناتك وحجز الهدية بنجاح!</h4>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);" id="leadResultText"></p>
                 </div>
             </div>
         </div>
@@ -1176,13 +1282,14 @@
             event.preventDefault();
             const name = document.getElementById('leadName').value;
             const phone = document.getElementById('leadPhone').value;
+            const gift = document.getElementById('leadGift').value;
             const interest = document.getElementById('leadInterest').value;
             const budget = document.getElementById('leadBudget').value;
 
             const resultEl = document.getElementById('leadResult');
             const resultText = document.getElementById('leadResultText');
 
-            resultText.innerText = `تم تسجيل المستثمر "${name}" (${phone}) بنجاح في قاعدة البيانات. تم توجيه اهتمامه (${interest} - ميزانية ${budget}) وتم تجهيز رسالة الترحيب الآلية عبر الواتساب.`;
+            resultText.innerText = `تم تسجيل المستثمر "${name}" (${phone}) بنجاح! تم حجز هديتك الحصرية: [${gift}] وتوجيه اهتمامك (${interest} - ميزانية ${budget}) مع إرسال كود التفعيل والكتالوج فورياً عبر الواتساب.`;
             resultEl.style.display = 'block';
 
             document.getElementById('leadForm').reset();
