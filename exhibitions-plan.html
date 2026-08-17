@@ -278,7 +278,7 @@
         /* --- Clean Modern Exhibition Cards --- */
         .exhibitions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 24px;
             margin-top: 20px;
         }
@@ -302,7 +302,6 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.4);
         }
 
-        /* Header row inside card to prevent any text overlaps */
         .ex-card-header {
             display: flex;
             align-items: flex-start;
@@ -365,24 +364,73 @@
             gap: 8px;
         }
 
+        .ex-price-tag {
+            background: rgba(207, 161, 92, 0.12);
+            color: var(--gold-light);
+            border: 1px dashed var(--border-color);
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .ex-price-tag strong {
+            color: var(--gold-primary);
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+
         .ex-desc {
             font-size: 0.9rem;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             line-height: 1.55;
         }
 
-        .ex-target {
-            background: rgba(207, 161, 92, 0.06);
-            border: 1px solid rgba(207, 161, 92, 0.15);
+        .ex-steps {
+            background: rgba(255, 255, 255, 0.02);
             border-radius: var(--radius-sm);
             padding: 12px 14px;
-            font-size: 0.85rem;
-            color: #e2e8f0;
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
         }
 
-        .ex-target strong {
+        .ex-steps-title {
             color: var(--gold-light);
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .ex-steps ol {
+            padding-right: 18px;
+            line-height: 1.6;
+        }
+
+        .ex-link-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            color: var(--bg-dark);
+            text-decoration: none;
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+            margin-top: 10px;
+        }
+
+        .ex-link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px var(--gold-glow);
         }
 
         /* --- Interactive Booth Component --- */
@@ -471,115 +519,40 @@
             line-height: 1.5;
         }
 
-        /* --- Lead Simulator Form --- */
-        .lead-sim-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 28px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 16px;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-        }
-
-        .form-input, .form-select {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-subtle);
-            color: var(--text-white);
-            padding: 12px 14px;
-            border-radius: var(--radius-sm);
-            font-size: 0.9rem;
-            outline: none;
-            transition: var(--transition-smooth);
-        }
-
-        .form-input:focus, .form-select:focus {
-            border-color: var(--gold-primary);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .btn-submit {
-            width: 100%;
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
-            color: var(--bg-dark);
-            border: none;
-            padding: 14px;
-            border-radius: var(--radius-sm);
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            margin-top: 10px;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px var(--gold-glow);
-        }
-
-        .lead-result {
-            margin-top: 20px;
-            padding: 16px;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            border-radius: var(--radius-sm);
-            display: none;
-        }
-
-        /* --- Content Roadmap Timeline --- */
-        .roadmap-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .roadmap-card {
+        /* --- Summary Table --- */
+        .summary-table-wrap {
+            overflow-x: auto;
+            margin-top: 30px;
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius-md);
             padding: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
         }
 
-        .roadmap-step {
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            font-size: 0.88rem;
+        }
+
+        .summary-table th {
             background: rgba(207, 161, 92, 0.15);
             color: var(--gold-light);
-            border: 1px solid var(--border-color);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
             font-weight: 700;
-            font-size: 1.1rem;
-            flex-shrink: 0;
         }
 
-        .roadmap-info h4 {
-            font-size: 1.1rem;
-            color: var(--text-white);
-            margin-bottom: 6px;
-        }
-
-        .roadmap-info p {
-            font-size: 0.9rem;
+        .summary-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-subtle);
             color: var(--text-muted);
-            line-height: 1.55;
+        }
+
+        .summary-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-white);
         }
 
         /* --- Mobile Responsive Fixes --- */
@@ -638,9 +611,9 @@
 
     <!-- --- Hero --- -->
     <section class="hero">
-        <span class="hero-tag">🌟 الدليل التكتيكي للفعاليات والمبيعات</span>
+        <span class="hero-tag">🌟 الدليل التكتيكي للفعاليات والمبيعات والأسعار</span>
         <h1 class="hero-title">الخطة الشاملة للمشاركة في المعارض العقارية وتجميع الليدز</h1>
-        <p class="hero-subtitle">استراتيجية متكاملة لاختيار أفضل المعارض في دبي والمنطقة، تصميم البوث الذكي، تجميع بيانات المستثمرين فورياً، وتأسيس بنك محتوى مرئي يغذي إعلانات الشركة لعدة أشهر.</p>
+        <p class="hero-subtitle">استراتيجية متكاملة لاختيار أفضل المعارض في دبي والمنطقة، مع توضيح تكاليف المشاركة التقديرية، روابط التسجيل المباشرة، طريقة التقديم، وتصميم البوث التفاعلي.</p>
     </section>
 
     <!-- --- Key Metrics --- -->
@@ -650,8 +623,8 @@
             <div class="metric-label">معارض عقارية مستهدفة (2026-2027)</div>
         </div>
         <div class="metric-card">
-            <div class="metric-number">3x2m</div>
-            <div class="metric-label">مساحة البوث المدمج الذكي (Micro-Booth)</div>
+            <div class="metric-number">9,000 - 18,000 AED</div>
+            <div class="metric-label">متوسط تكلفة البوث الصغير المعروض</div>
         </div>
         <div class="metric-card">
             <div class="metric-number">+500</div>
@@ -666,7 +639,7 @@
     <!-- --- Navigation Tabs --- -->
     <div class="tabs-wrapper">
         <div class="tabs-nav">
-            <button class="tab-btn active" onclick="switchTab('exhibitions')">📅 جدول المعارض المستهدفة</button>
+            <button class="tab-btn active" onclick="switchTab('exhibitions')">📅 المعارض، التكاليف، وطريقة التسجيل</button>
             <button class="tab-btn" onclick="switchTab('booth')">🏛️ تصميم البوث الذكي (3x2m)</button>
             <button class="tab-btn" onclick="switchTab('leadgen')">🎣 تجربة نظام تجميع الليدز</button>
             <button class="tab-btn" onclick="switchTab('media')">🎥 استراتيجية صناعة المحتوى</button>
@@ -677,84 +650,197 @@
     <!-- --- Container for Tab Contents --- -->
     <main class="container">
 
-        <!-- TAB 1: EXHIBITIONS -->
+        <!-- TAB 1: EXHIBITIONS WITH PRICING & REGISTRATION STEPS -->
         <div id="tab-exhibitions" class="tab-content active">
-            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 20px;">أبرز المعارض العقارية والاستثمارية الموصى بها</h2>
+            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 20px;">تفاصيل المعارض، التكلفة التقديرية، وروابط التسجيل المباشرة</h2>
             
             <div class="exhibitions-grid">
                 
-                <!-- Card 1 -->
+                <!-- Card 1: IPS 2026 -->
                 <div class="exhibition-card">
                     <div>
                         <div class="ex-card-header">
                             <h3 class="ex-title">International Property Show (IPS 2026)</h3>
                             <span class="ex-priority priority-high">أعلى أولوية ⭐⭐⭐⭐⭐</span>
                         </div>
+                        
                         <div class="ex-meta">
                             <div class="ex-meta-item"><span>📅</span> <span><strong>التاريخ:</strong> 7 - 9 سبتمبر 2026</span></div>
                             <div class="ex-meta-item"><span>📍</span> <span><strong>المكان:</strong> مركز دبي التجاري العالمي (DWTC)</span></div>
                         </div>
+
+                        <div class="ex-price-tag">
+                            <span>التكلفة التقديرية (9m² Shell Scheme):</span>
+                            <strong>14,000 - 18,000 درهم</strong>
+                        </div>
+
                         <p class="ex-desc">أبرز منصة مبيعات عقارية مباشرة في الشرق الأوسط تجمع المستثمرين والمشترين المباشرين والوكلاء المحليين والدوليين.</p>
+                        
+                        <div class="ex-steps">
+                            <span class="ex-steps-title">📋 خطوات التقديم والحجز:</span>
+                            <ol>
+                                <li>الدخول على رابط حجز البوث المباشر بالأسفل.</li>
+                                <li>تعبئة طلب العارضين (Exhibitor Booking Form) واختيار المساحة (9m² Shell Scheme).</li>
+                                <li>يتواصل مشروع الفعالية لتأكيد خريطة البوث وإرسال عقد الحجز الرسمي.</li>
+                            </ol>
+                        </div>
                     </div>
-                    <div class="ex-target">
-                        <strong>الهدف الرئيسي:</strong> البيع المباشر لمشاريع دبي وتجميع الليدز المؤهلة للشراء والاستثمار.
-                    </div>
+
+                    <a href="https://www.ipscongress.com/book-your-stand" target="_blank" class="ex-link-btn">
+                        🔗 التقديم وحجز البوث في IPS (Book Your Stand) ↗
+                    </a>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Card 2: IREX Dubai 2026 -->
                 <div class="exhibition-card">
                     <div>
                         <div class="ex-card-header">
-                            <h3 class="ex-title">IREX Dubai 2026 (International Real Estate)</h3>
+                            <h3 class="ex-title">IREX Dubai 2026 (International Real Estate Expo)</h3>
                             <span class="ex-priority priority-high">ممتاز للبوث الصغير ⭐⭐⭐⭐⭐</span>
                         </div>
+                        
                         <div class="ex-meta">
                             <div class="ex-meta-item"><span>📅</span> <span><strong>التاريخ:</strong> 5 - 6 سبتمبر 2026</span></div>
                             <div class="ex-meta-item"><span>📍</span> <span><strong>المكان:</strong> فندق أنانتارا داون تاون دبي</span></div>
                         </div>
+
+                        <div class="ex-price-tag">
+                            <span>التكلفة التقديرية (Tabletop / 6m²):</span>
+                            <strong>9,000 - 14,000 درهم</strong>
+                        </div>
+
                         <p class="ex-desc">معرض نخبوي يستهدف كبار المستثمرين (HNWIs) الباحثين عن فرص استثمارية وحلول إدارة وتأجير الأصول العقارية.</p>
+
+                        <div class="ex-steps">
+                            <span class="ex-steps-title">📋 خطوات التقديم والحجز:</span>
+                            <ol>
+                                <li>الدخول لموقع المعرض الرسمي واختيار "Exhibitor Registration".</li>
+                                <li>تحديد فئة المشاركة (Real Estate Broker / Asset Manager).</li>
+                                <li>تقديم الطلب لاستلام بروشور المشاركة والمساحات المتوفرة بفندق أنانتارا.</li>
+                            </ol>
+                        </div>
                     </div>
-                    <div class="ex-target">
-                        <strong>الهدف الرئيسي:</strong> عرض خدمات إدارة الأصول والفلل وتأجير المحافظ السكنية.
-                    </div>
+
+                    <a href="https://www.irexindia.com/irexdubai/" target="_blank" class="ex-link-btn">
+                        🔗 التقديم وحجز البوث في IREX Dubai ↗
+                    </a>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Card 3: Cityscape Global 2026 -->
                 <div class="exhibition-card">
                     <div>
                         <div class="ex-card-header">
                             <h3 class="ex-title">Cityscape Global 2026</h3>
                             <span class="ex-priority priority-mid">توسع خليجي ⭐⭐⭐⭐</span>
                         </div>
+                        
                         <div class="ex-meta">
                             <div class="ex-meta-item"><span>📅</span> <span><strong>التاريخ:</strong> 16 - 19 نوفمبر 2026</span></div>
                             <div class="ex-meta-item"><span>📍</span> <span><strong>المكان:</strong> مركز الرياض للمعارض، السعودية</span></div>
                         </div>
+
+                        <div class="ex-price-tag">
+                            <span>التكلفة التقديرية (Shell Scheme 9m²):</span>
+                            <strong>15,000 - 22,000 درهم</strong>
+                        </div>
+
                         <p class="ex-desc">أكبر حدث عقاري بالمنطقة، يتيح الوصول المباشر للمستثمرين الخليجيين والسعوديين المهتمين بشراء فلل وشقق في دبي.</p>
+
+                        <div class="ex-steps">
+                            <span class="ex-steps-title">📋 خطوات التقديم والحجز:</span>
+                            <ol>
+                                <li>الدخول على موقع سيتي سكيب العالمي والضغط على "Exhibit".</li>
+                                <li>اختيار قطاع التسويق وإدارة العقارات لخدمات دبي.</li>
+                                <li>تأكيد حجز البوث عبر ممثل المعرض المباشر.</li>
+                            </ol>
+                        </div>
                     </div>
-                    <div class="ex-target">
-                        <strong>الهدف الرئيسي:</strong> استقطاب مستثمرين خليجيين لعقارات دبي وتوسيع شبكة العملاء.
-                    </div>
+
+                    <a href="https://www.cityscapeglobal.com" target="_blank" class="ex-link-btn">
+                        🔗 التقديم وحجز البوث في Cityscape Global ↗
+                    </a>
                 </div>
 
-                <!-- Card 4 -->
+                <!-- Card 4: INDEX & Big 5 -->
                 <div class="exhibition-card">
                     <div>
                         <div class="ex-card-header">
                             <h3 class="ex-title">INDEX Dubai & Big 5 Global 2026</h3>
                             <span class="ex-priority priority-mid">معرض B2B شريك ⭐⭐⭐⭐</span>
                         </div>
+                        
                         <div class="ex-meta">
                             <div class="ex-meta-item"><span>📅</span> <span><strong>التاريخ:</strong> سبتمبر - نوفمبر 2026</span></div>
                             <div class="ex-meta-item"><span>📍</span> <span><strong>المكان:</strong> دبي (DWTC / Expo City)</span></div>
                         </div>
+
+                        <div class="ex-price-tag">
+                            <span>التكلفة التقديرية (B2B Shell Scheme):</span>
+                            <strong>12,000 - 16,000 درهم</strong>
+                        </div>
+
                         <p class="ex-desc">معارض التصميم والتطوير والمقاولات، توفر فرصة لبناء علاقات مع المطورين وموردي تشطيبات إدارة الأصول.</p>
+
+                        <div class="ex-steps">
+                            <span class="ex-steps-title">📋 خطوات التقديم والحجز:</span>
+                            <ol>
+                                <li>التقديم عبر نموذج Book a Stand في الموقع الرسمي للمعرض.</li>
+                                <li>تنسيق الجناح الخاص بحلول الخدمات والاستشارات العقارية.</li>
+                            </ol>
+                        </div>
                     </div>
-                    <div class="ex-target">
-                        <strong>الهدف الرئيسي:</strong> اتصالات B2B وشراكات إدارة وتجهيز الأصول.
-                    </div>
+
+                    <a href="https://www.indexexhibition.com" target="_blank" class="ex-link-btn">
+                        🔗 التقديم وحجز البوث في INDEX Dubai ↗
+                    </a>
                 </div>
 
+            </div>
+
+            <!-- Summary Table for Management Overview -->
+            <div class="summary-table-wrap">
+                <h3 style="color: var(--gold-primary); margin-bottom: 14px; font-size: 1.1rem;">📊 جدول ملخص التكاليف وروابط التقديم السريعة للمديرة</h3>
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>المعرض</th>
+                            <th>المكان والزمان</th>
+                            <th>مساحة البوث</th>
+                            <th>التكلفة التقديرية</th>
+                            <th>رابط التقديم المباشر</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>International Property Show (IPS 2026)</strong></td>
+                            <td>دبي (DWTC) | 7-9 سبتمبر 2026</td>
+                            <td>9m² Shell Scheme</td>
+                            <td><strong style="color: var(--gold-light);">14,000 - 18,000 درهم</strong></td>
+                            <td><a href="https://www.ipscongress.com/book-your-stand" target="_blank" style="color: var(--gold-primary);">تقديم طلب حجز بوث ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>IREX Dubai 2026</strong></td>
+                            <td>فندق أنانتارا دبي | 5-6 سبتمبر 2026</td>
+                            <td>Tabletop / 6m²</td>
+                            <td><strong style="color: var(--gold-light);">9,000 - 14,000 درهم</strong></td>
+                            <td><a href="https://www.irexindia.com/irexdubai/" target="_blank" style="color: var(--gold-primary);">تقديم طلب عارض ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cityscape Global 2026</strong></td>
+                            <td>الرياض | 16-19 نوفمبر 2026</td>
+                            <td>9m² Shell Scheme</td>
+                            <td><strong style="color: var(--gold-light);">15,000 - 22,000 درهم</strong></td>
+                            <td><a href="https://www.cityscapeglobal.com" target="_blank" style="color: var(--gold-primary);">تقديم طلب حجز بوث ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>INDEX Dubai 2026</strong></td>
+                            <td>إكسبو دبي | 28-30 سبتمبر 2026</td>
+                            <td>9m² B2B Stand</td>
+                            <td><strong style="color: var(--gold-light);">12,000 - 16,000 درهم</strong></td>
+                            <td><a href="https://www.indexexhibition.com" target="_blank" style="color: var(--gold-primary);">تقديم طلب عارض ↗</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
@@ -887,7 +973,7 @@
                     <div class="roadmap-step">2</div>
                     <div class="roadmap-info">
                         <h4>الأسبوع الثاني: تجهيز الأجهزة والأتمتة</h4>
-                        <p>إعداد تطبيق تجميع البيانات على الآيباد، تجهيز كروت الـ QR والـ NFC الرقمية، وااختبار أتمتة رسائل الواتساب الفورية.</p>
+                        <p>إعداد تطبيق تجميع البيانات على الآيباد، تجهيز كروت الـ QR والـ NFC الرقمية، واختبار أتمتة رسائل الواتساب الفورية.</p>
                     </div>
                 </div>
 
