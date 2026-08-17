@@ -35,6 +35,8 @@
             padding: 0;
             font-family: var(--font-main);
             -webkit-tap-highlight-color: transparent;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         body {
@@ -50,7 +52,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(3, 7, 12, 0.9);
+            background: rgba(3, 7, 12, 0.92);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-color);
@@ -92,6 +94,7 @@
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
+            display: inline-block;
         }
 
         .header-actions {
@@ -148,6 +151,7 @@
             background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, var(--gold-primary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            line-height: 1.3;
         }
 
         .hero-subtitle {
@@ -155,6 +159,7 @@
             font-size: 1.05rem;
             max-width: 750px;
             margin: 0 auto 30px;
+            line-height: 1.6;
         }
 
         /* --- Key Metrics Bar --- */
@@ -199,6 +204,7 @@
             font-weight: 800;
             color: var(--gold-primary);
             margin-bottom: 4px;
+            line-height: 1.2;
         }
 
         .metric-label {
@@ -240,6 +246,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            white-space: nowrap;
         }
 
         .tab-btn.active {
@@ -278,7 +285,7 @@
         /* --- Clean Modern Exhibition Cards --- */
         .exhibitions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 24px;
             margin-top: 20px;
         }
@@ -293,6 +300,8 @@
             justify-content: space-between;
             transition: var(--transition-smooth);
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            height: auto;
+            min-height: auto;
         }
 
         .exhibition-card:hover {
@@ -362,19 +371,22 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            line-height: 1.4;
         }
 
         .ex-price-tag {
             background: rgba(207, 161, 92, 0.12);
             color: var(--gold-light);
             border: 1px dashed var(--border-color);
-            padding: 10px 14px;
+            padding: 12px 14px;
             border-radius: var(--radius-sm);
             font-size: 0.88rem;
             margin-bottom: 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .ex-price-tag strong {
@@ -387,14 +399,14 @@
             font-size: 0.9rem;
             color: var(--text-muted);
             margin-bottom: 16px;
-            line-height: 1.55;
+            line-height: 1.6;
         }
 
         .ex-steps {
             background: rgba(255, 255, 255, 0.02);
             border-radius: var(--radius-sm);
             padding: 12px 14px;
-            font-size: 0.83rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 16px;
         }
@@ -402,12 +414,12 @@
         .ex-steps-title {
             color: var(--gold-light);
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             display: block;
         }
 
         .ex-steps ol {
-            padding-right: 18px;
+            padding-right: 20px;
             line-height: 1.6;
         }
 
@@ -420,12 +432,14 @@
             background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
             color: var(--bg-dark);
             text-decoration: none;
-            padding: 12px;
+            padding: 12px 16px;
             border-radius: var(--radius-sm);
             font-weight: 700;
             font-size: 0.9rem;
             transition: var(--transition-smooth);
             margin-top: 10px;
+            text-align: center;
+            white-space: normal;
         }
 
         .ex-link-btn:hover {
@@ -536,6 +550,7 @@
             align-items: flex-start;
             gap: 14px;
             transition: var(--transition-smooth);
+            height: auto;
         }
 
         .gift-card:hover {
@@ -547,6 +562,7 @@
         .gift-icon {
             font-size: 1.8rem;
             flex-shrink: 0;
+            line-height: 1;
         }
 
         .gift-info h5 {
@@ -554,12 +570,13 @@
             font-size: 0.95rem;
             margin-bottom: 4px;
             font-weight: 700;
+            line-height: 1.4;
         }
 
         .gift-info p {
             color: var(--text-muted);
             font-size: 0.82rem;
-            line-height: 1.4;
+            line-height: 1.45;
         }
 
         /* --- Lead Simulator Form Fix & Premium Styling --- */
@@ -568,24 +585,27 @@
             border: 1px solid var(--border-color) !important;
             border-radius: var(--radius-md) !important;
             padding: 32px 28px !important;
-            max-width: 640px !important;
+            max-width: 660px !important;
             width: 100% !important;
             margin: 0 auto !important;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
             box-sizing: border-box !important;
+            height: auto !important;
         }
 
         .form-gift-banner {
             background: linear-gradient(135deg, rgba(207, 161, 92, 0.2), rgba(16, 185, 129, 0.15)) !important;
             border: 1px solid var(--border-color) !important;
             border-radius: var(--radius-sm) !important;
-            padding: 12px 16px !important;
-            margin-bottom: 20px !important;
+            padding: 14px 18px !important;
+            margin-bottom: 24px !important;
             font-size: 0.9rem !important;
             color: var(--gold-light) !important;
             display: flex !important;
             align-items: center !important;
-            gap: 10px !important;
+            gap: 12px !important;
+            line-height: 1.5 !important;
+            word-break: break-word !important;
         }
 
         #leadForm {
@@ -612,16 +632,18 @@
             margin-bottom: 8px !important;
             text-align: right !important;
             width: 100% !important;
+            line-height: 1.4 !important;
         }
 
         .form-input, .form-select {
             display: block !important;
             width: 100% !important;
-            height: 48px !important;
+            min-height: 48px !important;
+            height: auto !important;
             background-color: #121c2b !important;
             border: 1px solid rgba(207, 161, 92, 0.35) !important;
             color: #ffffff !important;
-            padding: 0 16px !important;
+            padding: 12px 16px !important;
             border-radius: var(--radius-sm) !important;
             font-size: 0.95rem !important;
             font-family: var(--font-main) !important;
@@ -631,6 +653,7 @@
             -webkit-appearance: none !important;
             -moz-appearance: none !important;
             appearance: none !important;
+            line-height: 1.4 !important;
         }
 
         .form-select {
@@ -654,12 +677,17 @@
             background-color: #0a111a !important;
             color: #ffffff !important;
             padding: 12px !important;
+            white-space: normal !important;
+            word-break: break-word !important;
         }
 
         .btn-submit {
-            display: block !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
             width: 100% !important;
-            height: 54px !important;
+            min-height: 54px !important;
+            height: auto !important;
             background: linear-gradient(135deg, var(--gold-primary), var(--gold-light)) !important;
             color: #03070c !important;
             border: none !important;
@@ -671,6 +699,9 @@
             margin-top: 10px !important;
             text-align: center !important;
             box-shadow: 0 4px 15px var(--gold-glow) !important;
+            padding: 14px 20px !important;
+            white-space: normal !important;
+            line-height: 1.4 !important;
         }
 
         .btn-submit:hover {
@@ -688,6 +719,7 @@
             text-align: right !important;
             width: 100% !important;
             box-sizing: border-box !important;
+            line-height: 1.6 !important;
         }
 
         /* --- Summary Table --- */
@@ -710,15 +742,18 @@
         .summary-table th {
             background: rgba(207, 161, 92, 0.15);
             color: var(--gold-light);
-            padding: 12px;
+            padding: 12px 14px;
             border-bottom: 1px solid var(--border-color);
             font-weight: 700;
+            white-space: nowrap;
         }
 
         .summary-table td {
-            padding: 12px;
+            padding: 12px 14px;
             border-bottom: 1px solid var(--border-subtle);
             color: var(--text-muted);
+            white-space: normal;
+            vertical-align: middle;
         }
 
         .summary-table tr:hover td {
