@@ -1105,6 +1105,23 @@
 
             <div class="bento-grid" id="agencyAssetsGrid">
                 
+                <!-- Asset: Palm Central Private Residences -->
+                <div class="bento-item-4 hover-card-3d reveal-left" data-category="residential" onclick="openAgencyModal('palm_central')">
+                    <div class="double-bezel-outer" style="border-radius: 20px;">
+                        <div class="double-bezel-inner" style="border-radius: calc(20px - 12px); padding: 20px;">
+                            <div class="agency-media-wrap">
+                                <img src="images/project-images/palm-central/1.webp" alt="Palm Central Private Residences" loading="lazy">
+                            </div>
+                            <span class="agency-tagline" style="font-size: 0.65rem; margin-bottom: 5px;">Resort Residence</span>
+                            <h3 class="agency-title" style="font-size: 1.3rem; margin-bottom: 12px; height: 2.8rem; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">Palm Central Private Residences</h3>
+                            <div class="agency-meta">
+                                <span style="font-size: 0.8rem; color: var(--color-text-muted);">Palm Jebel Ali, Dubai</span>
+                                <span style="font-size: 0.8rem; color: var(--color-text-bright); font-weight: 500;">Off-Plan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Asset: Rem 30 Building -->
                 <div class="bento-item-4 hover-card-3d reveal-left" data-category="management" onclick="openAgencyModal('reem')">
                     <div class="double-bezel-outer" style="border-radius: 20px;">
@@ -1972,6 +1989,29 @@
                     "images/project-images/cedarwoodestates_2.webp"
                 ],
                 whatsapp: "https://wa.me/971564622103?text=" + encodeURIComponent("Inquiry - Cedarwood Estates")
+            },
+            "palm_central": {
+                title: lang => lang === 'en' ? "Palm Central Private Residences" : "بالم سنترال برايفيت ريزيدنسز",
+                desc: lang => lang === 'en' 
+                    ? "Palm Central Private Residences is an exclusive collection of 212 contemporary, resort-style homes across three elegant buildings situated between Fronds M & N at Palm Jebel Ali, offering uninterrupted waterfront views, private beach access, infinity pool, and luxury resort amenities."
+                    : "بالم سنترال برايفيت ريزيدنسز هي مجموعة حصرية تضم 212 مسكناً فاخراً بتصميم منتجع عصري على نخلة جبل علي بين السعفتين M و N، وتتميز بإطلالات بانورامية ساحرة على مياه الخليج العربي، وصول مباشر للشاطئ، ومرافق ترفيهية متكاملة.",
+                loc: lang => lang === 'en' ? "Palm Jebel Ali, Dubai" : "نخلة جبل علي، دبي",
+                rate: lang => lang === 'en' ? "Off-Plan (Handover Aug 2029)" : "قيد الإنشاء (التسليم أغسطس 2029)",
+                images: [
+                    "images/project-images/palm-central/1.webp",
+                    "images/project-images/palm-central/2.webp",
+                    "images/project-images/palm-central/3.webp",
+                    "images/project-images/palm-central/4.webp",
+                    "images/project-images/palm-central/5.webp",
+                    "images/project-images/palm-central/6.webp",
+                    "images/project-images/palm-central/7.webp",
+                    "images/project-images/palm-central/8.webp",
+                    "images/project-images/palm-central/9.webp",
+                    "images/project-images/palm-central/10.webp",
+                    "images/project-images/palm-central/11.webp",
+                    "images/project-images/palm-central/12.webp"
+                ],
+                whatsapp: "https://wa.me/971564622103?text=" + encodeURIComponent("Inquiry - Palm Central Private Residences")
             }
         };
 

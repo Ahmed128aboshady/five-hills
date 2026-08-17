@@ -1,5 +1,46 @@
 /* Dynamic Projects Metadata Database Generated automatically */
 const projectsData = {
+    "Palm Central Private Residences": {
+        "locationSlug": "palm-jebel-ali",
+        "priceRaw": 2500000,
+        "images": [
+            "images/project-images/palm-central/1.webp",
+            "images/project-images/palm-central/2.webp",
+            "images/project-images/palm-central/3.webp",
+            "images/project-images/palm-central/4.webp",
+            "images/project-images/palm-central/5.webp",
+            "images/project-images/palm-central/6.webp",
+            "images/project-images/palm-central/7.webp",
+            "images/project-images/palm-central/8.webp",
+            "images/project-images/palm-central/9.webp",
+            "images/project-images/palm-central/10.webp",
+            "images/project-images/palm-central/11.webp",
+            "images/project-images/palm-central/12.webp"
+        ],
+        "brochure": "brochures/palm-central-brochure.pdf",
+        "en": {
+            "title": "Palm Central Private Residences",
+            "locationText": "Palm Jebel Ali, Dubai",
+            "developer": "Nakheel",
+            "price": "AED 2,500,000",
+            "type": "Resort-Style Residences & Penthouses",
+            "status": "Off-Plan",
+            "handover": "August 2029",
+            "plan": "80/20 Plan",
+            "desc": "Palm Central Private Residences is an exclusive collection of 212 contemporary, resort-style homes across three elegant buildings situated between Fronds M & N at Palm Jebel Ali, offering uninterrupted waterfront views, private beach access, infinity pool, and luxury resort amenities."
+        },
+        "ar": {
+            "title": "بالم سنترال برايفيت ريزيدنسز",
+            "locationText": "نخلة جبل علي، دبي",
+            "developer": "نخيل",
+            "price": "2,500,000 درهم",
+            "type": "مسطحات ومنتجعات سكنية وبنتهاوس",
+            "status": "قيد الإنشاء",
+            "handover": "أغسطس 2029",
+            "plan": "خطة دفع 80/20",
+            "desc": "بالم سنترال برايفيت ريزيدنسز هي مجموعة حصرية تضم 212 مسكناً فاخراً بتصميم منتجع عصري على نخلة جبل علي بين السعفتين M و N، وتتميز بإطلالات بانورامية ساحرة على مياه الخليج العربي، وصول مباشر للشاطئ، ومرافق ترفيهية متكاملة."
+        }
+    },
     "The Community of 6 - Al Jafiliyah Villas": {
         "locationSlug": "al-jafiliyah",
         "priceRaw": 0,
