@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطة إعلانات وحساب سناب شات (Snapchat Ads Strategy) | 5 Hills Dubai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #03070c;
+            --bg-card: #0a111a;
+            --bg-card-hover: #121c2b;
+            --gold-primary: #cfa15c;
+            --gold-light: #e6c587;
+            --gold-glow: rgba(207, 161, 92, 0.25);
+            --snap-yellow: #FFFC00;
+            --snap-yellow-glow: rgba(255, 252, 0, 0.25);
+            --green-accent: #10b981;
+            --text-white: #ffffff;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --border-color: rgba(207, 161, 92, 0.25);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 8px;
+            --font-main: 'Cairo', sans-serif;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-main);
+            -webkit-tap-highlight-color: transparent;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+            padding-bottom: 60px;
+            overflow-x: hidden;
+        }
+
+        /* --- Header Styling --- */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(3, 7, 12, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 24px;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand-wrap {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-logo {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .brand-badge {
+            background: rgba(255, 252, 0, 0.15);
+            color: var(--snap-yellow);
+            border: 1px solid rgba(255, 252, 0, 0.35);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-action {
+            background: var(--bg-card);
+            color: var(--gold-primary);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .btn-action:hover {
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px var(--gold-glow);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 40px 24px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--snap-yellow);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+            background: rgba(255, 252, 0, 0.1);
+            padding: 6px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 252, 0, 0.25);
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 40%, var(--snap-yellow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.3;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        /* --- Comparison Matrix --- */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 24px;
+        }
+
+        .comp-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .comp-card.highlight {
+            border-color: var(--snap-yellow);
+            background: linear-gradient(180deg, rgba(255, 252, 0, 0.05) 0%, var(--bg-card) 100%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .comp-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .comp-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .comp-badge {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .badge-snap {
+            background: var(--snap-yellow);
+            color: #000;
+        }
+
+        .badge-meta {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+        }
+
+        .comp-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .comp-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.5;
+        }
+
+        /* --- Navigation Tabs --- */
+        .tabs-wrapper {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            padding: 0 24px;
+        }
+
+        .tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 14px;
+            width: 100%;
+        }
+
+        .tab-btn {
+            background: var(--bg-card);
+            color: var(--text-muted);
+            border: 1px solid var(--border-subtle);
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            font-size: 0.92rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            background: rgba(255, 252, 0, 0.15);
+            color: var(--snap-yellow);
+            border-color: rgba(255, 252, 0, 0.4);
+            box-shadow: 0 4px 15px var(--snap-yellow-glow);
+        }
+
+        .tab-btn:hover:not(.active) {
+            color: var(--text-white);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* --- Main Content Sections --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Ad Formats Grid --- */
+        .formats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .format-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-smooth);
+        }
+
+        .format-card:hover {
+            border-color: rgba(255, 252, 0, 0.4);
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+
+        .format-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .format-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .format-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .format-specs {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* --- Setup Checklist --- */
+        .checklist-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .check-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            border-right: 4px solid var(--snap-yellow);
+        }
+
+        .check-num {
+            background: rgba(255, 252, 0, 0.15);
+            color: var(--snap-yellow);
+            border: 1px solid rgba(255, 252, 0, 0.3);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .check-content h4 {
+            color: var(--text-white);
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .check-content p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        /* --- Target Audience Grid --- */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .aud-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .aud-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .aud-title {
+            color: var(--gold-light);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .aud-desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* --- Table Styling --- */
+        .summary-table-wrap {
+            overflow-x: auto;
+            margin-top: 30px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            font-size: 0.88rem;
+        }
+
+        .summary-table th {
+            background: rgba(255, 252, 0, 0.12);
+            color: var(--snap-yellow);
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 700;
+        }
+
+        .summary-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+        }
+
+        /* Responsive Mobile Adjustments */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+
+            .hero-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --- Header --- -->
+    <header class="header">
+        <div class="header-container">
+            <div class="brand-wrap">
+                <img src="images/project-images/logo-wide.webp" alt="5 Hills Logo" class="brand-logo" onerror="this.src='images/project-images/logo222.webp'">
+                <div>
+                    <div class="brand-title">5 Hills Real Estate</div>
+                    <span class="brand-badge">👻 Snapchat Business Ads Plan 2026</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn-action" onclick="window.print()">
+                    🖨️ طباعة الخطة
+                </button>
+                <a href="index.html" class="btn-action">
+                    🏠 الرئيسية
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Hero Section --- -->
+    <section class="hero">
+        <span class="hero-tag">👻 استراتيجية الاستهداف الخليجي وجذب كبار المستثمرين</span>
+        <h1 class="hero-title">الخطة الشاملة لإطلاق حساب وإعلانات سناب شات (Snapchat Ads)</h1>
+        <p class="hero-subtitle">دليل متكامل لتنفيذ حساب الشركة الرسمي على منصة سناب شات، وإطلاق حملات إعلانية عالية الجودة تستهدف المستثمرين والخليجيين في السعودية والإمارات والخليج لجمع ليدز مؤهلة للغاية (High-Quality Leads).</p>
+    </section>
+
+    <!-- --- Comparison Matrix Section --- -->
+    <section class="comparison-grid">
+        <div class="comp-card">
+            <div class="comp-header">
+                <h3 class="comp-title">Meta Ads (إعلانات فيسبوك وانستغرام)</h3>
+                <span class="comp-badge badge-meta">الوضع الحالي</span>
+            </div>
+            <ul class="comp-list">
+                <li>⚠️ <strong>جودة الليدز:</strong> وصول عشوائي لبعض الفئات غير الجادة.</li>
+                <li>⚠️ <strong>الاستجابة:</strong> كثرة الأرقام غير الصحيحة أو استفسارات بدون ميزانية.</li>
+                <li>⚠️ <strong>المنافسة:</strong> تشبع شديد في إعلانات عقارات دبي على ميتا.</li>
+            </ul>
+        </div>
+
+        <div class="comp-card highlight">
+            <div class="comp-header">
+                <h3 class="comp-title">Snapchat Ads (سناب شات الخليج)</h3>
+                <span class="comp-badge badge-snap">التوصية المستهدفة ⭐⭐⭐⭐⭐</span>
+            </div>
+            <ul class="comp-list">
+                <li>✨ <strong>انتشار واسع بالخليج:</strong> المنصة الأولى في السعودية والإمارات والكويت.</li>
+                <li>🎯 <strong>ليدز مؤهلة جداً (HNWIs):</strong> الوصول للمشترين والمستثمرين أصحاب القدرة المالية.</li>
+                <li>⚡ <strong>Instant Native Forms:</strong> نماذج تسجيل فورية معبأة تلقائياً برقم هاتف الحساب.</li>
+                <li>🎥 <strong>محتوى عمودي تفاعلي (9:16):</strong> فيديوهات 15 ثانية تعرض الفلل والمشاريع بدقة عالية.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- --- Navigation Tabs --- -->
+    <div class="tabs-wrapper">
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('setup')">⚙️ خطوة بخطوة: تجهيز الحساب (Setup)</button>
+            <button class="tab-btn" onclick="switchTab('formats')">🎨 أنواع الإعلانات والمحتوى (Creatives)</button>
+            <button class="tab-btn" onclick="switchTab('audience')">🎯 الجمهور والبلدان المستهدفة (Targeting)</button>
+            <button class="tab-btn" onclick="switchTab('leadforms')">📝 نموذج أتمتة الليدز (Instant Lead Forms)</button>
+            <button class="tab-btn" onclick="switchTab('budget')">💰 الميزانية ومراحل الإطلاق (Budget & Launch)</button>
+        </div>
+    </div>
+
+    <!-- --- Container for Tab Contents --- -->
+    <main class="container">
+
+        <!-- TAB 1: SETUP & CHECKLIST -->
+        <div id="tab-setup" class="tab-content active">
+            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 20px;">خطوات إنشاء وتجهيز حساب Business Snapchat لفايف هيلز</h2>
+            
+            <div class="checklist-grid">
+                <div class="check-item">
+                    <div class="check-num">1</div>
+                    <div class="check-content">
+                        <h4>تأسيس حساب الأعمال الرسمي (Snapchat Public Profile)</h4>
+                        <p>إنشاء حساب تجاري رسمي باسم <strong>@5HillsRealEstate</strong> وإثبات الهوية بشعار الشركة، الرابط الرسمي (fivehills.ae)، ووصف تعريفي بكونها وكالة إدارة وتطوير وتأجير العقارات في دبي.</p>
+                    </div>
+                </div>
+
+                <div class="check-item">
+                    <div class="check-num">2</div>
+                    <div class="check-content">
+                        <h4>ربط ومدير الإعلانات (Snap Business Manager & Billing)</h4>
+                        <p>تفعيل Snapchat Business Manager، ربط طريقة الدفع، إضافة فريق العمل، وتأكيد عمل العملة (AED / USD) لتتبع الحملات بسلاسة.</p>
+                    </div>
+                </div>
+
+                <div class="check-item">
+                    <div class="check-num">3</div>
+                    <div class="check-content">
+                        <h4>زرع كود التتبع (Snap Pixel Setup)</h4>
+                        <p>تركيب كود Snap Pixel على موقع fivehills.ae وصفحات المشاريع لتتبع الزوار، وإعادة استهداف كل من زار موقع بالم سنترال أو صفحة البورتفوليو.</p>
+                    </div>
+                </div>
+
+                <div class="check-item">
+                    <div class="check-num">4</div>
+                    <div class="check-content">
+                        <h4>ربط الواتساب الآلي (WhatsApp Auto-Responder API)</h4>
+                        <p>توجيه أي ليد يسجل في إعلان سناب شات تلقائياً إلى رسالة واتساب فورية تحتوي البروشور والدليل الاستثماري، للرد خلال 30 ثانية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: AD FORMATS & CREATIVE STRATEGY -->
+        <div id="tab-formats" class="tab-content">
+            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 20px;">أنواع الإعلانات والتصاميم المطلوبة لسناب شات</h2>
+            
+            <div class="formats-grid">
+                <div class="format-card">
+                    <div>
+                        <span class="format-icon">🎬</span>
+                        <h3 class="format-title">Snap Video Ads (فيديوهات 9:16)</h3>
+                        <p class="format-desc">فيديوهات قصيرة 10-15 ثانية بجودة 4K تعرض الفلل، الإطلالات، والعوائد الاستثمارية لمشاريع مثل بالم سنترال ورأس الخيمة.</p>
+                    </div>
+                    <div class="format-specs">
+                        <strong>المواصفات:</strong> 1080x1920 PX | أبعاد 9:16 عمودي | صوت واضح + نصوص توضيحية خفيفة.
+                    </div>
+                </div>
+
+                <div class="format-card">
+                    <div>
+                        <span class="format-icon">📋</span>
+                        <h3 class="format-title">Lead Generation Snap Ads</h3>
+                        <p class="format-desc">إعلان يحتوي على زر (Swipe Up to Register) يفتح فوراً نموذج سناب شات السريع المعبأ تلقائياً باسم العميل ورقم هاتفه.</p>
+                    </div>
+                    <div class="format-specs">
+                        <strong>الميزة:</strong> أعلى معدل تحويل (Conversion Rate) لأن الزائر لا يحتاج لكتابة بياناته يدوياً.
+                    </div>
+                </div>
+
+                <div class="format-card">
+                    <div>
+                        <span class="format-icon">🛍️</span>
+                        <h3 class="format-title">Collection Ads (كتالوج المشاريع)</h3>
+                        <p class="format-desc">إعلان يظهر فيديو رئيسي مع 4 كروت صغيرة سفلية لمشاريع مختلفة (فلل، شقق فندقية، أبراج مكتبية، ومستودعات).</p>
+                    </div>
+                    <div class="format-specs">
+                        <strong>الميزة:</strong> يتيح للعميل استعراض خيارات متعددة واختيار المشروع الذي يناسب ميزانيته.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: TARGETING & AUDIENCE -->
+        <div id="tab-audience" class="tab-content">
+            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 20px;">الجمهور والدول المستهدفة في إعلانات سناب شات</h2>
+            
+            <div class="audience-grid">
+                <div class="aud-card">
+                    <span class="aud-icon">🇸🇦</span>
+                    <h3 class="aud-title">المملكة العربية السعودية</h3>
+                    <p class="aud-desc">الرياض، جدة، المنطقة الشرقية. استهداف كبار السن أصحاب الملاءة المالية، المهتمين بشراء فلل وشقق استثمارية في دبي.</p>
+                </div>
+
+                <div class="aud-card">
+                    <span class="aud-icon">🇦🇪</span>
+                    <h3 class="aud-title">الإمارات العربية المتحدة</h3>
+                    <p class="aud-desc">دبي، أبوظبي، الشارقة. استهداف المواطنين والمقيمين من فئات HNWIs المهتمين بإدارة الأملاك وشراء العقارات تحت الإنشاء.</p>
+                </div>
+
+                <div class="aud-card">
+                    <span class="aud-icon">🇰🇼</span>
+                    <h3 class="aud-title">الكويت وقطر وسلطنة عمان</h3>
+                    <p class="aud-desc">استهداف المستثمرين الخليجيين الباحثين عن عقارات فاخرة وإدارة أصول مضمونة العائد الإيجاري بـ دبي.</p>
+                </div>
+
+                <div class="aud-card">
+                    <span class="aud-icon">🎯</span>
+                    <h3 class="aud-title">الاهتمامات والسلوكيات</h3>
+                    <p class="aud-desc">Real Estate Investment, Luxury Lifestyle, Business Travel, High-Income Earners, Property Owners.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: INSTANT LEAD FORMS -->
+        <div id="tab-leadforms" class="tab-content">
+            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 20px;">تصميم نموذج تجميع البيانات الفوري (Snap Instant Form)</h2>
+            
+            <div class="checklist-grid">
+                <div class="check-item">
+                    <div class="check-num">1</div>
+                    <div class="check-content">
+                        <h4>الاسم الكامل (Full Name)</h4>
+                        <p>يتم سحبه تلقائياً من موثق حساب المستخدم في سناب شات لضمان صحة البيانات.</p>
+                    </div>
+                </div>
+
+                <div class="check-item">
+                    <div class="check-num">2</div>
+                    <div class="check-content">
+                        <h4>رقم الهاتف والواتساب (Phone Number)</h4>
+                        <p>يتضمن رمز الدولة القياسي (+966 / +971) لمنع الأرقام الوهمية الخاطئة.</p>
+                    </div>
+                </div>
+
+                <div class="check-item">
+                    <div class="check-num">3</div>
+                    <div class="check-content">
+                        <h4>الميزانية ونوع الاستثمار (Investment Intent & Budget)</h4>
+                        <p>سؤال سريع بلمسة واحدة: (فلل فاخرة 5M+ | شقق استثمارية 1.5M - 3M | خدمات إدارة وتأجير أملاك).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: BUDGET & LAUNCH -->
+        <div id="tab-budget" class="tab-content">
+            <h2 style="font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 20px;">جدول الميزانية والتنفيذ الإعلاني</h2>
+            
+            <div class="summary-table-wrap">
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>المرحلة</th>
+                            <th>الهدف الإعلاني</th>
+                            <th>الجمهور المستهدف</th>
+                            <th>الميزانية التقديرية (يومياً)</th>
+                            <th>مخرج المرحلة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>المرحلة الأولى (التأشير والاختبار)</strong></td>
+                            <td>Snap Lead Gen & Engagement</td>
+                            <td>السعودية والإمارات (اعمار 25-55)</td>
+                            <td><strong style="color: var(--snap-yellow);">150 - 300 AED</strong></td>
+                            <td>اختبار أفضل الفيديوهات والـ Lead Forms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>المرحلة الثانية (التوسع والتحشيد)</strong></td>
+                            <td>High-Intent Lead Capture</td>
+                            <td>كبار المستثمرين (HNWIs) بالسعودية والخليج</td>
+                            <td><strong style="color: var(--snap-yellow);">400 - 800 AED</strong></td>
+                            <td>تجميع 30-50 ليد مؤهل يومياً</td>
+                        </tr>
+                        <tr>
+                            <td><strong>المرحلة الثالثة (إعادة الاستهداف)</strong></td>
+                            <td>Retargeting Snap Pixel Visits</td>
+                            <td>من زار موقع fivehills.ae ولم يكمل الطلب</td>
+                            <td><strong style="color: var(--snap-yellow);">150 - 250 AED</strong></td>
+                            <td>إغلاق الصفقات وإرسال العروض الفورية</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- --- JavaScript for Interactivity --- -->
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(btn => btn.getAttribute('onclick').includes(tabId));
+            if (activeBtn) activeBtn.classList.add('active');
+
+            const targetContent = document.getElementById('tab-' + tabId);
+            if (targetContent) targetContent.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
