@@ -184,7 +184,7 @@ const translations = {
         fEmail: "Email: info@fivehills.ae",
         fAddress: "Office: Marina Plaza, Suite 2402, Dubai Marina, Dubai, UAE",
         fCopy: "© 2026 5 Hills Real Estate. All rights reserved. Registered with RERA No. 12849.",
-        fWhatsapp: '<strong>WhatsApp:</strong> <a href="https://wa.me/971564622103?text=Hello" target="_blank" style="color: inherit; text-decoration: underline;">+971 56 462 2103</a>',
+        fWhatsapp: '<strong>WhatsApp:</strong> <a href="https://wa.me/971585874751?text=Hello" target="_blank" style="color: inherit; text-decoration: underline;">+971 56 462 2103</a>',
         ccT1_wa: "WhatsApp Support",
         ccD1_wa: "Chat with our online support team for instant property listings.",
 
@@ -472,7 +472,7 @@ const translations = {
         fEmail: "البريد: info@fivehills.ae",
         fAddress: "المكتب: مارينا بلازا، جناح 2402، دبي مارينا، دبي، إ.ع.م",
         fCopy: "© 2026 5 هيلز العقارية. جميع الحقوق محفوظة. ترخيص ريرا رقم 12849.",
-        fWhatsapp: '<strong>واتساب:</strong> <a href="https://wa.me/971564622103?text=Hello" target="_blank" style="color: inherit; text-decoration: underline;">+971 56 462 2103</a>',
+        fWhatsapp: '<strong>واتساب:</strong> <a href="https://wa.me/971585874751?text=Hello" target="_blank" style="color: inherit; text-decoration: underline;">+971 56 462 2103</a>',
         ccT1_wa: "الدعم عبر الواتساب",
         ccD1_wa: "تواصل مع فريق الدعم المباشر للحصول على أحدث قوائم العقارات فوراً.",
 
@@ -1013,7 +1013,7 @@ function submitLeadForm() {
     const encoded = encodeURIComponent(textMsg);
     
     // Redirect to WhatsApp
-    window.open(`https://wa.me/971564622103?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/971585874751?text=${encoded}`, '_blank');
 
     const successMsg = currentLang === 'ar' 
         ? `شكرًا لك يا ${name}. تم توجيهك إلى الواتساب لإرسال بياناتك وحجز اهتمامك.` 
@@ -1034,7 +1034,7 @@ function submitGeneralContactForm() {
     const encoded = encodeURIComponent(textMsg);
     
     // Redirect to WhatsApp
-    window.open(`https://wa.me/971564622103?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/971585874751?text=${encoded}`, '_blank');
 
     const successMsg = currentLang === 'ar'
         ? `شكرًا لتواصلك معنا يا ${name}. تم توجيهك إلى الواتساب لإرسال استفسارك عقارياً.`
@@ -1054,7 +1054,7 @@ function submitBookingForm() {
     const encoded = encodeURIComponent(textMsg);
     
     // Redirect to WhatsApp
-    window.open(`https://wa.me/971564622103?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/971585874751?text=${encoded}`, '_blank');
 
     const successMsg = currentLang === 'ar'
         ? `تم توجيهك للواتساب يا ${name} لإتمام حجز الموعد بتاريخ ${date} الساعة ${time}.`
@@ -1211,7 +1211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Dynamic Injection of Floating Social Dock ---
     const socialHTML = `
     <div class="floating-social-dock" id="socialFloatingDock">
-        <a href="https://wa.me/971564622103?text=Hello,%20I%20am%20interested%20in%20Dubai%20Luxury%20Properties" target="_blank" class="social-dock-item whatsapp" title="WhatsApp">
+        <a href="https://wa.me/971585874751?text=Hello,%20I%20am%20interested%20in%20Dubai%20Luxury%20Properties" target="_blank" class="social-dock-item whatsapp" title="WhatsApp">
             <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.805-1.45L0 24zm6.59-4.846c1.785 1.058 3.549 1.59 5.41 1.591 5.474 0 9.928-4.448 9.932-9.921.002-2.651-1.03-5.143-2.906-7.021C17.156 1.92 14.661.888 12.016.888c-5.467 0-9.92 4.448-9.924 9.922a9.852 9.852 0 0 0 1.5 5.147l-.985 3.593 3.69-.968zm11.562-7.79c-.316-.158-1.87-.923-2.158-1.028-.288-.105-.499-.158-.709.158-.21.316-.81 1.028-.993 1.238-.184.21-.368.237-.684.079-.316-.158-1.336-.493-2.544-1.57-1.028-.917-1.636-2.164-1.838-2.507-.202-.343-.022-.528.136-.685.143-.142.316-.368.474-.553.158-.184.21-.316.316-.527.105-.21.053-.395-.026-.553-.079-.158-.709-1.71-.972-2.34-.256-.615-.517-.53-.709-.54-.184-.01-.395-.01-.605-.01-.21 0-.553.079-.842.395-.288.316-1.104 1.079-1.104 2.632 0 1.553 1.132 3.053 1.29 3.263.158.21 2.228 3.4 5.397 4.766.753.325 1.342.52 1.8.663.757.241 1.446.207 1.99.125.607-.09 1.87-.763 2.133-1.463.263-.7 2.63-1.62 2.63-1.62-.263-.079-.526-.158-.842-.316z"/></svg>
         </a>
         <a href="https://www.instagram.com/5hills.ae" target="_blank" class="social-dock-item instagram" title="Instagram">
@@ -1356,7 +1356,7 @@ function submitBrochureModalForm() {
     const textMsg = `Hello 5 Hills,\n\nI just downloaded the brochure for *${projectTitle}*:\n- *Name:* ${name}\n- *Phone:* ${phone}`;
     const encoded = encodeURIComponent(textMsg);
     setTimeout(() => {
-        window.location.href = `https://wa.me/971564622103?text=${encoded}`;
+        window.location.href = `https://wa.me/971585874751?text=${encoded}`;
     }, 1000);
 }
 
